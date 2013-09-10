@@ -1,0 +1,3 @@
+_read 'SOURCES_URI'
+cd $ROOT_DIR/sources
+wget -N $SOURCES_URI
