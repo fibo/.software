@@ -1,0 +1,3 @@
+_read 'CURRENT_VERSION_DIR'
+cd $ROOT_DIR/
+ln -s $CURRENT_VERSION_DIR current
