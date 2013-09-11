@@ -41,7 +41,7 @@ export DOTSOFTWARE_HOME_DIR=~/.software
 	mkdir -p $SOURCES_DIR
 	export SOURCES_DIR
 
-	$DOTSOFTWARE_HOME_DIR/$NAME/install.sh
+	bash $DOTSOFTWARE_HOME_DIR/$NAME/install.sh
 
 	# Go back to starting dir.
 	cd $STARTING_DIR
