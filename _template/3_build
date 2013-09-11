@@ -1,6 +1,0 @@
-_read 'CURRENT_VERSION_DIR'
-cd $ROOT_DIR/build/$CURRENT_VERSION_DIR
-PREFIX=$ROOT_DIR/$CURRENT_VERSION_DIR
-rm -rf $PREFIX
-mkdir $PREFIX
-./configure --prefix=$PREFIX && make install
