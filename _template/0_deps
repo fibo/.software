@@ -1,2 +1,0 @@
-which dep1 || .software Dep1
-which dep2 || .software Dep2
