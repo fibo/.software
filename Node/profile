@@ -1,7 +1,5 @@
 
-set -x
 export NODE_BASE=$DOTSOFTWARE_ROOT_DIR/Node
 export NODE_HOME=$NODE_BASE/current
 export PATH=$NODE_HOME/bin:$PATH
-set +x
 
