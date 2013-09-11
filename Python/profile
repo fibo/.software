@@ -1,0 +1,5 @@
+
+export PYTHON_BASE=$DOTSOFTWARE_ROOT_DIR/Python
+export PYTHON_HOME=$PYTHON_BASE/current
+export PATH=$PYTHON_HOME/bin:$PATH
+
