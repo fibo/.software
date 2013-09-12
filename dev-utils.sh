@@ -1,4 +1,17 @@
 
+.software_push_all_branches() {
+	.software_list | while read BRANCH
+		do
+			git checkout $BRANCH
+			git push origin $BRANCH
+		done
+
+	git checkout master
+	git push origin master
+}
+
+#-------------------------------------------------------------------------------
+
 .software_checkout_all_branches_from_origin() {
 	.software_list_origin_branches | while read BRANCH
 		do
