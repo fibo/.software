@@ -3,6 +3,10 @@
 
 build & install software locally
 
+# Repository
+
+The repo of this software is hosted [here](https://github.com/fibo/.software).
+
 # Why install software locally ?
 
 If you have root rights or sudo with a package manager, *don't use me!*.
