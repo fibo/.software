@@ -1,4 +1,15 @@
 
+.software_push_all_branches() {
+	.software_list | while read BRANCH
+		do
+			git checkout $BRANCH
+			git push origin $BRANCH
+		done
+
+	git checkout master
+	git push origin master
+}
+
 #-------------------------------------------------------------------------------
 
 .software_merge_master_from_all_branches() {
