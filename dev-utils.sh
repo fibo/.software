@@ -2,6 +2,10 @@
 #-------------------------------------------------------------------------------
 
 .software_merge_master_from_all_branches() {
+	git checkout master
+	git add .
+	git commit
+
 	.software_list | while read BRANCH
 		do
 			.software_merge_master_from_branch $BRANCH
@@ -16,7 +20,7 @@
 	BRANCH=$1
 
 	git checkout $BRANCH || return 1
-	git merge master
+	git merge master && git commit -m 'merge master'
 }
 
 #-------------------------------------------------------------------------------
