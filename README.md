@@ -3,6 +3,19 @@
 
 build & install software locally
 
+# Why install software locally ?
+
+If you have root rights or sudo with a package manager, *don't use me!*.
+
+But, sometimes you are in one of the following scenarios
+
+* your host is too old, without vendor support
+* you have not root rights, and you need to keep your software update
+* you need to compile and customize software
+* you want to try new releases without waiting until are packaged
+* you are a nerd
+* you are a nerd, and it is saturday night
+
 # Installation
 
 ## Get it
