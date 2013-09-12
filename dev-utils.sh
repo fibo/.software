@@ -5,8 +5,8 @@
 			.software_checkout_origin_branch $BRANCH
 		done
 
-	git branch
 	git checkout master
+	git branch
 }
 
 #-------------------------------------------------------------------------------
