@@ -33,8 +33,7 @@
 #-------------------------------------------------------------------------------
 
 .software_list_origin_branches() {
-	git branch -a | grep -v master | cut -d / -f3
->>>>>>> master
+	git branch -a | grep -v master | grep -v local | cut -d / -f3
 }
 
 #-------------------------------------------------------------------------------
@@ -64,7 +63,7 @@
 		do
 			BRANCH=${LINE/* /}
 
-			if [ "$BRANCH" != "master" ]; then
+			if [ "$BRANCH" != "master" ] && [ "$BRANCH" != "local" ]; then
 				echo $BRANCH
 			fi
 		done
