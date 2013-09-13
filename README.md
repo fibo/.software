@@ -1,4 +1,4 @@
-	.software
+.software
 =========
 
 build & install software locally
@@ -58,12 +58,16 @@ Add these lines to your `.bash_profile`
     # source ~/.software/Node/profile
     # source ~/.software/Python/profile
 
+Load it if you want to use it in your current shell session
+
+    $ source ~/.software/init.sh
+
 ## Create local branch
 
 Create a local branch named `local`.
 
-    cd ~/.software
-    git checkout -b local
+    $ cd ~/.software
+    $ git checkout -b local
 
 Its purpouse is to track all software actually installed on your machine, and
 keep the `master branch` clean.
@@ -74,11 +78,14 @@ keep the `master branch` clean.
 
 From your `branch local` merge branches related to software you need to install
 
-    git merge Foo
+    $ cd ~/.software
+    $ git checkout -b Foo origin/Foo
+    $ git checkout local
+    $ git merge Foo
 
 Then install it
 
-    .software_install Foo
+    $ .software_install Foo
 
 This will prepare your env and launch the `~/.software/Foo/install.sh` script.
 
@@ -115,4 +122,8 @@ The master branch contains the following files:
 The local branch is the result of merging Foo, Bar, Quz branches.
 
 Branch Foo-x.y.z, if any, is a checkout from Foo and represents a specific version.
+
+# License
+
+[MIT](http://fibo.mit-license.org/)
 
