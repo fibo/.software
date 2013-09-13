@@ -7,6 +7,15 @@ build & install software locally
 
 The repo of this software is hosted [here](https://github.com/fibo/.software).
 
+# Usage
+
+`.software` has only one feature: installing software locally !
+
+It is implemented by a bash function named `.software_install` the takes only
+one parameter: what you want to install, for example
+
+    .software_install Foo
+
 # Why install software locally ?
 
 If you have root rights or sudo with a package manager, *don't use me!*.
@@ -29,16 +38,16 @@ Just go to your home dir and clone this repo.
     cd
     git clone https://github.com/fibo/.software.git
 
-If you don't have git you should create a 
+## Set your environment
 
 Add these lines to your `.bash_profile`
 
     # Set .software target dir, defaults to ~/opt
     # [optional]
     ##
-    export DOTSOFTWARE_ROOT_DIR=/path/to/
+    # export DOTSOFTWARE_ROOT_DIR=/path/to/your/software
 
-    # Load .software
+    # Init .software
     # [required]
     ##
     source ~/.software/init.sh
@@ -48,32 +57,33 @@ Add these lines to your `.bash_profile`
     # source ~/.software/Node/profile
     # source ~/.software/Python/profile
 
-## Add software
+## Create local branch
+
+Create a local branch named `local`.
 
     cd ~/.software
+    git checkout -b local
+
+Its purpouse is to track all software actually installed on your machine, and
+keep the `master branch` clean.
 
 # Usage
 
-`.software` has only one feature: installing software !
+## Add software
 
-It is implemented by a bash function named .software the takes only one
-parameter: what you want to install, for example
+From your `branch local` merge branches related to software you need to install
 
-    .software Foo
+    git merge Foo
+
+Then install it
+
+    .software_install Foo
 
 This will prepare your env and launch the `~/.software/Foo/install.sh` script.
-Note that you should add a
+
+Note that you have to add manually a
 
     source ~/.software/Foo/profile
 
-line lines to your `.bash_profile` after installation complete.
-
-I recommend to create a branch named as your machine.
-
-    cd ~/.software
-    git checkout -b host123.example.org
-
-Then merge branches related to software you need installed, for example
-
-    git merge Foo
+line to your `.bash_profile`.
 
