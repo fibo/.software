@@ -15,7 +15,7 @@ tar xzf $SOURCES_DIR/$SOURCES_FILENAME
 
 # Build
 cd $CURRENT_VERSION_DIR
-./configure --prefix=$BASE_DIR/$CURRENT_VERSION_DIR --datarootdir=$DOTSOFTWARE_DATAROOT_DIR && make install
+./configure --prefix=$BASE_DIR/$CURRENT_VERSION_DIR --datarootdir=$DOTSOFTWARE_SHARE_DIR && make install
 
 # Link it
 cd $BASE_DIR
