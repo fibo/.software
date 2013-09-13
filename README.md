@@ -12,9 +12,17 @@ The repo of this software is hosted [here](https://github.com/fibo/.software).
 `.software` has only one feature: installing software locally !
 
 It is implemented by a bash function named `.software_install` the takes only
-one parameter: what you want to install, for example
+one parameter: what you want to install. For example
 
-    .software_install Foo
+    $ .software_install Foo
+
+This will prepare your env and launch the `~/.software/Foo/install.sh` script.
+
+Note that you have to add manually a
+
+    source ~/.software/Foo/profile
+
+line to your `.bash_profile`.
 
 # Why install software locally ?
 
@@ -62,66 +70,31 @@ Load it if you want to use it in your current shell session
 
     $ source ~/.software/init.sh
 
-## Create local branch
-
-Create a local branch named `local`.
-
-    $ cd ~/.software
-    $ git checkout -b local
-
-Its purpouse is to track all software actually installed on your machine, and
-keep the `master branch` clean.
-
 # Usage
 
-## Add software
+## Install software
 
-From your `branch local` merge branches related to software you need to install
-
-    $ cd ~/.software
-    $ git checkout -b Foo origin/Foo
-    $ git checkout local
-    $ git merge Foo
-
-Then install it
+Just launch
 
     $ .software_install Foo
 
-This will prepare your env and launch the `~/.software/Foo/install.sh` script.
+## Folder structure
 
-Note that you have to add manually a
-
-    source ~/.software/Foo/profile
-
-line to your `.bash_profile`.
-
-## Conventions
-
-Software Foo has its own branch Foo that is checkout from master and adds a Foo folder.
-
-Foo folder contains the following files:
-
-* installrc: exports env vars needed for installation, like `SOURCES_URI`
-* install.sh: is launched by `.software_install` function and performes installation, does not work by its own
-* profile: it is sourced by your `.bash_profile`
-
-Feel free to customize, add, delete branches according to your needs, but,
-really recommend that you keep the following branch model and conventions.
-
-(suppose you want to install softwares Foo, Bar, Quz)
-
-* master branch -> Foo branch [ -> Foo-x.y.z branch ]
-* Foo, Bar, Quz branches -> local branch
-
-The master branch contains the following files:
+`.software` folder contains the following files:
 
 * README.md: this file
 * init.sh: implements `.software_install` function, it is sourced by your `.bash_profile`
-* dev-utils.sh: a set of helpers to maintain repository
 
-The local branch is the result of merging Foo, Bar, Quz branches.
+There is a folder for every software that can be installed.
 
-Branch Foo-x.y.z, if any, is a checkout from Foo and represents a specific version.
+Software Foo has its Foo folder and contains the following files:
+
+* installrc: exports env vars needed for installation, like `SOURCES_URI`
+* install.sh: is launched by `.software_install` function and performes
+               installation, does not work by its own
+* profile: it is sourced by your `.bash_profile`
+
+Feel free to customize files according to your needs.
 
 # License
 

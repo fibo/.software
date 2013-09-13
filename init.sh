@@ -1,6 +1,4 @@
 
-#-------------------------------------------------------------------------------
-
 # Define and create .software folders
 
 DOTSOFTWARE_ROOT_DIR=${DOTSOFTWARE_ROOT_DIR:-~/opt}
@@ -14,9 +12,8 @@ export DOTSOFTWARE_HOME_DIR
 #-------------------------------------------------------------------------------
 
 .software_install() {
-
 	# cd info DOTSOFTWARE_HOME_DIR
-	pushd $DOTSOFTWARE_HOME_DIR
+	pushd $DOTSOFTWARE_HOME_DIR 1> /dev/null
 
 	SOFTWARE_NAME=$1
 
@@ -47,7 +44,7 @@ export DOTSOFTWARE_HOME_DIR
 	bash $DOTSOFTWARE_HOME_DIR/$SOFTWARE_NAME/install.sh
 
 	# Go back to starting dir.
-	popd
+	popd 1> /dev/null
 
 	# Cleanup variables and functions.
 	unset BASE_DIR
@@ -56,78 +53,4 @@ export DOTSOFTWARE_HOME_DIR
 	unset INSTALL_DIR
 	unset SOFTWARE_NAME
 }
-
-#-------------------------------------------------------------------------------
-
-.software_push_all_branches() {
-	.software_list | while read BRANCH
-		do
-			git checkout $BRANCH
-			git push origin $BRANCH
-		done
-
-	git checkout master
-	git push origin master
-}
-
-#-------------------------------------------------------------------------------
-
-.software_checkout_all_branches_from_origin() {
-	.software_list_origin_branches | while read BRANCH
-		do
-			.software_checkout_origin_branch $BRANCH
-		done
-
-	git checkout master
-	git branch
-}
-
-#-------------------------------------------------------------------------------
-
-.software_checkout_origin_branch() {
-	BRANCH=$1
-
-	git checkout -b $BRANCH origin/$BRANCH
-}
-
-#-------------------------------------------------------------------------------
-
-.software_list_origin_branches() {
-	git branch -a | grep -v master | grep -v local | cut -d / -f3
-}
-
-#-------------------------------------------------------------------------------
-
-.software_merge_master_from_all_branches() {
-	.software_list | while read BRANCH
-		do
-			.software_merge_master_from_branch $BRANCH
-		done
-
-	git checkout master
-}
-
-#-------------------------------------------------------------------------------
-
-.software_merge_master_from_branch() {
-	BRANCH=$1
-
-	git checkout $BRANCH || return 1
-	git merge master
-}
-
-#-------------------------------------------------------------------------------
-
-.software_list() {
-	git branch | while read LINE
-		do
-			BRANCH=${LINE/* /}
-
-			if [ "$BRANCH" != "master" ] && [ "$BRANCH" != "local" ]; then
-				echo $BRANCH
-			fi
-		done
-}
-
-#-------------------------------------------------------------------------------
 
