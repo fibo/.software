@@ -1,35 +1,38 @@
 
-DOTSOFTWARE_ROOT_DIR=${DOTSOFTWARE_ROOT_DIR:-~/opt}
-mkdir -p $DOTSOFTWARE_ROOT_DIR
-export DOTSOFTWARE_ROOT_DIR=$DOTSOFTWARE_ROOT_DIR
-
-DOTSOFTWARE_HOME_DIR=${DOTSOFTWARE_ROOT_DIR:-~/.software}
-export DOTSOFTWARE_HOME_DIR=~/.software
-
 #-------------------------------------------------------------------------------
 
-.software() {
-    .software_install $*
-}
+# Define and create .software folders
+
+DOTSOFTWARE_ROOT_DIR=${DOTSOFTWARE_ROOT_DIR:-~/opt}
+mkdir -p $DOTSOFTWARE_ROOT_DIR || exit 1
+export DOTSOFTWARE_ROOT_DIR
+
+DOTSOFTWARE_HOME_DIR=${DOTSOFTWARE_HOME_DIR:-~/.software}
+mkdir -p $DOTSOFTWARE_HOME_DIR || exit 1
+export DOTSOFTWARE_HOME_DIR
 
 #-------------------------------------------------------------------------------
 
 .software_install() {
 
-	STARTING_DIR=$PWD
+	# cd info DOTSOFTWARE_HOME_DIR
+	pushd $DOTSOFTWARE_HOME_DIR
 
-	NAME=$1
-	if [ -z "$NAME" ]; then
-		echo USAGE: .software NAME
+	SOFTWARE_NAME=$1
+
+	# Require parameter
+	if [ -z "$SOFTWARE_NAME" ]; then
+		echo USAGE: .software_install Foo
 	return 1
 	fi
 
-	if [ ! -d $DOTSOFTWARE_HOME_DIR/$NAME ]; then
-		echo Unknown software: $NAME
+	# Check that SOFTWARE_NAME dir exists
+	if [ ! -d $DOTSOFTWARE_HOME_DIR/$SOFTWARE_NAME ]; then
+		echo Unknown software: $SOFTWARE_NAME
 		return 1
 	fi
 
-	BASE_DIR=$DOTSOFTWARE_ROOT_DIR/$NAME
+	BASE_DIR=$DOTSOFTWARE_ROOT_DIR/$SOFTWARE_NAME
 	mkdir -p $BASE_DIR
 	export BASE_DIR
 
@@ -41,17 +44,16 @@ export DOTSOFTWARE_HOME_DIR=~/.software
 	mkdir -p $SOURCES_DIR
 	export SOURCES_DIR
 
-	bash $DOTSOFTWARE_HOME_DIR/$NAME/install.sh
+	bash $DOTSOFTWARE_HOME_DIR/$SOFTWARE_NAME/install.sh
 
 	# Go back to starting dir.
-	cd $STARTING_DIR
+	popd
 
 	# Cleanup variables and functions.
-	unset STARTING_DIR
 	unset BASE_DIR
 	unset SOURCES_DIR
 	unset BUILD_DIR
 	unset INSTALL_DIR
-	unset NAME
+	unset SOFTWARE_NAME
 }
 
