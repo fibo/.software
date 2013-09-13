@@ -1,13 +1,17 @@
 
 # Define and create .software folders
 
+DOTSOFTWARE_HOME_DIR=${DOTSOFTWARE_HOME_DIR:-~/.software}
+mkdir -p $DOTSOFTWARE_HOME_DIR || exit 1
+export DOTSOFTWARE_HOME_DIR
+
 DOTSOFTWARE_ROOT_DIR=${DOTSOFTWARE_ROOT_DIR:-~/opt}
 mkdir -p $DOTSOFTWARE_ROOT_DIR || exit 1
 export DOTSOFTWARE_ROOT_DIR
 
-DOTSOFTWARE_HOME_DIR=${DOTSOFTWARE_HOME_DIR:-~/.software}
-mkdir -p $DOTSOFTWARE_HOME_DIR || exit 1
-export DOTSOFTWARE_HOME_DIR
+DOTSOFTWARE_DATAROOT_DIR=${DOTSOFTWARE_DATAROOT_DIR:$DOTSOFTWARE_ROOT_DIR/data}
+mkdir -p $DOTSOFTWARE_DATAROOT_DIR || exit 1
+export DOTSOFTWARE_ROOTDATA_DIR
 
 #-------------------------------------------------------------------------------
 
