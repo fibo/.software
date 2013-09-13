@@ -9,9 +9,12 @@ DOTSOFTWARE_ROOT_DIR=${DOTSOFTWARE_ROOT_DIR:-~/opt}
 mkdir -p $DOTSOFTWARE_ROOT_DIR
 export DOTSOFTWARE_ROOT_DIR
 
-DOTSOFTWARE_DATAROOT_DIR=$DOTSOFTWARE_ROOT_DIR/data
+DOTSOFTWARE_SHARE_DIR=$DOTSOFTWARE_SHARE_DIR/share
 mkdir -p $DOTSOFTWARE_DATAROOT_DIR
 export DOTSOFTWARE_DATAROOT_DIR
+
+# Make software man available
+export PATH=$DOTSOFTWARE_SHARE_DIR/man:$PATH
 
 #-------------------------------------------------------------------------------
 
