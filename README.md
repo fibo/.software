@@ -70,15 +70,7 @@ Load it if you want to use it in your current shell session
 
     $ source ~/.software/init.sh
 
-# Usage
-
-## Install software
-
-Just launch
-
-    $ .software_install Foo
-
-## Folder structure
+# Folder structure
 
 `.software` folder contains the following files:
 
