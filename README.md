@@ -104,6 +104,40 @@ Software Foo has its Foo folder and contains the following files:
 
 Feel free to customize files according to your needs.
 
+# Tips
+
+## Packaging software
+
+`.software` installs software locally downloading sources and compile them.
+This process can be time and cpu consuming, so, if you have two or more similar
+machines is not that difficut to build only once, than package your result and
+installing it on other hosts. The requirement are
+
+* the machines has the same system software (OS, kernel, etc), 
+* the paths are the same, in particular the user home path and the `DOTSOFTWARE_ROOT_DIR`.
+
+Suppose for example you builded Perl version 5.18.1 on *host1.example.com*, then
+you install many Perl modules: yes, this can take time, specially for running all tests.
+
+When you installation is complete, you can package your result
+
+    $ cd $DOTSOFTWARE_ROOT_DIR/Perl
+    $ mkdir packages
+    $ tar czf perl-5.18.1.tar.gz perl-5.18.1/
+    $ mv perl-5.18.1.tar.gz packages/
+
+If you imagine you could replicate the installation just unpackaging it in many
+servers, you will agree that it is a big amount of time saved.
+
+To install the package just login on a **twin** machine,
+for instance *host2.example.com*, with the same user, for instance *user*
+get the package and uncompress it.
+
+    $ cd $DOTSOFTWARE_ROOT_DIR/Perl
+    $ mkdir packages
+    $ scp user@host1.example.com:$DOTSOFTWARE_ROOT_DIR/Perl/packages/perl-5.18.1.tar.gz packages
+    $ tar xzf packages/perl-5.18.1.tar.gz
+
 # Info
 
 * **Author:** [G. Casati](https://github.com/fibo)
