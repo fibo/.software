@@ -32,7 +32,7 @@ Note that you have to add manually a
 
     source ~/.software/Foo/profile
 
-line to your `.bash_profile`.
+line to your `.bash_profile` (or `.bashrc`, see below).
 
 # Installation
 
@@ -52,7 +52,9 @@ If you don' t have git installed you can try something like
 
 ## Set your environment
 
-Add these lines to your `.bash_profile`
+Add these lines to your `.bash_profile`.
+
+Please *Note* that if you are an Ubuntu user or you are using `.software` from  graphical environment rather tha a remote server login shell, you should use `.bashrc` file instead.
 
     # Set .software target dir, defaults to ~/opt
     # [optional]
@@ -95,24 +97,16 @@ There is a folder for every software that can be installed.
 
 Software Foo has its Foo folder and contains the following files:
 
-* installrc: exports env vars needed for installation, like `SOURCES_URI`
-* install.sh: is launched by `.software_install` function and performes
-               installation, does not work by its own
-* profile: it is sourced by your `.bash_profile`
+* installrc: exports env vars needed for installation, like `SOURCES_URI`.
+* install.sh: it is launched by `.software_install` function and performes
+               installation, does not work by its own.
+* profile: it is sourced by your `.bash_profile` (or `.bashrc`), user aware.
 
 Feel free to customize files according to your needs.
 
 # Info
 
-## Author
-
-[G. Casati](https://github.com/fibo)
-
-## Repository
-
-The repo of this software is hosted [here](https://github.com/fibo/.software).
-
-## License
-
-[MIT](http://fibo.mit-license.org/)
+* Author: [G. Casati](https://github.com/fibo)
+* Repository: the repo of this software is hosted [here](https://github.com/fibo/.software).
+* License: [MIT](http://fibo.mit-license.org/)
 
