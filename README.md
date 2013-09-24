@@ -137,6 +137,8 @@ get the package and uncompress it.
     $ mkdir packages
     $ scp user@host1.example.com:$DOTSOFTWARE_ROOT_DIR/Perl/packages/perl-5.18.1.tar.gz packages
     $ tar xzf packages/perl-5.18.1.tar.gz
+    $ rm current 2> /dev/null
+    $ ln -s perl-5.18.1 current
 
 # Info
 
