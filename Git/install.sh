@@ -15,9 +15,14 @@ tar xzf $SOURCES_DIR/$SOURCES_FILENAME
 
 # Build
 cd $CURRENT_VERSION_DIR
-./configure --prefix=$BASE_DIR/$CURRENT_VERSION_DIR && make install
+
+PERL=$(which perl)
+PYTHON=$(which python)
+
+./configure --prefix=$BASE_DIR/$CURRENT_VERSION_DIR --with-perl=$PERL --with-python=$PYTHON && make install
 
 # Link it
 cd $BASE_DIR
+rm current 2> /dev/null
 ln -s $CURRENT_VERSION_DIR current
 

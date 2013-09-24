@@ -19,5 +19,6 @@ cd $CURRENT_VERSION_DIR
 
 # Link it
 cd $BASE_DIR
+rm current 2> /dev/null
 ln -s $CURRENT_VERSION_DIR current
 
