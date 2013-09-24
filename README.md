@@ -54,7 +54,7 @@ If you don' t have git installed you can try something like
 
 Add these lines to your `.bash_profile`.
 
-Please *Note* that if you are an Ubuntu user or you are using `.software` from  graphical environment rather tha a remote server login shell, you should use `.bashrc` file instead.
+Note that if you are an Ubuntu user or you are using `.software` from  graphical environment rather tha a remote server login shell, you should use `.bashrc` file instead.
 
     # Set .software target dir, defaults to ~/opt
     # [optional]
@@ -106,7 +106,7 @@ Feel free to customize files according to your needs.
 
 # Info
 
-* Author: [G. Casati](https://github.com/fibo)
-* Repository: the repo of this software is hosted [here](https://github.com/fibo/.software).
-* License: [MIT](http://fibo.mit-license.org/)
+* **Author:** [G. Casati](https://github.com/fibo)
+* **Repository:** the repo of this software is hosted [here](https://github.com/fibo/.software).
+* **License:** [MIT](http://fibo.mit-license.org/)
 
