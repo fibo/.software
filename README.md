@@ -5,7 +5,7 @@ build & install software locally
 
 # Why install software locally ?
 
-If you have root rights or sudo with a package manager, *don't use me!*.
+If you have root rights or sudo with a package manager, __don't use me!__.
 
 But, sometimes you are in one of the following scenarios
 
@@ -43,8 +43,9 @@ Just go to your home dir and clone this repo.
     $ cd
     $ git clone https://github.com/fibo/.software.git
 
-If you don' t have git installed you can try something like
+If you don' t have git installed you can try the following commands
 
+    $ cd
     $ wget --no-check-certificate https://github.com/fibo/.software/archive/master.zip
     $ unzip master
     $ mv .software-master .software
@@ -54,12 +55,16 @@ If you don' t have git installed you can try something like
 
 Add these lines to your `.bash_profile`.
 
-Note that if you are an Ubuntu user or you are using `.software` from  graphical environment rather tha a remote server login shell, you should use `.bashrc` file instead.
+Note that if you are an Ubuntu user or you are using `.software` from  graphical
+environment rather tha a remote server login shell, you should use `.bashrc` file instead.
+
+    ########################################################
+    ### .software config start
 
     # Set .software target dir, defaults to ~/opt
     # [optional]
     ##
-    # export DOTSOFTWARE_ROOT_DIR=/path/to/your/software
+    # export DOTSOFTWARE_ROOT_DIR=/path/to/your/software/dir
 
     # Init .software
     # [required]
@@ -70,6 +75,9 @@ Note that if you are an Ubuntu user or you are using `.software` from  graphical
     ##
     # source ~/.software/Node/profile
     # source ~/.software/Python/profile
+
+    ### end .software config
+    ########################################################
 
 Load it if you want to use it in your current shell session
 
@@ -113,10 +121,10 @@ This process can be time and cpu consuming, so, if you have two or more similar
 machines is not that difficut to build only once, than package your result and
 installing it on other hosts. The requirement are
 
-* the machines has the same system software (OS, kernel, etc), 
+* the machines has the same system software (OS, kernel, etc),
 * the paths are the same, in particular the user home path and the `DOTSOFTWARE_ROOT_DIR`.
 
-Suppose for example you builded Perl version 5.18.1 on *host1.example.com*, then
+Suppose for example you builded Perl version 5.18.1 on _host1.example.com_, then
 you install many Perl modules: yes, this can take time, specially for running all tests.
 
 When you installation is complete, you can package your result
@@ -129,8 +137,8 @@ When you installation is complete, you can package your result
 If you imagine you could replicate the installation just unpackaging it in many
 servers, you will agree that it is a big amount of time saved.
 
-To install the package just login on a **twin** machine,
-for instance *host2.example.com*, with the same user, for instance *user*
+To install the package just login on a __twin__ machine,
+for instance _host2.example.com_, with the same user, for instance _user_
 get the package and uncompress it.
 
     $ cd $DOTSOFTWARE_ROOT_DIR/Perl
@@ -142,7 +150,7 @@ get the package and uncompress it.
 
 # Info
 
-* **Author:** [G. Casati](https://github.com/fibo)
-* **Repository:** the repo of this software is hosted [here](https://github.com/fibo/.software).
-* **License:** [MIT](http://fibo.mit-license.org/)
+* __Author    :__ [G. Casati](https://github.com/fibo)
+* __Repository:__ the repo of this software is hosted [here](https://github.com/fibo/.software).
+* __License   :__ [MIT](http://fibo.mit-license.org/)
 
