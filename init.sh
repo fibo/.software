@@ -83,5 +83,10 @@ export DOTSOFTWARE_ROOT_DIR
 	unset SOURCES_DIR
 	unset SOURCES_FILENAME
 	unset SOURCES_URI
+
+	unset _build
+	unset _extract
+	unset _get_sources
+	unset _link_it
 }
 
