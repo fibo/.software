@@ -41,16 +41,47 @@ export DOTSOFTWARE_ROOT_DIR
 	mkdir -p $SOURCES_DIR
 	export SOURCES_DIR
 
-	bash $DOTSOFTWARE_HOME_DIR/$SOFTWARE_NAME/install.sh
+	function _get_sources() {
+		cd $SOURCES_DIR
+		wget -N $SOURCES_URI
+		SOURCES_FILENAME=$(basename $SOURCES_URI)
+		CURRENT_VERSION_DIR=$(tar tzf $SOURCES_FILENAME | head -1)
+	}
+
+	function _extract() {
+		cd $BUILD_DIR
+		tar xzf $SOURCES_DIR/$SOURCES_FILENAME
+	}
+
+	function _build() {
+		cd $CURRENT_VERSION_DIR
+		./configure --prefix=$BASE_DIR/$CURRENT_VERSION_DIR && make install
+	}
+
+	function _link_it() {
+		cd $BASE_DIR
+		rm current 2> /dev/null
+		ln -s $CURRENT_VERSION_DIR current
+	}
+
+	source $DOTSOFTWARE_HOME_DIR/$SOFTWARE_NAME/installrc
+
+	_get_sources
+	_extract
+	_build
+	_link_it
 
 	# Go back to starting dir.
 	popd 1> /dev/null
 
 	# Cleanup variables and functions.
 	unset BASE_DIR
-	unset SOURCES_DIR
 	unset BUILD_DIR
+	unset CURRENT_VERSION_DIR
 	unset INSTALL_DIR
 	unset SOFTWARE_NAME
+	unset SOURCES_DIR
+	unset SOURCES_FILENAME
+	unset SOURCES_URI
 }
 

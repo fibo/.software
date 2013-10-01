@@ -106,8 +106,6 @@ There is a folder for every software that can be installed.
 Software Foo has its Foo folder and contains the following files:
 
 * installrc: exports env vars needed for installation, like `SOURCES_URI`.
-* install.sh: it is launched by `.software_install` function and performes
-               installation, does not work by its own.
 * profile: it is sourced by your `.bash_profile` (or `.bashrc`), user aware.
 
 Feel free to customize files according to your needs.
