@@ -44,7 +44,15 @@ export DOTSOFTWARE_ROOT_DIR
 	function _get_sources() {
 		cd $SOURCES_DIR
 		wget -N $SOURCES_URI
+	}
+
+	function _read_sources_filename() {
+		cd $SOURCES_DIR
 		SOURCES_FILENAME=$(basename $SOURCES_URI)
+	}
+
+	function _read_current_version_dir() {
+		cd $SOURCES_DIR
 		CURRENT_VERSION_DIR=$(tar tzf $SOURCES_FILENAME | head -1)
 	}
 
@@ -67,6 +75,8 @@ export DOTSOFTWARE_ROOT_DIR
 	source $DOTSOFTWARE_HOME_DIR/$SOFTWARE_NAME/installrc
 
 	_get_sources
+	_read_sources_filename
+	_read_current_version_dir
 	_extract
 	_build
 	_link_it
@@ -88,5 +98,7 @@ export DOTSOFTWARE_ROOT_DIR
 	unset _extract
 	unset _get_sources
 	unset _link_it
+	unset _read_current_version_dir
+	unset _read_current_version_dir
 }
 
