@@ -114,13 +114,13 @@ Feel free to customize files according to your needs.
 
 ## Packaging software
 
-`.software` installs software locally downloading sources and compile them.
+`.software` installs software locally downloading and compiling sources.
 This process can be time and cpu consuming, so, if you have two or more similar
-machines is not that difficut to build only once, than package your result and
+machines is not that difficut to build only once, then package your result and
 installing it on other hosts. The requirement are
 
-* the machines has the same system software (OS, kernel, etc),
-* the paths are the same, in particular the user home path and the `DOTSOFTWARE_ROOT_DIR`.
+* The hosts has the same system software (OS, kernel, etc) and environment.
+* The variable `DOTSOFTWARE_ROOT_DIR` has the same value on every host.
 
 Suppose for example you builded Perl version 5.18.1 on _host1.example.com_, then
 you install many Perl modules: yes, this can take time, specially for running all tests.
@@ -135,9 +135,8 @@ When you installation is complete, you can package your result
 If you imagine you could replicate the installation just unpackaging it in many
 servers, you will agree that it is a big amount of time saved.
 
-To install the package just login on a __twin__ machine,
-for instance _host2.example.com_, with the same user, for instance _user_
-get the package and uncompress it.
+To install the package just login on another machine,
+for instance _host2.example.com_, get the package and uncompress it.
 
     $ cd $DOTSOFTWARE_ROOT_DIR/Perl
     $ mkdir packages
