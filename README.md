@@ -79,7 +79,9 @@ environment rather tha a remote server login shell, you should use `.bashrc` fil
     ### end .software config
     ########################################################
 
-Load it if you want to use it in your current shell session
+## Finally
+
+Load `.software` if you want to use it in your current shell session
 
     $ source ~/.software/init.sh
 
