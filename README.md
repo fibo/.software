@@ -105,12 +105,22 @@ You maybe want to edit it, for example when
 
 There is a folder for every software that can be installed.
 
-Software Foo has its Foo folder and contains the following files:
+Software Foo has its Foo folder and contains the following files.
 
-* installrc: exports env vars needed for installation, like `SOURCES_URI`.
-* profile: it is sourced by your `.bash_profile` (or `.bashrc`), user aware.
+## installrc
 
-Feel free to customize files according to your needs.
+Exports env vars needed for installation, like `SOURCES_URI`.
+It can be used to override functions used bi init.sh
+
+* `_build`
+* `_extract`
+* `_get_sources`
+* `_link_it`
+* `_read_current_version_dir`
+
+## profile
+
+It is sourced by your `.bash_profile` (or `.bashrc`), user aware.
 
 # Tips
 

@@ -99,6 +99,5 @@ export DOTSOFTWARE_ROOT_DIR
 	unset _get_sources
 	unset _link_it
 	unset _read_current_version_dir
-	unset _read_current_version_dir
 }
 

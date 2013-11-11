@@ -2,9 +2,9 @@ SOURCES_URI=http://www.cpan.org/src/5.0/perl-5.18.1.tar.gz
 
 function _build() {
 	cd $CURRENT_VERSION_DIR
-	sh Configure -des \
+	./Configure -des \
 		-Dprefix=$BASE_DIR/$CURRENT_VERSION_DIR \
-		-Dinstallscript=$BASE_DIR/$CURRENT_VERSION_DIR/bin \
+		-Dscriptdir=$BASE_DIR/$CURRENT_VERSION_DIR/bin \
 		&& make test \
 		&& make install
 }
