@@ -1,7 +1,7 @@
 .software
 =========
 
-build & install software locally
+> build & install software locally
 
 # Why install software locally ?
 
@@ -26,7 +26,7 @@ one parameter: what you want to install. For example
 
     $ .software_install Foo
 
-This will prepare your env and launch the `~/.software/Foo/install.sh` script.
+This will prepare your env sourcing `~/.software/Foo/installrc` and launch installation.
 
 Note that you have to add manually a
 
@@ -40,50 +40,58 @@ line to your `.bash_profile` (or `.bashrc`, see below).
 
 Just go to your home dir and clone this repo.
 
-    $ cd
-    $ git clone https://github.com/fibo/.software.git
+```bash
+$ cd
+$ git clone https://github.com/fibo/.software.git
+```
 
 If you don' t have git installed you can try the following commands
 
-    $ cd
-    $ wget --no-check-certificate https://github.com/fibo/.software/archive/master.zip
-    $ unzip master
-    $ mv .software-master .software
-    $ rm master
+```bash
+$ cd
+$ wget --no-check-certificate https://github.com/fibo/.software/archive/master.zip
+$ unzip master
+$ mv .software-master .software
+$ rm master
+```
 
 ## Set your environment
 
 Add these lines to your `.bash_profile`.
 
-Note that if you are an Ubuntu user or you are using `.software` from  graphical
+Note that __if you are an Ubuntu user__ or you are using `.software` from  graphical
 environment rather tha a remote server login shell, you should use `.bashrc` file instead.
 
-    ########################################################
-    ### .software config start
+```bash
+########################################################
+### .software config start
 
-    # Set .software target dir, defaults to ~/opt
-    # [optional]
-    ##
-    # export DOTSOFTWARE_ROOT_DIR=/path/to/your/software/dir
+# Set .software target dir, defaults to ~/opt
+# [optional]
+##
+# export DOTSOFTWARE_ROOT_DIR=/path/to/your/software/dir
 
-    # Init .software
-    # [required]
-    ##
-    source ~/.software/init.sh
+# Init .software
+# [required]
+##
+source ~/.software/init.sh
 
-    # Load .software profiles
-    ##
-    # source ~/.software/Node/profile
-    # source ~/.software/Python/profile
+# Load .software profiles
+##
+# source ~/.software/Node/profile
+# source ~/.software/Python/profile
 
-    ### end .software config
-    ########################################################
+### end .software config
+########################################################
+```
 
 ## Finally
 
 Load `.software` if you want to use it in your current shell session
 
-    $ source ~/.software/init.sh
+```bash
+$ source ~/.software/init.sh
+```
 
 # Environment
 
@@ -105,12 +113,15 @@ You maybe want to edit it, for example when
 
 There is a folder for every software that can be installed.
 
-Software Foo has its Foo folder and contains the following files.
+Software _Foo_ has its homonym folder and contains the following files
+
+* installrc
+* profile
 
 ## installrc
 
 Exports env vars needed for installation, like `SOURCES_URI`.
-It can be used to override functions used bi init.sh
+It can be used to override functions used by init.sh
 
 * `_build`
 * `_extract`
@@ -160,6 +171,6 @@ for instance _host2.example.com_, get the package and uncompress it.
 # Info
 
 * __Author    :__ [G. Casati](https://github.com/fibo)
-* __Repository:__ the repo of this software is hosted [here](https://github.com/fibo/.software).
+* __Repository:__ the repo of this software is hosted [here](https://github.com/fibo/.software)
 * __License   :__ [MIT](http://fibo.mit-license.org/)
 
