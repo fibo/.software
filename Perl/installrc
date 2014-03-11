@@ -1,4 +1,4 @@
-SOURCES_URI=http://www.cpan.org/src/5.0/perl-5.18.1.tar.gz
+SOURCES_URI=http://www.cpan.org/src/5.0/perl-5.18.2.tar.gz
 
 function _build() {
 	cd $CURRENT_VERSION_DIR
