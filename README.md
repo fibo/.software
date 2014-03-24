@@ -66,7 +66,7 @@ environment rather tha a remote server login shell, you should use `.bashrc` fil
 ########################################################
 ### .software config start
 
-# Set .software target dir, defaults to ~/opt
+# Set .software target dir, defaults to ~/.software
 # [optional]
 ##
 # export DOTSOFTWARE_ROOT_DIR=/path/to/your/software/dir
@@ -96,9 +96,9 @@ $ source ~/.software/init.sh
 # Environment
 
 `.software` uses only one enviroment variable: `DOTSOFTWARE_ROOT_DIR`. It is the
-dir where all your software will be installed, defaults to `~/opt`.
+dir where all your software will be installed.
 
-You maybe want to edit it, for example when
+You maybe want to edit it when
 
 * you have not enough space in your home dir
 * you want to install in a dir common to many users like `/usr/local` or `/opt`.
