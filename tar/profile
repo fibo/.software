@@ -1,0 +1,5 @@
+
+TAR_BASE=$DOTSOFTWARE_ROOT_DIR/tar
+TAR_HOME=$TAR_BASE/current
+export PATH=$TAR_HOME/bin:$PATH
+
