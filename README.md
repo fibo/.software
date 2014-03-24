@@ -133,9 +133,8 @@ It can be used to override functions used by init.sh
 
 It is sourced by your `.bash_profile` (or `.bashrc`), user aware.
 
-# Tips
 
-## Packaging software
+# Packaging software
 
 `.software` installs software locally downloading and compiling sources.
 This process can be time and cpu consuming, so, if you have two or more similar
@@ -143,17 +142,22 @@ machines is not that difficut to build only once, then package your result and
 installing it on other hosts. The requirement are
 
 * The hosts has the same system software (OS, kernel, etc) and environment.
-* The variable `DOTSOFTWARE_ROOT_DIR` has the same value on every host.
+* The variable `DOTSOFTWARE_ROOT_DIR` has the same value on every host. Note that, using default value implies that users has the same name.
+  
+
+## Packaging specific software
 
 Suppose for example you builded Perl version 5.18.1 on _host1.example.com_, then
 you install many Perl modules: yes, this can take time, specially for running all tests.
 
 When you installation is complete, you can package your result
 
-    $ cd $DOTSOFTWARE_ROOT_DIR/Perl
-    $ mkdir packages
-    $ tar czf perl-5.18.1.tar.gz perl-5.18.1/
-    $ mv perl-5.18.1.tar.gz packages/
+```bash
+$ cd $DOTSOFTWARE_ROOT_DIR/Perl
+$ mkdir packages
+$ tar czf perl-5.18.1.tar.gz perl-5.18.1/
+$ mv perl-5.18.1.tar.gz packages/
+```
 
 If you imagine you could replicate the installation just unpackaging it in many
 servers, you will agree that it is a big amount of time saved.
@@ -161,12 +165,27 @@ servers, you will agree that it is a big amount of time saved.
 To install the package just login on another machine,
 for instance _host2.example.com_, get the package and uncompress it.
 
-    $ cd $DOTSOFTWARE_ROOT_DIR/Perl
-    $ mkdir packages
-    $ scp user@host1.example.com:$DOTSOFTWARE_ROOT_DIR/Perl/packages/perl-5.18.1.tar.gz packages
-    $ tar xzf packages/perl-5.18.1.tar.gz
-    $ rm current 2> /dev/null
+```bash
+$ cd $DOTSOFTWARE_ROOT_DIR/Perl
+$ mkdir packages
+$ scp user@host1.example.com:$DOTSOFTWARE_ROOT_DIR/Perl/packages/perl-5.18.1.tar.gz packages
+$ tar xzf packages/perl-5.18.1.tar.gz
+$ rm current 2> /dev/null
     $ ln -s perl-5.18.1 current
+```
+
+## Bundle everything
+
+The same concept above can be applied to the whole *.software* folder.
+If you are using default `.software` configuration you could just launch
+
+```bash
+$ cd
+$ tar czf dotsoftware.tar.gz .software/
+$ scp dotsoftware.tar.gz host1.example.com:~
+$ ssh host1.example.com tar xzf dotsoftware.tar.gz
+$ ssh host1.example.com rm dotsoftware.tar.gz
+```
 
 # Info
 
