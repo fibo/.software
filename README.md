@@ -63,10 +63,10 @@ Note that __if you are an Ubuntu user__ or you are using `.software` from  graph
 environment rather tha a remote server login shell, you should use `.bashrc` file instead.
 
 ```bash
-########################################################
+#############################################################
 ### .software config start
 
-# Set .software target dir, defaults to ~/.software
+# Set .software target dir, defaults to $DOTSOFTWARE_HOME_DIR
 # [optional]
 ##
 # export DOTSOFTWARE_ROOT_DIR=/path/to/your/software/dir
@@ -74,7 +74,7 @@ environment rather tha a remote server login shell, you should use `.bashrc` fil
 # Init .software
 # [required]
 ##
-source ~/.software/init.sh
+source $DOTSOFTWARE_HOME_DIR/init.sh
 
 # Load .software profiles
 ##
@@ -82,7 +82,7 @@ source ~/.software/init.sh
 # source ~/.software/Python/profile
 
 ### end .software config
-########################################################
+#############################################################
 ```
 
 ## Finally
