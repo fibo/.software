@@ -96,6 +96,7 @@ source $DOTSOFTWARE_HOME_DIR/init.sh
 # source $DOTSOFTWARE_HOME_DIR/Python/profile
 # source $DOTSOFTWARE_HOME_DIR/libxml2/profile
 # source $DOTSOFTWARE_HOME_DIR/make/profile
+# source $DOTSOFTWARE_HOME_DIR/patch/profile
 # source $DOTSOFTWARE_HOME_DIR/redis/profile
 # source $DOTSOFTWARE_HOME_DIR/rsync/profile
 # source $DOTSOFTWARE_HOME_DIR/tar/profile
