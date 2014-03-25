@@ -66,20 +66,41 @@ environment rather tha a remote server login shell, you should use `.bashrc` fil
 #############################################################
 ### .software config start
 
+##[optional]
+# Set .software home dir, defaults to $HOME/.software
+# You maybe want to set it to one of the following
+#    * $HOME/opt
+#    * $HOME/software
+##
+# export DOTSOFTWARE_HOME_DIR=/path/to/your/dot/software/home
+
+##[optional]
 # Set .software target dir, defaults to $DOTSOFTWARE_HOME_DIR
-# [optional]
 ##
 # export DOTSOFTWARE_ROOT_DIR=/path/to/your/software/dir
 
+##[required]
 # Init .software
-# [required]
 ##
 source $DOTSOFTWARE_HOME_DIR/init.sh
 
-# Load .software profiles
+##[required]
+# Load .software profiles: after installing a software, uncomment
+# the corresponding line, according to your needs.
+#
+# source $DOTSOFTWARE_HOME_DIR/Gettext/profile
+# source $DOTSOFTWARE_HOME_DIR/Git/profile
+# source $DOTSOFTWARE_HOME_DIR/Node/profile
+# source $DOTSOFTWARE_HOME_DIR/OpenSSL/profile
+# source $DOTSOFTWARE_HOME_DIR/Perl/profile
+# source $DOTSOFTWARE_HOME_DIR/Python/profile
+# source $DOTSOFTWARE_HOME_DIR/libxml2/profile
+# source $DOTSOFTWARE_HOME_DIR/make/profile
+# source $DOTSOFTWARE_HOME_DIR/redis/profile
+# source $DOTSOFTWARE_HOME_DIR/rsync/profile
+# source $DOTSOFTWARE_HOME_DIR/tar/profile
+# source $DOTSOFTWARE_HOME_DIR/xz/profile
 ##
-# source ~/.software/Node/profile
-# source ~/.software/Python/profile
 
 ### end .software config
 #############################################################
