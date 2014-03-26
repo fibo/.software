@@ -1,1 +1,7 @@
-SOURCES_URI=http://python.org/ftp/python/2.7.6/Python-2.7.6.tgz
+SOURCES_URI=https://python.org/ftp/python/2.7.6/Python-2.7.6.tgz
+
+function _get_sources() {
+  cd $SOURCES_DIR
+  wget -N --no-check-certificate $SOURCES_URI
+}
+
