@@ -93,7 +93,7 @@ source $DOTSOFTWARE_HOME_DIR/init.sh
 # source $DOTSOFTWARE_HOME_DIR/Node/profile
 # source $DOTSOFTWARE_HOME_DIR/OpenSSL/profile
 # source $DOTSOFTWARE_HOME_DIR/Perl/profile
-# source $DOTSOFTWARE_HOME_DIR/Python/profile
+# source $DOTSOFTWARE_HOME_DIR/Python2/profile
 # source $DOTSOFTWARE_HOME_DIR/libxml2/profile
 # source $DOTSOFTWARE_HOME_DIR/make/profile
 # source $DOTSOFTWARE_HOME_DIR/patch/profile
