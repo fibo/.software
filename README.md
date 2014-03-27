@@ -90,13 +90,14 @@ source $DOTSOFTWARE_HOME_DIR/init.sh
 #
 # source $DOTSOFTWARE_HOME_DIR/Gettext/profile
 # source $DOTSOFTWARE_HOME_DIR/Git/profile
-# source $DOTSOFTWARE_HOME_DIR/Node/profile
-# source $DOTSOFTWARE_HOME_DIR/OpenSSL/profile
-# source $DOTSOFTWARE_HOME_DIR/Perl/profile
-# source $DOTSOFTWARE_HOME_DIR/Python2/profile
+# source $DOTSOFTWARE_HOME_DIR/libiconv/profile
 # source $DOTSOFTWARE_HOME_DIR/libxml2/profile
 # source $DOTSOFTWARE_HOME_DIR/make/profile
+# source $DOTSOFTWARE_HOME_DIR/Node/profile
+# source $DOTSOFTWARE_HOME_DIR/OpenSSL/profile
 # source $DOTSOFTWARE_HOME_DIR/patch/profile
+# source $DOTSOFTWARE_HOME_DIR/Perl/profile
+# source $DOTSOFTWARE_HOME_DIR/Python2/profile
 # source $DOTSOFTWARE_HOME_DIR/redis/profile
 # source $DOTSOFTWARE_HOME_DIR/rsync/profile
 # source $DOTSOFTWARE_HOME_DIR/tar/profile
