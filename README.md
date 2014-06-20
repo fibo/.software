@@ -72,7 +72,7 @@ environment rather tha a remote server login shell, you should use `.bashrc` fil
 #    * $HOME/opt
 #    * $HOME/software
 ##
-# export DOTSOFTWARE_HOME_DIR=/path/to/your/dot/software/home
+export DOTSOFTWARE_HOME_DIR=$HOME/.software
 
 ##[optional]
 # Set .software target dir, defaults to $DOTSOFTWARE_HOME_DIR
