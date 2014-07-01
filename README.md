@@ -67,12 +67,17 @@ environment rather tha a remote server login shell, you should use `.bashrc` fil
 ### .software config start
 
 ##[optional]
-# Set .software home dir, defaults to $HOME/.software
-# You maybe want to set it to one of the following
-#    * $HOME/opt
-#    * $HOME/software
+# Set .software home dir, defaults to ~/.software
 ##
-# export DOTSOFTWARE_HOME_DIR=/path/to/dot/software/dir
+DOTSOFTWARE_HOME_DIR=${DOTSOFTWARE_HOME_DIR:-~/.software}
+#
+# You maybe want to set it to one of the following
+#
+#    * ~/opt
+#    * ~/software
+#
+# DOTSOFTWARE_HOME_DIR=/path/to/dot/software/dir
+export DOTSOFTWARE_HOME_DIR
 
 ##[optional]
 # Set .software target dir, defaults to $DOTSOFTWARE_HOME_DIR
