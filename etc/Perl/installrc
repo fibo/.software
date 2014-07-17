@@ -1,0 +1,12 @@
+
+SOURCES_URI=http://www.cpan.org/src/5.0/perl-${PERL_VERSION}.tar.gz
+
+function _build() {
+	cd $CURRENT_VERSION_DIR
+	./Configure -des \
+		-Dprefix=$DOTSOFTWARE_ROOT_DIR \
+		-Dscriptdir=$DOTSOFTWARE_ROOT_DIR/bin \
+		&& make test \
+		&& make install
+}
+

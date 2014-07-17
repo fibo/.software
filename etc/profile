@@ -1,0 +1,109 @@
+
+
+# Define and create .software folders
+
+DOTSOFTWARE_HOME_DIR=~/.software
+
+DOTSOFTWARE_ROOT_DIR=${DOTSOFTWARE_ROOT_DIR:-$DOTSOFTWARE_HOME_DIR}
+mkdir -p $DOTSOFTWARE_ROOT_DIR
+export DOTSOFTWARE_ROOT_DIR
+
+DOTSOFTWARE_TMP_DIR=${DOTSOFTWARE_TMP_DIR:-/tmp/dotsoftware}
+mkdir -p $DOTSOFTWARE_TMP_DIR
+export DOTSOFTWARE_TMP_DIR
+
+# Make installed software avalilable
+
+export C_INCLUDE_PATH=$DOTSOFTWARE_ROOT_DIR/include:$C_INCLUDE_PATH
+export LD_LIBRARY_PATH=$DOTSOFTWARE_ROOT_DIR/lib:$LD_LIBRARY_PATH
+export MANPATH=$DOTSOFTWARE_ROOT_DIR/share/man:$MANPATH
+export PATH=$DOTSOFTWARE_ROOT_DIR/bin:$PATH
+export PKG_CONFIG_PATH=$DOTSOFTWARE_ROOT_DIR/lib/pkgconfig/:$PKG_CONFIG_PATH
+
+#-------------------------------------------------------------------------------
+
+.software_install() {
+	# Change directory into DOTSOFTWARE_HOME_DIR, just to popd when install
+        # finishes, in order to go back to starting directory.
+	pushd $DOTSOFTWARE_HOME_DIR 1> /dev/null
+
+	SOFTWARE_NAME=$1
+
+	# Require parameter
+	if [ -z "$SOFTWARE_NAME" ]; then
+		echo USAGE: .software_install Foo
+		popd 1> /dev/null
+		return 1
+	fi
+
+	ETC_DIR=$DOTSOFTWARE_HOME_DIR/etc/$SOFTWARE_NAME
+
+	# Check that SOFTWARE_NAME dir exists
+	if [ ! -d $ETC_DIR ]; then
+		echo Unknown software: $SOFTWARE_NAME
+		popd 1> /dev/null
+		return 1
+	fi
+
+	source $DOTSOFTWARE_HOME_DIR/etc/versions
+
+	BUILD_DIR=$DOTSOFTWARE_TMP_DIR/build
+	mkdir -p $BUILD_DIR
+	export BUILD_DIR
+
+	SOURCES_DIR=$DOTSOFTWARE_TMP_DIR/sources
+	mkdir -p $SOURCES_DIR
+	export SOURCES_DIR
+
+	function _get_sources() {
+		cd $SOURCES_DIR
+		wget -N $SOURCES_URI
+	}
+
+	function _read_sources_filename() {
+		cd $SOURCES_DIR
+		SOURCES_FILENAME=$(basename $SOURCES_URI)
+	}
+
+	function _read_current_version_dir() {
+		cd $SOURCES_DIR
+		CURRENT_VERSION_DIR=$(tar tzf $SOURCES_FILENAME | head -1)
+	}
+
+	function _extract() {
+		cd $BUILD_DIR
+		tar xzf $SOURCES_DIR/$SOURCES_FILENAME
+	}
+
+	function _build() {
+		cd $CURRENT_VERSION_DIR
+		./configure --prefix=$DOTSOFTWARE_ROOT_DIR && make install
+	}
+
+	source $ETC_DIR/installrc
+
+	_get_sources
+	_read_sources_filename
+	_read_current_version_dir
+	_extract
+	_build
+
+	# Go back to starting dir.
+	popd 1> /dev/null
+
+	# Cleanup variables and functions.
+	unset BUILD_DIR
+	unset CURRENT_VERSION_DIR
+	unset INSTALL_DIR
+	unset SOFTWARE_NAME
+	unset SOURCES_DIR
+	unset SOURCES_FILENAME
+	unset SOURCES_URI
+
+	unset _build
+	unset _extract
+	unset _get_sources
+	unset _link_it
+	unset _read_current_version_dir
+}
+

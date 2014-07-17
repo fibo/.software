@@ -1,0 +1,3 @@
+
+SOURCES_URI=http://cache.ruby-lang.org/pub/ruby/$(echo $RUBY_VERSION | cut -d . -f1,2)/ruby-$RUBY_VERSION.tar.gz
+

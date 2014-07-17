@@ -1,5 +1,0 @@
-
-XZ_BASE=$DOTSOFTWARE_ROOT_DIR/xz
-XZ_HOME=$XZ_BASE/current
-export PATH=$XZ_HOME/bin:$PATH
-

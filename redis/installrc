@@ -1,8 +1,0 @@
-SOURCES_URI=http://download.redis.io/releases/redis-2.8.7.tar.gz
-
-function _build() {
-  cd $CURRENT_VERSION_DIR
-  # make test requires tcl
-  make PREFIX=$BASE_DIR/$CURRENT_VERSION_DIR install
-}
-

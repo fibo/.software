@@ -1,0 +1,13 @@
+
+SOURCES_URI=http://mirror.switch.ch/ftp/mirror/openssl/source/openssl-${OPENSSL_VERSION}.tar.gz
+
+function _read_current_version_dir() {
+	cd $SOURCES_DIR
+	CURRENT_VERSION_DIR=$(tar tzf $SOURCES_FILENAME | head -1 | cut -d / -f1)
+}
+
+function _build() {
+	cd $CURRENT_VERSION_DIR
+	./config --prefix=$DOTSOFTWARE_ROOT_DIR && make install
+}
+

@@ -1,0 +1,3 @@
+
+SOURCES_URI=http://nodejs.org/dist/node-${NODE_VERSION}.tar.gz
+

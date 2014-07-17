@@ -1,8 +1,0 @@
-
-NODE_BASE=$DOTSOFTWARE_ROOT_DIR/Node
-NODE_HOME=$NODE_BASE/current
-
-export PATH=$NODE_HOME/bin:$PATH
-
-export MANPATH=$NODE_HOME/share/man:$MANPATH
-

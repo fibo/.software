@@ -1,0 +1,12 @@
+
+SOURCES_URI=http://git-core.googlecode.com/files/git-${GIT_VERSION}.tar.gz
+
+function _build() {
+	cd $CURRENT_VERSION_DIR
+
+	PERL=$(which perl)
+	PYTHON=$(which python)
+
+	./configure --prefix=$DOTSOFTWARE_ROOT_DIR --with-perl=$PERL --with-python=$PYTHON && make install
+}
+

@@ -24,15 +24,9 @@ But, sometimes you are in one of the following scenarios
 It is implemented by a bash function named `.software_install` the takes only
 one parameter: what you want to install. For example
 
-    $ .software_install Foo
-
-This will prepare your env sourcing `~/.software/Foo/installrc` and launch installation.
-
-Note that you have to add manually a
-
-    source ~/.software/Foo/profile
-
-line to your `.bash_profile` (or `.bashrc`, see below).
+```bash
+$ .software_install Foo
+```
 
 # Installation
 
@@ -57,7 +51,15 @@ $ rm master
 
 ## Set your environment
 
-Add these lines to your `.bash_profile`.
+For the impatient, just copy and paste the following line in your bash prompt and you are done!
+
+```bash
+grep 'source ~/.software/etc/profile' ~/.bash_profile || echo 'source ~/.software/etc/profile' >> ~/.bash_profile && source ~/.software/etc/profile
+```
+
+It will add `source ~/.software/etc/profile` to your *.bash_profile* **only once** and load *.software* features in your current session.
+
+Otherwise you can add manually these lines to your `.bash_profile`.
 
 Note that __if you are an Ubuntu user__ or you are using `.software` from  graphical
 environment rather tha a remote server login shell, you should use `.bashrc` file instead.
@@ -67,58 +69,17 @@ environment rather tha a remote server login shell, you should use `.bashrc` fil
 ### .software config start
 
 ##[optional]
-# Set .software home dir, defaults to ~/.software
-##
-DOTSOFTWARE_HOME_DIR=${DOTSOFTWARE_HOME_DIR:-~/.software}
-#
-# You maybe want to set it to one of the following
-#
-#    * ~/opt
-#    * ~/software
-#
-# DOTSOFTWARE_HOME_DIR=/path/to/dot/software/dir
-export DOTSOFTWARE_HOME_DIR
-
-##[optional]
-# Set .software target dir, defaults to $DOTSOFTWARE_HOME_DIR
+# Set .software target dir, defaults to ~/.software
 ##
 # export DOTSOFTWARE_ROOT_DIR=/path/to/your/software/installation/dir
 
 ##[required]
 # Init .software
 ##
-source $DOTSOFTWARE_HOME_DIR/init.sh
-
-##[required]
-# Load .software profiles: after installing a software, uncomment
-# the corresponding line, according to your needs.
-#
-# source $DOTSOFTWARE_HOME_DIR/Gettext/profile
-# source $DOTSOFTWARE_HOME_DIR/Git/profile
-# source $DOTSOFTWARE_HOME_DIR/libiconv/profile
-# source $DOTSOFTWARE_HOME_DIR/libxml2/profile
-# source $DOTSOFTWARE_HOME_DIR/make/profile
-# source $DOTSOFTWARE_HOME_DIR/Node/profile
-# source $DOTSOFTWARE_HOME_DIR/OpenSSL/profile
-# source $DOTSOFTWARE_HOME_DIR/patch/profile
-# source $DOTSOFTWARE_HOME_DIR/Perl/profile
-# source $DOTSOFTWARE_HOME_DIR/Python2/profile
-# source $DOTSOFTWARE_HOME_DIR/redis/profile
-# source $DOTSOFTWARE_HOME_DIR/rsync/profile
-# source $DOTSOFTWARE_HOME_DIR/tar/profile
-# source $DOTSOFTWARE_HOME_DIR/xz/profile
-##
+source ~/.software/etc/profile
 
 ### end .software config
 #############################################################
-```
-
-## Finally
-
-Load `.software` if you want to use it in your current shell session
-
-```bash
-$ source ~/.software/init.sh
 ```
 
 # Environment
@@ -134,17 +95,9 @@ You maybe want to edit it when
 
 # Folder structure
 
-`.software` folder contains the following files:
+Under *~/.software/etc* there is a folder for every software that can be installed.
 
-* README.md: this file
-* init.sh: implements `.software_install` function, it is sourced by your `.bash_profile`
-
-There is a folder for every software that can be installed.
-
-Software _Foo_ has its homonym folder and contains the following files
-
-* installrc
-* profile
+Software _Foo_ has its homonym folder under *~/.software/etc* and contains an *installrc* file described below.
 
 ## installrc
 
@@ -154,57 +107,19 @@ It can be used to override functions used by init.sh
 * `_build`
 * `_extract`
 * `_get_sources`
-* `_link_it`
 * `_read_current_version_dir`
 
-## profile
+## ~/.software/etc/versions
 
-It is sourced by your `.bash_profile` (or `.bashrc`), user aware.
-
+Contains the list of software with corresponding version: **edit it** according to your needs.
 
 # Packaging software
 
-`.software` installs software locally downloading and compiling sources.
-This process can be time and cpu consuming, so, if you have two or more similar
-machines is not that difficut to build only once, then package your result and
-installing it on other hosts. The requirement are
+`.software` installs software locally downloading and compiling sources. This process can be time and cpu consuming, so, if you have two or more similar machines is not that difficut to build only once, then package your result and installing it on other hosts. The requirement are
 
 * The hosts has the same system software (OS, kernel, etc) and environment.
 * The variable `DOTSOFTWARE_ROOT_DIR` has the same value on every host. Note that, using default value implies that users has the same name.
-  
 
-## Packaging specific software
-
-Suppose for example you builded Perl version 5.18.1 on _host1.example.com_, then
-you install many Perl modules: yes, this can take time, specially for running all tests.
-
-When you installation is complete, you can package your result
-
-```bash
-$ cd $DOTSOFTWARE_ROOT_DIR/Perl
-$ mkdir packages
-$ tar czf perl-5.18.1.tar.gz perl-5.18.1/
-$ mv perl-5.18.1.tar.gz packages/
-```
-
-If you imagine you could replicate the installation just unpackaging it in many
-servers, you will agree that it is a big amount of time saved.
-
-To install the package just login on another machine,
-for instance _host2.example.com_, get the package and uncompress it.
-
-```bash
-$ cd $DOTSOFTWARE_ROOT_DIR/Perl
-$ mkdir packages
-$ scp user@host1.example.com:$DOTSOFTWARE_ROOT_DIR/Perl/packages/perl-5.18.1.tar.gz packages
-$ tar xzf packages/perl-5.18.1.tar.gz
-$ rm current 2> /dev/null
-    $ ln -s perl-5.18.1 current
-```
-
-## Bundle everything
-
-The same concept above can be applied to the whole *.software* folder.
 If you are using default `.software` configuration you could just launch
 
 ```bash

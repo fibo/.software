@@ -1,0 +1,9 @@
+
+SOURCES_URI=http://download.redis.io/releases/redis-${REDIS_VERSION}.tar.gz
+
+function _build() {
+  cd $CURRENT_VERSION_DIR
+  # make test requires tcl
+  make PREFIX=$DOTSOFTWARE_ROOT_DIR install
+}
+
