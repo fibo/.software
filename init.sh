@@ -33,7 +33,7 @@ export DOTSOFTWARE_ROOT_DIR
 	mkdir -p $BASE_DIR
 	export BASE_DIR
 
-	BUILD_DIR=$BASE_DIR/build
+	BUILD_DIR=$DOTSOFTWARE_ROOT_DIR/build
 	mkdir -p $BUILD_DIR
 	export BUILD_DIR
 
