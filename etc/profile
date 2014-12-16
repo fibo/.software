@@ -1,6 +1,5 @@
 
-
-# Define and create .software folders
+# Define and create .software folders.
 
 DOTSOFTWARE_HOME_DIR=~/.software
 
@@ -12,7 +11,7 @@ DOTSOFTWARE_TMP_DIR=${DOTSOFTWARE_TMP_DIR:-/tmp/dotsoftware}
 mkdir -p $DOTSOFTWARE_TMP_DIR
 export DOTSOFTWARE_TMP_DIR
 
-# Make installed software avalilable
+# Make installed software avalilable.
 
 export C_INCLUDE_PATH=$DOTSOFTWARE_ROOT_DIR/include:$C_INCLUDE_PATH
 export LD_LIBRARY_PATH=$DOTSOFTWARE_ROOT_DIR/lib:$LD_LIBRARY_PATH
@@ -38,7 +37,7 @@ export PKG_CONFIG_PATH=$DOTSOFTWARE_ROOT_DIR/lib/pkgconfig/:$PKG_CONFIG_PATH
 
 	ETC_DIR=$DOTSOFTWARE_HOME_DIR/etc/$SOFTWARE_NAME
 
-	# Check that SOFTWARE_NAME dir exists
+	# Check that SOFTWARE_NAME dir exists.
 	if [ ! -d $ETC_DIR ]; then
 		echo Unknown software: $SOFTWARE_NAME
 		popd 1> /dev/null
@@ -94,7 +93,6 @@ export PKG_CONFIG_PATH=$DOTSOFTWARE_ROOT_DIR/lib/pkgconfig/:$PKG_CONFIG_PATH
 	# Cleanup variables and functions.
 	unset BUILD_DIR
 	unset CURRENT_VERSION_DIR
-	unset INSTALL_DIR
 	unset SOFTWARE_NAME
 	unset SOURCES_DIR
 	unset SOURCES_FILENAME
@@ -103,7 +101,6 @@ export PKG_CONFIG_PATH=$DOTSOFTWARE_ROOT_DIR/lib/pkgconfig/:$PKG_CONFIG_PATH
 	unset _build
 	unset _extract
 	unset _get_sources
-	unset _link_it
 	unset _read_current_version_dir
 }
 
