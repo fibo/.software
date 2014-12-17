@@ -6,6 +6,25 @@
 
 Give it a try or [![Show me a Demo at Codio](https://codio-public.s3.amazonaws.com/sharing/demo-in-ide.png)](https://codio.com/fibo/dotsoftware).
 
+## Quick start
+
+For the impatient, just copy and paste the following lines in your bash prompt
+
+```bash
+# get latest .software
+cd
+git clone https://github.com/fibo/.software.git
+# source it in your profile and in current session
+[ -f ~/.bash_profile ] && grep 'source ~/.software/etc/profile' ~/.bash_profile || echo 'source ~/.software/etc/profile' >> ~/.bash_profile && source ~/.software/etc/profile
+# you are done!
+```
+
+Give it a try, launch
+
+```bash
+.software_install Node
+```
+
 ## Motivation
 
 > Why install software locally?
@@ -60,13 +79,11 @@ $ rm master
 
 ### Set your environment
 
-For the impatient, just copy and paste the following line in your bash prompt and you are done!
+The following command will add `source ~/.software/etc/profile` to your *.bash_profile* **only once** and load *.software* features in your current session.
 
 ```bash
-grep 'source ~/.software/etc/profile' ~/.bash_profile || echo 'source ~/.software/etc/profile' >> ~/.bash_profile && source ~/.software/etc/profile
+$ [ -f ~/.bash_profile ] && grep 'source ~/.software/etc/profile' ~/.bash_profile || echo 'source ~/.software/etc/profile' >> ~/.bash_profile && source ~/.software/etc/profile
 ```
-
-It will add `source ~/.software/etc/profile` to your *.bash_profile* **only once** and load *.software* features in your current session.
 
 Otherwise you can add manually these lines to your `.bash_profile`.
 
@@ -140,4 +157,3 @@ $ scp dotsoftware.tar.gz host1.example.com:~
 $ ssh host1.example.com tar xzf dotsoftware.tar.gz
 $ ssh host1.example.com rm dotsoftware.tar.gz
 ```
-
