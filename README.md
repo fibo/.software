@@ -87,7 +87,7 @@ $ [ -f ~/.bash_profile ] && grep 'source ~/.software/etc/profile' ~/.bash_profil
 
 Otherwise you can add manually these lines to your `.bash_profile`.
 
-Note that __if you are an Ubuntu user__ or you are using `.software` from  graphical environment rather tha a remote server login shell, you should use `.bashrc` file instead.
+Note that if you are using `.software` from a graphical environment rather than a remote server login shell, you should use `.bashrc` file instead.
 
 ```bash
 #############################################################
@@ -107,10 +107,7 @@ source ~/.software/etc/profile
 #############################################################
 ```
 
-## Environment
-
-`.software` uses only one enviroment variable: `DOTSOFTWARE_ROOT_DIR`. It is the
-dir where all your software will be installed.
+`.software` uses only one enviroment variable: `DOTSOFTWARE_ROOT_DIR`. It is the dir where all your software will be installed.
 
 You maybe want to edit it when
 
@@ -157,3 +154,4 @@ $ scp dotsoftware.tar.gz host1.example.com:~
 $ ssh host1.example.com tar xzf dotsoftware.tar.gz
 $ ssh host1.example.com rm dotsoftware.tar.gz
 ```
+
