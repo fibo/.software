@@ -54,7 +54,7 @@ $ .software_install Foo
 
 ## Requirements
 
-In order to run, `.software` requires bash and wget. Other requirements are those needed by software builds.
+In order to run, `.software` requires bash, tar and wget. Other requirements are those needed by software builds: make, gcc, etc.
 
 ## Installation
 
@@ -85,9 +85,7 @@ The following command will add `source ~/.software/etc/profile` to your *.bash_p
 $ [ -f ~/.bash_profile ] && grep 'source ~/.software/etc/profile' ~/.bash_profile || echo 'source ~/.software/etc/profile' >> ~/.bash_profile && source ~/.software/etc/profile
 ```
 
-Otherwise you can add manually these lines to your `.bash_profile`.
-
-Note that if you are using `.software` from a graphical environment rather than a remote server login shell, you should use `.bashrc` file instead.
+Otherwise you can add manually these lines to your `.bash_profile`. Note that if you are using `.software` from a graphical environment rather than a remote server login shell, you should use `.bashrc` file instead.
 
 ```bash
 #############################################################
@@ -107,12 +105,24 @@ source ~/.software/etc/profile
 #############################################################
 ```
 
+#### DOTSOFTWARE_ROOT_DIR
+
 `.software` uses only one enviroment variable: `DOTSOFTWARE_ROOT_DIR`. It is the dir where all your software will be installed.
 
 You maybe want to edit it when
 
 * you have not enough space in your home dir
 * you want to install in a dir common to many users like `/usr/local` or `/opt`.
+
+Instead of setting a `DOTSOFTWARE_ROOT_DIR` variable, another choice is to create a symbolic link from your `/dotsoftware/root/dir` to `~/.software/` dir.
+For example on my [Codio box][1], since default working folder is `~./workspace` I did
+
+```bash
+$ cd
+$ ln -s workspace/ .software
+```
+
+Everything works like a charm!
 
 ## Folder structure
 
@@ -154,4 +164,6 @@ $ scp dotsoftware.tar.gz host1.example.com:~
 $ ssh host1.example.com tar xzf dotsoftware.tar.gz
 $ ssh host1.example.com rm dotsoftware.tar.gz
 ```
+
+  [1]: https://codio.com/fibo/dotsoftware "Codio Box"
 
