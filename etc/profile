@@ -13,7 +13,15 @@ export DOTSOFTWARE_TMP_DIR
 
 # Make installed software avalilable.
 
-export C_INCLUDE_PATH=$DOTSOFTWARE_ROOT_DIR/include:$C_INCLUDE_PATH
+## Avoid C_INCLUDE_PATH ending with a colon, otherwise Perl build will fail.
+if [ -z "$C_INCLUDE_PATH" ]; then
+	C_INCLUDE_PATH=$DOTSOFTWARE_ROOT_DIR/include
+else
+	C_INCLUDE_PATH=$DOTSOFTWARE_ROOT_DIR/include:$C_INCLUDE_PATH
+fi
+
+export C_INCLUDE_PATH
+
 export LD_LIBRARY_PATH=$DOTSOFTWARE_ROOT_DIR/lib:$LD_LIBRARY_PATH
 export MANPATH=$DOTSOFTWARE_ROOT_DIR/share/man:$MANPATH
 export PATH=$DOTSOFTWARE_ROOT_DIR/bin:$PATH
@@ -105,7 +113,8 @@ export PKG_CONFIG_PATH=$DOTSOFTWARE_ROOT_DIR/lib/pkgconfig/:$PKG_CONFIG_PATH
 }
 
 #-------------------------------------------------------------------------------
-# Autocompletion
+
+# Autocompletion.
 
 _dotsoftware_install_completion() {
 	local cur prev opts
