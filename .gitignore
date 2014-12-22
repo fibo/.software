@@ -2,3 +2,4 @@ bin/
 info/
 man/
 share/
+etc/wgetrc
