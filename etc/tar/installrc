@@ -1,4 +1,2 @@
 
-
 SOURCES_URI=http://ftp.gnu.org/gnu/tar/tar-${TAR_VERSION}.tar.gz
-

@@ -7,7 +7,7 @@ DOTSOFTWARE_ROOT_DIR=${DOTSOFTWARE_ROOT_DIR:-$DOTSOFTWARE_HOME_DIR}
 mkdir -p $DOTSOFTWARE_ROOT_DIR
 export DOTSOFTWARE_ROOT_DIR
 
-DOTSOFTWARE_TMP_DIR=${DOTSOFTWARE_TMP_DIR:-/tmp/dotsoftware}
+DOTSOFTWARE_TMP_DIR=${DOTSOFTWARE_TMP_DIR:-/tmp/${USER}.software}
 mkdir -p $DOTSOFTWARE_TMP_DIR
 export DOTSOFTWARE_TMP_DIR
 
@@ -103,4 +103,23 @@ export PKG_CONFIG_PATH=$DOTSOFTWARE_ROOT_DIR/lib/pkgconfig/:$PKG_CONFIG_PATH
 	unset _get_sources
 	unset _read_current_version_dir
 }
+
+#-------------------------------------------------------------------------------
+# Autocompletion
+
+_dotsoftware_install_completion() {
+	local cur prev opts
+	COMPREPLY=()
+	cur="${COMP_WORDS[COMP_CWORD]}"
+	prev="${COMP_WORDS[COMP_CWORD-1]}"
+        # Every ~/.software/etc/ subfolder maps to an installable software.
+	opts=`find ~/.software/etc/ -maxdepth 1 -mindepth 1 -type d | while read dir; do echo $(basename $dir); done`
+
+	if [[ ${cur} == * ]] ; then
+		COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+		return 0
+	fi
+}
+
+complete -F _dotsoftware_install_completion .software_install
 

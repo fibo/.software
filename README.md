@@ -52,9 +52,11 @@ For example
 $ .software_install Foo
 ```
 
+Typing `.software_install` and hitting <kbd>TAB</kbd> will autocomplete with available software, i.e. *~/.software/etc* subfolders.
+
 ## Requirements
 
-In order to run, `.software` requires bash, tar and wget. Other requirements are those needed by software builds: make, gcc, etc.
+In order to run, `.software` requires bash, tar, gzip, find and wget. Other requirements are those needed by software builds: make, gcc, etc.
 
 ## Installation
 
