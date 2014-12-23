@@ -1,0 +1,8 @@
+
+SOURCES_URI=http://waterlan.home.xs4all.nl/dos2unix/dos2unix-${DOS2UNIX_VERSION}.tar.gz
+
+function _build() {
+	cd $CURRENT_VERSION_DIR
+	make prefix=$DOTSOFTWARE_ROOT_DIR install
+}
+
