@@ -1,0 +1,12 @@
+
+SOURCES_URI=http://downloads.sourceforge.net/project/cloc/cloc/v${CLOC_VERSION}/cloc-${CLOC_VERSION}.tar.gz
+
+function _build() {
+  cd $CURRENT_VERSION_DIR
+  make prefix=$DOTSOFTWARE_ROOT_DIR install
+
+  echo For a complete installation, launch
+  echo cpan Algorithm::Diff Digest::MD5 Regexp::Common
+  echo and then reinstall.
+}
+
