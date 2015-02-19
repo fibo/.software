@@ -22,7 +22,7 @@ git clone https://github.com/fibo/.software.git
 Give it a try, launch
 
 ```bash
-.software_install Node
+$ .software_install Node
 ```
 
 ## Motivation
@@ -43,20 +43,20 @@ But, sometimes you are in one of the following scenarios
 
 ## Usage
 
-`.software` has only one feature: installing software locally!
+*.software* has only one feature: installing software locally!
 
-It is implemented by a bash function named `.software_install` the takes only one parameter: what you want to install.
+It is implemented by a bash function named `.software_install` that takes only one parameter: what you want to install.
 For example
 
 ```bash
 $ .software_install Foo
 ```
 
-Typing `.software_install` and hitting <kbd>TAB</kbd> will autocomplete with available software, i.e. *~/.software/etc* subfolders.
+Typing *.software_install* in your bash prompt, and hitting <kbd>TAB</kbd> will autocomplete with available software, i.e. *~/.software/etc* subfolders.
 
 ## Requirements
 
-In order to run, `.software` requires bash, tar, gzip, find and wget. Other requirements are those needed by software builds: make, gcc, etc.
+In order to run, *.software* requires bash, tar, gzip, find and wget. Other requirements are those needed by software builds: make, gcc, etc.
 
 ## Installation
 
@@ -87,16 +87,26 @@ The following command will add `source ~/.software/etc/profile` to your *.bash_p
 $ [ -f ~/.bash_profile ] && grep 'source ~/.software/etc/profile' ~/.bash_profile || echo 'source ~/.software/etc/profile' >> ~/.bash_profile && source ~/.software/etc/profile
 ```
 
-Otherwise you can add manually these lines to your `.bash_profile`. Note that if you are using `.software` from a graphical environment rather than a remote server login shell, you should use `.bashrc` file instead.
+Otherwise you can add manually these lines to your *.bash_profile*. Note that if you are using *.software* from a graphical environment rather than a remote server login shell, you should use *.bashrc* file instead.
 
 ```bash
 #############################################################
 ### .software config start
 
 ##[optional]
-# Set .software target dir, defaults to ~/.software
+#
+# Set .software target dir, defaults to "~/.software".
+#
 ##
 # export DOTSOFTWARE_ROOT_DIR=/path/to/your/software/installation/dir
+
+##[optional]
+#
+# Set .software temp dir used to download sources and create build dirs.
+# Defaults to "/tmp/${USER}.software"
+#
+##
+# export DOTSOFTWARE_TMP_DIR=$DOTSOFTWARE_ROOT_DIR
 
 ##[required]
 # Init .software
@@ -109,15 +119,17 @@ source ~/.software/etc/profile
 
 #### DOTSOFTWARE_ROOT_DIR
 
-`.software` uses only one enviroment variable: `DOTSOFTWARE_ROOT_DIR`. It is the dir where all your software will be installed.
+*.software* uses enviroment variable `DOTSOFTWARE_ROOT_DIR` to know the dir where all your software will be installed.
+
+It defaults to *~/.software* dir.
 
 You maybe want to edit it when
 
 * you have not enough space in your home dir
-* you want to install in a dir common to many users like `/usr/local` or `/opt`.
+* you want to install in a dir common to many users like */usr/local* or */opt*.
 
-Instead of setting a `DOTSOFTWARE_ROOT_DIR` variable, another choice is to create a symbolic link from your `/dotsoftware/root/dir` to `~/.software/` dir.
-For example on my [Codio box][1], since default working folder is `~./workspace` I did
+Instead of setting a `DOTSOFTWARE_ROOT_DIR` variable, another choice is to create a symbolic link from your */dotsoftware/root/dir* to *~/.software/* dir.
+For example on my [Codio box][1], since default working folder is *~./workspace* I did
 
 ```bash
 $ cd
@@ -125,6 +137,15 @@ $ ln -s workspace/ .software
 ```
 
 Everything works like a charm!
+
+#### DOTSOFTWARE_TMP_DIR
+
+*.software* can also be configured with `DOTSOFTWARE_TMP_DIR` that is the dir where all your software will be downloaded and built.
+
+It defaults to */tmp/${USER}.software* dir.
+
+You maybe want to set it as `DOTSOFTWARE_TMP_DIR=$DOTSOFTWARE_ROOT_DIR` to cache sources since *.software* by default do not download sources if they are already on the filesystem. This can be used to install software without an Internet connection.
+If you do so, you will see folders *build* and *sources* in your `DOTSOFTWARE_ROOT_DIR`.
 
 ## Folder structure
 
@@ -134,12 +155,12 @@ Software _Foo_ has its homonym folder under *~/.software/etc* and contains an *i
 
 ### ~/.software/etc/Foo/installrc
 
-Exports env vars needed for installation, like `SOURCES_URI`. It can be used to override functions used by `.software_install`
+Exports env vars needed for installation, like `SOURCES_URI`. It can be used to override functions used by *.software_install*
 
-* `_build`
-* `_extract`
-* `_get_sources`
-* `_read_current_version_dir`
+* *_build*
+* *_extract*
+* *_get_sources*
+* *_read_current_version_dir*
 
 ### ~/.software/etc/versions
 
@@ -147,17 +168,17 @@ Contains the list of software with corresponding version: **edit it** according 
 
 ### ~/.software/etc/profile
 
-Implements the `.software_install` function.
+Implements the *.software_install* function.
 
 ## Packaging software
 
-`.software` installs software locally downloading and compiling sources. This process can be time and cpu consuming, so, if you have two or more similar machines is not that difficut to build only once, then package your result and installing it on other hosts.
+*.software* installs software locally downloading and compiling sources. This process can be time and cpu consuming, so, if you have two or more similar machines is not that difficut to build only once, then package your result and installing it on other hosts.
 The requirement are
 
 * The hosts has the same system software (OS, kernel, etc) and environment.
 * The variable `DOTSOFTWARE_ROOT_DIR` has the same value on every host. Note that, using default value implies that users has the same name.
 
-If you are using default `.software` configuration you could launch
+If you are using default *.software* configuration you could launch
 
 ```bash
 $ cd

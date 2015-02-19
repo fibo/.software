@@ -1,3 +1,4 @@
+
 bin/
 etc/wgetrc
 info/
@@ -5,3 +6,9 @@ include/
 lib/
 man/
 share/
+
+# In case DOTSOFTWARE_TMP_DIR is set as DOTSOFTWARE_ROOT_DIR
+# which is the recommended setting other than default.
+build/
+sources/
+
