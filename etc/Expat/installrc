@@ -1,0 +1,3 @@
+
+SOURCES_URI=http://downloads.sourceforge.net/project/expat/expat/${EXPAT_VERSION}/expat-${EXPAT_VERSION}.tar.gz
+
