@@ -4,6 +4,7 @@ bin/
 info/
 include/
 lib/
+libexec/
 man/
 share/
 src/
