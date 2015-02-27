@@ -10,6 +10,7 @@ export DOTSOFTWARE_ROOT_DIR
 DOTSOFTWARE_TMP_DIR=${DOTSOFTWARE_TMP_DIR:-/tmp/${USER}.software}
 mkdir -p $DOTSOFTWARE_TMP_DIR
 export DOTSOFTWARE_TMP_DIR
+DOTSOFTWARE_TMP_DIR_RETENTION=3 # days
 
 # Make installed software avalilable.
 
@@ -36,15 +37,23 @@ else
 	LD_LIBRARY_PATH=$DOTSOFTWARE_ROOT_DIR/lib:$LD_LIBRARY_PATH
 fi
 
-export LD_LIBRARY_PATH
+if [ -z "$PKG_CONFIG_PATH" ]; then
+	PKG_CONFIG_PATH=$DOTSOFTWARE_ROOT_DIR/lib/pkgconfig
+else
+	PKG_CONFIG_PATH=$DOTSOFTWARE_ROOT_DIR/lib/pkgconfig:$PKG_CONFIG_PATH
+fi
+
+export PKG_CONFIG_PATH
 
 export MANPATH=$DOTSOFTWARE_ROOT_DIR/share/man:$MANPATH
 export PATH=$DOTSOFTWARE_ROOT_DIR/bin:$PATH
-export PKG_CONFIG_PATH=$DOTSOFTWARE_ROOT_DIR/lib/pkgconfig/:$PKG_CONFIG_PATH
 
 #-------------------------------------------------------------------------------
 
 .software_install() {
+	# Cleanup DOTSOFTWARE_TMP_DIR
+	find $DOTSOFTWARE_TMP_DIR -depth -follow -ctime +$DOTSOFTWARE_TMP_DIR_RETENTION -user $USER -exec rm -rf {} \;
+
 	# Change directory into DOTSOFTWARE_HOME_DIR, just to popd when install
         # finishes, in order to go back to starting directory.
 	pushd $DOTSOFTWARE_HOME_DIR 1> /dev/null
@@ -73,7 +82,7 @@ export PKG_CONFIG_PATH=$DOTSOFTWARE_ROOT_DIR/lib/pkgconfig/:$PKG_CONFIG_PATH
 	mkdir -p $BUILD_DIR
 	export BUILD_DIR
 
-	SOURCES_DIR=$DOTSOFTWARE_TMP_DIR/sources
+	SOURCES_DIR=$DOTSOFTWARE_ROOT_DIR/src
 	mkdir -p $SOURCES_DIR
 	export SOURCES_DIR
 

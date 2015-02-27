@@ -100,14 +100,6 @@ Otherwise you can add manually these lines to your *.bash_profile*. Note that if
 ##
 # export DOTSOFTWARE_ROOT_DIR=/path/to/your/software/installation/dir
 
-##[optional]
-#
-# Set .software temp dir used to download sources and create build dirs.
-# Defaults to "/tmp/${USER}.software"
-#
-##
-# export DOTSOFTWARE_TMP_DIR=$DOTSOFTWARE_ROOT_DIR
-
 ##[required]
 # Init .software
 ##
@@ -128,6 +120,9 @@ You maybe want to edit it when
 * you have not enough space in your home dir
 * you want to install in a dir common to many users like */usr/local* or */opt*.
 
+Note that *.software* by default do not download sources if they are already in folder *$DOTSOFTWARE_ROOT_DIR/src*.
+This information can be useful when you need to install software without an Internet connection.
+
 Instead of setting a `DOTSOFTWARE_ROOT_DIR` variable, another choice is to create a symbolic link from your */dotsoftware/root/dir* to *~/.software/* dir.
 For example on my [Codio box][1], since default working folder is *~./workspace* I did
 
@@ -137,15 +132,6 @@ $ ln -s workspace/ .software
 ```
 
 Everything works like a charm!
-
-#### DOTSOFTWARE_TMP_DIR
-
-*.software* can also be configured with `DOTSOFTWARE_TMP_DIR` that is the dir where all your software will be downloaded and built.
-
-It defaults to */tmp/${USER}.software* dir.
-
-You maybe want to set it as `DOTSOFTWARE_TMP_DIR=$DOTSOFTWARE_ROOT_DIR` to cache sources since *.software* by default do not download sources if they are already on the filesystem. This can be used to install software without an Internet connection.
-If you do so, you will see folders *build* and *sources* in your `DOTSOFTWARE_ROOT_DIR`.
 
 ## Folder structure
 
@@ -172,7 +158,7 @@ Implements the *.software_install* function.
 
 ## Packaging software
 
-*.software* installs software locally downloading and compiling sources. This process can be time and cpu consuming, so, if you have two or more similar machines is not that difficut to build only once, then package your result and installing it on other hosts.
+*.software* installs software locally downloading and compiling sources. This process can be time and cpu consuming, so, if you have two or more similar machines is not that difficult to build only once, then package your result and installing it on other hosts.
 The requirement are
 
 * The hosts has the same system software (OS, kernel, etc) and environment.

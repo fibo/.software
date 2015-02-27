@@ -1,14 +1,16 @@
 
+# In case DOTSOFTWARE_ROOT_DIR is set as ~/.software, that is the default
 bin/
-etc/wgetrc
 info/
 include/
 lib/
 man/
 share/
+src/
+
+# Configuration files
+etc/wgetrc
 
 # In case DOTSOFTWARE_TMP_DIR is set as DOTSOFTWARE_ROOT_DIR
-# which is the recommended setting other than default.
 build/
-sources/
 
