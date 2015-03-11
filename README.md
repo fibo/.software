@@ -142,10 +142,11 @@ Software _Foo_ has its homonym folder under *~/.software/etc* and contains an *i
 
 Exports env vars needed for installation, like `SOURCES_URI`. It can be used to override functions used by *.software_install*
 
-* *_build*
-* *_extract*
-* *_get_sources*
-* *_read_current_version_dir*
+	_get_sources
+	_read_sources_filename
+	_read_current_version_dir
+	_extract
+	_build
 
 ### ~/.software/etc/versions
 
