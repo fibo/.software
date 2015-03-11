@@ -130,10 +130,11 @@ export PATH=$DOTSOFTWARE_ROOT_DIR/bin:$PATH
 	unset SOURCES_FILENAME
 	unset SOURCES_URI
 
-	unset _build
-	unset _extract
 	unset _get_sources
+	unset _read_sources_filename
 	unset _read_current_version_dir
+	unset _extract
+	unset _build
 }
 
 #-------------------------------------------------------------------------------

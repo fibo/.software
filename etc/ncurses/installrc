@@ -1,0 +1,12 @@
+
+# There is no version number in the tarball name.
+SOURCES_URI=http://invisible-island.net/datafiles/release/ncurses.tar.gz
+
+function _build() {
+	cd $CURRENT_VERSION_DIR
+
+	./configure --prefix=$DOTSOFTWARE_ROOT_DIR && make install
+
+	# Try this if there is no g++ available.
+	#./configure --prefix=$DOTSOFTWARE_ROOT_DIR --without-cxx && make install
+}
