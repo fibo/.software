@@ -127,8 +127,7 @@ Instead of setting a `DOTSOFTWARE_ROOT_DIR` variable, another choice is to creat
 For example on my [Codio box][1], since default working folder is *~./workspace* I did
 
 ```bash
-$ cd
-$ ln -s workspace/ .software
+$ ln -s ~/workspace/ ~/.software
 ```
 
 Everything works like a charm!
