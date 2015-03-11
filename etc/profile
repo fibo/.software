@@ -157,3 +157,5 @@ _dotsoftware_install_completion() {
 
 complete -F _dotsoftware_install_completion .software_install
 
+# Do not unset _dotsoftware_install_completion
+
