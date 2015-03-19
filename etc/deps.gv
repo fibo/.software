@@ -1,0 +1,4 @@
+digraph D {
+    dialog -> ncurses;
+    Nmap -> Lua -> sed;
+}
