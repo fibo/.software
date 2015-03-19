@@ -56,6 +56,7 @@ Typing *.software_install* in your bash prompt, and hitting <kbd>TAB</kbd> will 
 
 ## Requirements
 
+Please note that *.software* supports only Linux, but most of the features should work on many other Unix-like systems, like BSD and Darwin with no or minor modifications.
 In order to run, *.software* requires bash, tar, gzip, find and wget. Other requirements are those needed by software builds: make, gcc, etc.
 
 ## Installation
