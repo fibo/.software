@@ -1,4 +1,8 @@
 digraph D {
     dialog -> ncurses;
-    Nmap -> Lua -> sed;
+    Nmap -> Lua -> Sed;
+    Node -> Python;
+    Git -> Perl;
+    Git -> Python;
+    Grep -> Tar;
 }

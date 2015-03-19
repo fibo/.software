@@ -1,0 +1,12 @@
+
+SOURCES_URI=http://ftp.gnu.org/gnu/grep/grep-${GREP_VERSION}.tar.xz
+
+function _read_current_version_dir() {
+	CURRENT_VERSION_DIR=grep-$GREP_VERSION
+}
+
+function _extract() {
+	cd $BUILD_DIR
+	tar xf $SOURCES_DIR/$SOURCES_FILENAME
+}
+
