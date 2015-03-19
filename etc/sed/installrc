@@ -1,0 +1,3 @@
+
+SOURCES_URI=http://ftp.gnu.org/gnu/sed/sed-${SED_VERSION}.tar.gz
+
