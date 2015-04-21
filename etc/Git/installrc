@@ -7,5 +7,8 @@ function _build() {
 	sed -i -e 's/prefix = \$(HOME)/prefix = \$(DOTSOFTWARE_ROOT_DIR)/' Makefile
 	# Build with no gui, no docs.
 	make NO_TCLTK=1 && make install
+	# Install also subtree
+	cd contrib/subtree
+	make prefix=$DOTSOFTWARE_ROOT_DIR install
 }
 
