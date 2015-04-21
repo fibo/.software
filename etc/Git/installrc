@@ -1,5 +1,5 @@
 
-SOURCES_URI=http://git-core.googlecode.com/files/git-${GIT_VERSION}.tar.gz
+SOURCES_URI=https://github.com/git/git/archive/v${GIT_VERSION}.tar.gz
 
 function _build() {
 	cd $CURRENT_VERSION_DIR
