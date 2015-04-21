@@ -5,5 +5,7 @@ digraph D {
     Git -> cURL;
     Git -> Perl;
     Git -> Python;
+    Git -> OpenSSL;
+    Git -> Expat;
     Grep -> Tar;
 }
