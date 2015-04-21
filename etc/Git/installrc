@@ -3,10 +3,6 @@ SOURCES_URI=https://github.com/git/git/archive/v${GIT_VERSION}.tar.gz
 
 function _build() {
 	cd $CURRENT_VERSION_DIR
-
-	PERL=$(which perl)
-	PYTHON=$(which python)
-
-	./configure --prefix=$DOTSOFTWARE_ROOT_DIR --with-perl=$PERL --with-python=$PYTHON && make install
+	make prefix=$DOTSOFTWARE_ROOT_DIR all doc info
 }
 

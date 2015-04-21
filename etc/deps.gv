@@ -2,6 +2,7 @@ digraph D {
     dialog -> ncurses;
     Nmap -> Lua -> Sed;
     Node -> Python;
+    Git -> cURL;
     Git -> Perl;
     Git -> Python;
     Grep -> Tar;
