@@ -3,6 +3,6 @@ SOURCES_URI=https://github.com/git/git/archive/v${GIT_VERSION}.tar.gz
 
 function _build() {
 	cd $CURRENT_VERSION_DIR
-	make prefix=$DOTSOFTWARE_ROOT_DIR all doc info
+	make prefix=$DOTSOFTWARE_ROOT_DIR all && make install
 }
 
