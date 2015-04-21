@@ -3,6 +3,9 @@ SOURCES_URI=https://github.com/git/git/archive/v${GIT_VERSION}.tar.gz
 
 function _build() {
 	cd $CURRENT_VERSION_DIR
-	make prefix=$DOTSOFTWARE_ROOT_DIR all && make install
+	# Substitute prefix in Makefile.
+	sed -i -e 's/prefix = \$(HOME)/prefix = \$(DOTSOFTWARE_ROOT_DIR)/' Makefile
+	# Build with no gui, no docs.
+	make NO_TCLTK=1 && make install
 }
 
