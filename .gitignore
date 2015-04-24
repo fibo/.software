@@ -13,6 +13,9 @@ src/
 # Configuration files
 etc/wgetrc
 
+# Bash completion
+etc/bash_completion.d
+
 # In case DOTSOFTWARE_TMP_DIR is set as DOTSOFTWARE_ROOT_DIR
 build/
 

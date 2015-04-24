@@ -147,7 +147,7 @@ _dotsoftware_install_completion() {
 	cur="${COMP_WORDS[COMP_CWORD]}"
 	prev="${COMP_WORDS[COMP_CWORD-1]}"
         # Every ~/.software/etc/ subfolder maps to an installable software.
-	opts=`find ~/.software/etc/ -maxdepth 1 -mindepth 1 -type d | while read dir; do echo $(basename $dir); done`
+	opts=`find ~/.software/etc/ -maxdepth 1 -mindepth 1 -type d ! -name bash_completion.d | while read dir; do echo $(basename $dir); done`
 
 	if [[ ${cur} == * ]] ; then
 		COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
