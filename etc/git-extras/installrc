@@ -1,0 +1,8 @@
+
+SOURCES_URI=https://github.com/tj/git-extras/archive/${GITEXTRAS_VERSION}.tar.gz
+
+function _build() {
+	cd $CURRENT_VERSION_DIR
+	PREFIX=$DOTSOFTWARE_ROOT_DIR make install
+}
+
