@@ -7,5 +7,6 @@ digraph D {
     Git -> Python;
     Git -> OpenSSL;
     Git -> Expat;
+    Git -> zlib;
     Grep -> Tar;
 }
