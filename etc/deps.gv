@@ -10,4 +10,5 @@ digraph D {
     Git -> zlib;
     Git -> Autoconf;
     Grep -> Tar;
+    Autoconf -> M4;
 }
