@@ -67,10 +67,10 @@ export PATH=$DOTSOFTWARE_ROOT_DIR/bin:$PATH
 		return 1
 	fi
 
-	ETC_DIR=$DOTSOFTWARE_HOME_DIR/etc/$SOFTWARE_NAME
+	INSTALLRC=$DOTSOFTWARE_HOME_DIR/etc/installrc.d/$SOFTWARE_NAME
 
 	# Check that SOFTWARE_NAME dir exists.
-	if [ ! -d $ETC_DIR ]; then
+	if [ ! -f $INSTALLRC ]; then
 		echo Unknown software: $SOFTWARE_NAME
 		popd 1> /dev/null
 		return 1
@@ -111,7 +111,7 @@ export PATH=$DOTSOFTWARE_ROOT_DIR/bin:$PATH
 		./configure --prefix=$DOTSOFTWARE_ROOT_DIR && make install
 	}
 
-	source $ETC_DIR/installrc
+	source $INSTALLRC
 
 	_get_sources
 	_read_sources_filename
@@ -125,6 +125,7 @@ export PATH=$DOTSOFTWARE_ROOT_DIR/bin:$PATH
 	# Cleanup variables and functions.
 	unset BUILD_DIR
 	unset CURRENT_VERSION_DIR
+	unset INSTALLRC
 	unset SOFTWARE_NAME
 	unset SOURCES_DIR
 	unset SOURCES_FILENAME
@@ -146,8 +147,8 @@ _dotsoftware_install_completion() {
 	COMPREPLY=()
 	cur="${COMP_WORDS[COMP_CWORD]}"
 	prev="${COMP_WORDS[COMP_CWORD-1]}"
-        # Every ~/.software/etc/ subfolder maps to an installable software.
-	opts=`find ~/.software/etc/ -maxdepth 1 -mindepth 1 -type d ! -name bash_completion.d | while read dir; do echo $(basename $dir); done`
+        # Every ~/.software/etc/installrc.d/ file maps to an installable software.
+	opts=`find ~/.software/etc/installrc.d -maxdepth 1 -mindepth 1 while read installrc; do echo $(basename $installrc); done`
 
 	if [[ ${cur} == * ]] ; then
 		COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )

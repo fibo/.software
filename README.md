@@ -91,7 +91,7 @@ $ [ -f ~/.bash_profile ] && grep 'source ~/.software/etc/profile' ~/.bash_profil
 Otherwise you can add manually these lines to your *.bash_profile*. Note that if you are using *.software* from a graphical environment rather than a remote server login shell, you should use *.bashrc* file instead.
 
 ```bash
-#############################################################
+################################################################################
 ### .software config start
 
 ##[optional]
@@ -107,7 +107,7 @@ Otherwise you can add manually these lines to your *.bash_profile*. Note that if
 source ~/.software/etc/profile
 
 ### end .software config
-#############################################################
+################################################################################
 ```
 
 #### DOTSOFTWARE_ROOT_DIR
@@ -135,19 +135,40 @@ Everything works like a charm!
 
 ## Folder structure
 
-Under *~/.software/etc* there is a folder for every software that can be installed.
+### ~/.software/etc/installrc.d/Foo
 
-Software _Foo_ has its homonym folder under *~/.software/etc* and contains an *installrc* file described below.
+Software _Foo_ has its homonym file in folder *~/.software/etc/installrc.d*.
 
-### ~/.software/etc/Foo/installrc
+It defines env vars needed for installation. It **must contain** at least `SOURCES_URI`.
 
-Exports env vars needed for installation, like `SOURCES_URI`. It can be used to override functions used by *.software_install*
+For example, _Wget_ contains
+
+```bash
+SOURCES_URI=http://ftp.gnu.org/gnu/wget/wget-${WGET_VERSION}.tar.gz
+```
+
+It can also be used to override functions used by *.software_install*
 
 	_get_sources
 	_read_sources_filename
 	_read_current_version_dir
 	_extract
 	_build
+
+For example, _Perl_ contains
+
+```bash
+SOURCES_URI=http://www.cpan.org/src/5.0/perl-${PERL_VERSION}.tar.gz
+
+function _build() {
+	cd $CURRENT_VERSION_DIR
+	./Configure -des \
+		-Dprefix=$DOTSOFTWARE_ROOT_DIR \
+		-Dscriptdir=$DOTSOFTWARE_ROOT_DIR/bin \
+		&& make test \
+		&& make install
+}
+```
 
 ### ~/.software/etc/versions
 

@@ -11,4 +11,5 @@ digraph D {
     Git -> Autoconf;
     Grep -> Tar;
     Autoconf -> M4;
+    Autoconf -> Data::Dumper -> Perl;
 }
