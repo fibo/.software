@@ -1,9 +1,0 @@
-
-# There is no version number in the tarbal name.
-SOURCES_URI=http://invisible-island.net/datafiles/release/dialog.tar.gz
-
-function _build() {
-	cd $CURRENT_VERSION_DIR
-
-	./configure --prefix=$DOTSOFTWARE_ROOT_DIR --with-curses-dir=$DOTSOFTWARE_ROOT_DIR && make install
-}

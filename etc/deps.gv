@@ -1,14 +1,12 @@
 digraph D {
-    dialog -> ncurses;
-    Nmap -> Lua -> Sed;
     Node -> Python;
     Git -> cURL;
     Git -> Perl;
     Git -> Python;
     Git -> OpenSSL;
+    Ruby -> zlib;
+    Ruby -> OpenSSL;
     Git -> Expat;
     Git -> zlib;
     Grep -> Tar;
-    Autoconf -> M4;
-    Autoconf -> Data::Dumper -> Perl;
 }
