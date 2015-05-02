@@ -8,7 +8,6 @@ digraph D {
     Git -> OpenSSL;
     Git -> Expat;
     Git -> zlib;
-    Git -> Autoconf;
     Grep -> Tar;
     Autoconf -> M4;
     Autoconf -> Data::Dumper -> Perl;

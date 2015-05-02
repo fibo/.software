@@ -1,6 +1,12 @@
 
+!etc/deps.gv
+!etc/installrc.d/
+!etc/profile
+!etc/versions
+
 # In case DOTSOFTWARE_ROOT_DIR is set as ~/.software, that is the default
 bin/
+etc
 info/
 include/
 lib/
@@ -10,12 +16,6 @@ man/
 opt/
 share/
 src/
-
-# Configuration files
-etc/wgetrc
-
-# Bash completion
-etc/bash_completion.d
 
 # In case DOTSOFTWARE_TMP_DIR is set as DOTSOFTWARE_ROOT_DIR
 build/
