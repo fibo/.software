@@ -112,7 +112,7 @@ export PATH=$DOTSOFTWARE_ROOT_DIR/bin:$PATH
 	}
 
 	function _create_profile() {
-
+		echo no profile created
 	}
 
 	source $INSTALLRC
