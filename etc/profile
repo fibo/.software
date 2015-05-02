@@ -46,6 +46,9 @@ export PKG_CONFIG_PATH
 export MANPATH=$DOTSOFTWARE_ROOT_DIR/share/man:$MANPATH
 export PATH=$DOTSOFTWARE_ROOT_DIR/bin:$PATH
 
+# Find and load profiles
+find ~/.software/etc/ -mindepth 2 -name profile | while read prof; do source $prof; done
+
 #-------------------------------------------------------------------------------
 
 .software_install() {
@@ -146,7 +149,7 @@ _dotsoftware_install_completion() {
 	cur="${COMP_WORDS[COMP_CWORD]}"
 	prev="${COMP_WORDS[COMP_CWORD-1]}"
         # Every file in dir ~/.software/etc/installrc.d/ maps to an installable software.
-	opts=`find ~/.software/etc/installrc.d -maxdepth 1 -mindepth 1 while read installrc; do echo $(basename $installrc); done`
+	opts=`find ~/.software/etc/installrc.d -maxdepth 1 -mindepth 1 | while read installrc; do echo $(basename $installrc); done`
 
 	if [[ ${cur} == * ]] ; then
 		COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
