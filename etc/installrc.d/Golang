@@ -8,6 +8,7 @@ function _build() {
 	cat <<-"PROFILE" > ~/.software/etc/Golang/profile
 	export GOROOT=$DOTSOFTWARE_ROOT_DIR/opt/golang
 	export GOPATH=$DOTSOFTWARE_ROOT_DIR/opt/gopath
+	export PATH=$PATH:$GOROOT/bin
 	PROFILE
 
 	source ~/.software/etc/Golang/profile
@@ -16,10 +17,10 @@ function _build() {
 		rm -rf $GOROOT
 	fi
 
-	mkdir -p $GOROOT
 	mkdir -p $GOPATH
+	mv $CURRENT_VERSION_DIR $GOROOT
 
-	cd $CURRENT_VERSION_DIR/src
+	cd $GOROOT/src
 	./all.bash
 }
 
