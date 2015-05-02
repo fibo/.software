@@ -111,6 +111,10 @@ export PATH=$DOTSOFTWARE_ROOT_DIR/bin:$PATH
 		./configure --prefix=$DOTSOFTWARE_ROOT_DIR && make install
 	}
 
+	function _create_profile() {
+
+	}
+
 	source $INSTALLRC
 
 	_get_sources
@@ -118,6 +122,7 @@ export PATH=$DOTSOFTWARE_ROOT_DIR/bin:$PATH
 	_read_current_version_dir
 	_extract
 	_build
+	_create_profile
 
 	# Go back to starting dir.
 	popd 1> /dev/null
@@ -147,8 +152,8 @@ _dotsoftware_install_completion() {
 	COMPREPLY=()
 	cur="${COMP_WORDS[COMP_CWORD]}"
 	prev="${COMP_WORDS[COMP_CWORD-1]}"
-        # Every ~/.software/etc/installrc.d/ file maps to an installable software.
-	opts=`find ~/.software/etc/installrc.d -maxdepth 1 -mindepth 1 while read installrc; do echo $(basename $installrc); done`
+        # Every $DOTSOFTWARE_HOME_DIR/etc/installrc.d/ file maps to an installable software.
+	opts=`find $DOTSOFTWARE_HOME_DIR/etc/installrc.d -maxdepth 1 -mindepth 1 while read installrc; do echo $(basename $installrc); done`
 
 	if [[ ${cur} == * ]] ; then
 		COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )

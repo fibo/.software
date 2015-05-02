@@ -154,6 +154,7 @@ It can also be used to override functions used by *.software_install*
 	_read_current_version_dir
 	_extract
 	_build
+	_create_profile
 
 For example, _Perl_ contains
 
