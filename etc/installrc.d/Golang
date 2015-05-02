@@ -3,7 +3,7 @@ SOURCES_URI=https://github.com/golang/go/archive/go${GOLANG_VERSION}.tar.gz
 
 function _build() {
 	# Create profile
-	mkdir -p $DOTSOFTWARE_HOME_DIR/etc/Golang
+	mkdir -p ~/.software/etc/Golang
 
 	cat <<-"PROFILE" > ~/.software/etc/Golang/profile
 	export GOROOT=$DOTSOFTWARE_ROOT_DIR/opt/golang
