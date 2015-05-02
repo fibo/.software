@@ -2,8 +2,15 @@
 SOURCES_URI=https://github.com/golang/go/archive/go${GOLANG_VERSION}.tar.gz
 
 function _build() {
-	GOROOT=$DOTSOFTWARE_ROOT_DIR/opt/goroot
-	GOPATH=$DOTSOFTWARE_ROOT_DIR/opt/gopath
+	# Create profile
+	mkdir -p $DOTSOFTWARE_HOME_DIR/etc/Golang
+
+	cat <<-"PROFILE" > ~/.software/etc/Golang/profile
+	export GOROOT=$DOTSOFTWARE_ROOT_DIR/opt/golang
+	export GOPATH=$DOTSOFTWARE_ROOT_DIR/opt/gopath
+	PROFILE
+
+	source ~/.software/etc/Golang/profile
 
 	if [ -d $GOROOT ]; then
 		rm -rf $GOROOT
@@ -14,14 +21,5 @@ function _build() {
 
 	cd $CURRENT_VERSION_DIR/src
 	./all.bash
-}
-
-function _create_profile() {
-	mkdir -p $DOTSOFTWARE_HOME_DIR/etc/Golang
-
-	cat << PROFILE > $DOTSOFTWARE_HOME_DIR/etc/Golang/profile
-	GOROOT=$DOTSOFTWARE_ROOT_DIR/opt/golang
-	GOPATH=$DOTSOFTWARE_ROOT_DIR/opt/gopath
-	PROFILE
 }
 

@@ -35,7 +35,7 @@ But, sometimes you are in one of the following scenarios
 
 * your host is too old, without vendor support
 * you have not root rights, and you need to keep your software update
-* you need to compile and customize your builds
+
 * you want to compile from sources you trust
 * you want to try new releases without waiting until they are packaged
 * you are a nerd
@@ -154,7 +154,6 @@ It can also be used to override functions used by *.software_install*
 	_read_current_version_dir
 	_extract
 	_build
-	_create_profile
 
 For example, _Perl_ contains
 

@@ -1,9 +1,7 @@
 
 # Define and create .software folders.
 
-DOTSOFTWARE_HOME_DIR=~/.software
-
-DOTSOFTWARE_ROOT_DIR=${DOTSOFTWARE_ROOT_DIR:-$DOTSOFTWARE_HOME_DIR}
+DOTSOFTWARE_ROOT_DIR=${DOTSOFTWARE_ROOT_DIR:-~/.software}
 mkdir -p $DOTSOFTWARE_ROOT_DIR
 export DOTSOFTWARE_ROOT_DIR
 
@@ -54,9 +52,9 @@ export PATH=$DOTSOFTWARE_ROOT_DIR/bin:$PATH
 	# Cleanup DOTSOFTWARE_TMP_DIR
 	find $DOTSOFTWARE_TMP_DIR -depth -follow -ctime +$DOTSOFTWARE_TMP_DIR_RETENTION -user $USER -exec rm -rf {} \;
 
-	# Change directory into DOTSOFTWARE_HOME_DIR, just to popd when install
+	# Change directory into ~/.software, just to popd when install
         # finishes, in order to go back to starting directory.
-	pushd $DOTSOFTWARE_HOME_DIR 1> /dev/null
+	pushd ~/.software 1> /dev/null
 
 	SOFTWARE_NAME=$1
 
@@ -67,7 +65,7 @@ export PATH=$DOTSOFTWARE_ROOT_DIR/bin:$PATH
 		return 1
 	fi
 
-	INSTALLRC=$DOTSOFTWARE_HOME_DIR/etc/installrc.d/$SOFTWARE_NAME
+	INSTALLRC=~/.software/etc/installrc.d/$SOFTWARE_NAME
 
 	# Check that SOFTWARE_NAME dir exists.
 	if [ ! -f $INSTALLRC ]; then
@@ -76,7 +74,7 @@ export PATH=$DOTSOFTWARE_ROOT_DIR/bin:$PATH
 		return 1
 	fi
 
-	source $DOTSOFTWARE_HOME_DIR/etc/versions
+	source ~/.software/etc/versions
 
 	BUILD_DIR=$DOTSOFTWARE_TMP_DIR/build
 	mkdir -p $BUILD_DIR
@@ -111,10 +109,6 @@ export PATH=$DOTSOFTWARE_ROOT_DIR/bin:$PATH
 		./configure --prefix=$DOTSOFTWARE_ROOT_DIR && make install
 	}
 
-	function _create_profile() {
-		echo no profile created
-	}
-
 	source $INSTALLRC
 
 	_get_sources
@@ -122,7 +116,6 @@ export PATH=$DOTSOFTWARE_ROOT_DIR/bin:$PATH
 	_read_current_version_dir
 	_extract
 	_build
-	_create_profile
 
 	# Go back to starting dir.
 	popd 1> /dev/null
@@ -152,8 +145,8 @@ _dotsoftware_install_completion() {
 	COMPREPLY=()
 	cur="${COMP_WORDS[COMP_CWORD]}"
 	prev="${COMP_WORDS[COMP_CWORD-1]}"
-        # Every $DOTSOFTWARE_HOME_DIR/etc/installrc.d/ file maps to an installable software.
-	opts=`find $DOTSOFTWARE_HOME_DIR/etc/installrc.d -maxdepth 1 -mindepth 1 while read installrc; do echo $(basename $installrc); done`
+        # Every file in dir ~/.software/etc/installrc.d/ maps to an installable software.
+	opts=`find ~/.software/etc/installrc.d -maxdepth 1 -mindepth 1 while read installrc; do echo $(basename $installrc); done`
 
 	if [[ ${cur} == * ]] ; then
 		COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
