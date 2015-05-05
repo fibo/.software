@@ -6,7 +6,7 @@
 
 # In case DOTSOFTWARE_ROOT_DIR is set as ~/.software, that is the default
 bin/
-etc
+etc/
 info/
 include/
 lib/
