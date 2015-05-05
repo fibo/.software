@@ -1,4 +1,3 @@
-
 .software
 =========
 
@@ -132,6 +131,57 @@ $ ln -s ~/workspace/ ~/.software
 ```
 
 Everything works like a charm!
+
+## Software list
+
+### g++
+
+### gcc
+
+### Git
+
+* deps
+: [gcc](#gcc), [Make](#make), [Perl](#perl), [Python](#python), [Tar](#tar)
+
+### Make
+
+* deps
+: [gcc](#gcc), [Make](#make), [Tar](#tar)
+
+    # apt-get install make
+
+### OpenSSL
+
+    # apt-get install -y openssl libssl libssl-dev
+
+### Golang
+
+### Node
+
+* deps
+: [gcc](#gcc), [Make](#make), [Python](#python), [Tar](#tar)
+
+### Perl
+
+* deps
+: [gcc](#gcc), [Make](#make), [Tar](#tar)
+
+### Ruby
+
+* deps
+: [OpenSSL](#openssl), [gcc](#gcc), [Make](#make), [Tar](#tar)
+
+### Rust
+
+* notes
+: installation is done via *rustup*, does not work at the time of this writing.
+
+### Tar
+
+* deps
+: [gcc](#gcc), [Make](#make), [Tar](#tar)
+
+    # apt-get install tar
 
 ## Folder structure
 
