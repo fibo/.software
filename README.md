@@ -169,7 +169,7 @@ Everything works like a charm!
 ### Ruby
 
 * deps
-: [OpenSSL](#openssl), [gcc](#gcc), [Make](#make), [Tar](#tar)
+: [OpenSSL](#openssl), [gcc](#gcc), [Make](#make), [Tar](#tar), [patch](#patch), [libxml2](#libxml2)
 
 ### Rust
 
