@@ -5,8 +5,11 @@ digraph D {
     Git -> Python;
     Git -> OpenSSL;
     Ruby -> zlib;
-    Ruby -> OpenSSL;
+    Ruby -> OpenSSL -> OS;
     Git -> Expat;
     Git -> zlib;
+    Git -> gcc -> OS;
+    Python -> gcc -> OS;
     Grep -> Tar;
+    libxml2 -> gcc -> OS:
 }
