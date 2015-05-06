@@ -134,54 +134,114 @@ Everything works like a charm!
 
 ## Software list
 
+### Expat
+
+depends on:
+* [gcc](#gcc)
+* [Make](#make)
+* [Tar](#tar)
+* [Perl](#perl)
+* [Python](#python)
+
 ### g++
+
+Install it with a package manager:
+
+* `# apt-get install -y c++`
 
 ### gcc
 
+Install it with a package manager:
+
+* `# apt-get install -y gcc`
+
 ### Git
 
-* deps
-: [gcc](#gcc), [Make](#make), [Perl](#perl), [Python](#python), [Tar](#tar)
-
-### Make
-
-* deps
-: [gcc](#gcc), [Make](#make), [Tar](#tar)
-
-    # apt-get install make
-
-### OpenSSL
-
-    # apt-get install -y openssl libssl libssl-dev
+depends on:
+* [gcc](#gcc)
+* [Make](#make)
+* [Tar](#tar)
+* [Perl](#perl)
+* [Python](#python)
 
 ### Golang
 
+depends on:
+* [gcc](#gcc)
+* [Make](#make)
+* [Tar](#tar)
+
+### libxml2
+
+depends on:
+* [gcc](#gcc)
+* [Make](#make)
+* [Tar](#tar)
+
+### Make
+
+It is a root dependency.
+
+Install it with a package manager:
+
+* `# apt-get install -y make`
+
+depends on:
+* [gcc](#gcc)
+* [Make](#make)
+* [Tar](#tar)
+
 ### Node
 
-* deps
-: [gcc](#gcc), [Make](#make), [Python](#python), [Tar](#tar)
+depends on:
+* [gcc](#gcc)
+* [Make](#make)
+* [Tar](#tar)
+* [Python](#python)
+
+### OpenSSL
+
+Install it with a package manager:
+
+* `# apt-get install -y openssl libssl libssl-dev`
 
 ### Perl
 
-* deps
-: [gcc](#gcc), [Make](#make), [Tar](#tar)
+depends on:
+* [gcc](#gcc)
+* [Make](#make)
+* [Tar](#tar)
 
 ### Ruby
 
-* deps
-: [OpenSSL](#openssl), [gcc](#gcc), [Make](#make), [Tar](#tar), [patch](#patch), [libxml2](#libxml2)
+depends on:
+* [gcc](#gcc)
+* [Make](#make)
+* [Tar](#tar)
+* [OpenSSL](#openssl)
+* [libxml2](#libxml2)
+* [patch](#patch)
 
 ### Rust
 
-* notes
-: installation is done via *rustup*, does not work at the time of this writing.
+depends on:
+* [gcc](#gcc)
+* [Make](#make)
+* [Tar](#tar)
+
+notes:
+* installation is done via *rustup*, does not work at the time of this writing.
 
 ### Tar
 
-* deps
-: [gcc](#gcc), [Make](#make), [Tar](#tar)
+Install it with a package manager:
 
-    # apt-get install tar
+* `# apt-get install -y tar`
+
+depends on:
+* [gcc](#gcc)
+* [Make](#make)
+* [Tar](#tar)
 
 ## Folder structure
 
