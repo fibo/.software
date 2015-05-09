@@ -1,9 +1,9 @@
 .software
 =========
 
-> build & install software locally
+> build & install software locally with **dot**software
 
-Give it a try or [![Show me a Demo at Codio](https://codio-public.s3.amazonaws.com/sharing/demo-in-ide.png)](https://codio.com/fibo/dotsoftware).
+[Usage](#usage) | [Installation](#installation) | [Software list](#software-list)
 
 ## Quick start
 
@@ -23,6 +23,8 @@ Give it a try, launch
 ```bash
 $ .software_install Node
 ```
+
+If you want to try it without installing, push this botton to [![Show me a Demo at Codio](https://codio-public.s3.amazonaws.com/sharing/demo-in-ide.png)](https://codio.com/fibo/dotsoftware)
 
 ## Motivation
 
@@ -53,12 +55,12 @@ $ .software_install Foo
 
 Typing *.software_install* in your bash prompt, and hitting <kbd>TAB</kbd> will autocomplete with available software, i.e. *~/.software/etc* subfolders.
 
-## Requirements
+## Installation
+
+### Requirements
 
 Please note that *.software* supports only Linux, but most of the features should work on many other Unix-like systems, like BSD and Darwin with no or minor modifications.
-In order to run, *.software* requires bash, [Tar](#tar), gzip, find and [Wget](#wget). Other requirements are those needed by software builds: make, gcc, etc.
-
-## Installation
+In order to run, *.software* requires bash, [Tar](#tar), [Gzip[(#gzip), [Findutils](#findutils) and [Wget](#wget). Other requirements are those needed by software builds: [Make](#make), [gcc](#gcc), etc.
 
 ### Get it
 
@@ -124,24 +126,33 @@ Note that *.software* by default do not download sources if they are already in 
 This information can be useful when you need to install software without an Internet connection.
 
 Instead of setting a `DOTSOFTWARE_ROOT_DIR` variable, another choice is to create a symbolic link from your */dotsoftware/root/dir* to *~/.software/* dir.
-For example on my [Codio box][1], since default working folder is *~./workspace* I did
+For example on my [Codio box][1], since default working folder is *~./workspace* I launched
 
 ```bash
 $ ln -s ~/workspace/ ~/.software
 ```
 
-Everything works like a charm!
-
 ## Software list
 
 ### Expat
 
-depends on:
+Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
-* [Tar](#tar)
 * [Perl](#perl)
 * [Python](#python)
+
+### Findutils
+
+It is a *.software* dependency.
+
+Install it with a package manager:
+
+* `# apt-get install -y findutils`
+
+Build depends on:
+* [gcc](#gcc)
+* [Make](#make)
 
 ### g++
 
@@ -149,54 +160,67 @@ Install it with a package manager:
 
 * `# apt-get install -y c++`
 
+Build not supported.
+
 ### gcc
 
 Install it with a package manager:
 
 * `# apt-get install -y gcc`
 
+Build not supported.
+
 ### Git
 
-depends on:
+Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
-* [Tar](#tar)
 * [Perl](#perl)
 * [Python](#python)
 
 ### Golang
 
-depends on:
+Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
-* [Tar](#tar)
+
+### Gzip
+
+Install it with a package manager:
+
+* `# apt-get install -y gzip`
+
+Build depends on:
+* [gcc](#gcc)
+* [Make](#make)
 
 ### libxml2
 
-depends on:
+Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
-* [Tar](#tar)
 
 ### Make
-
-It is a root dependency.
 
 Install it with a package manager:
 
 * `# apt-get install -y make`
 
-depends on:
+Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
-* [Tar](#tar)
+
+### Netcat
+
+Build depends on:
+* [gcc](#gcc)
+* [Make](#make)
 
 ### Node
 
-depends on:
+Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
-* [Tar](#tar)
 * [Python](#python)
 
 ### OpenSSL
@@ -205,48 +229,46 @@ Install it with a package manager:
 
 * `# apt-get install -y openssl libssl libssl-dev`
 
+Build not supported.
+
 ### Perl
 
-depends on:
+Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
-* [Tar](#tar)
 
 ### Ruby
 
-depends on:
+Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
-* [Tar](#tar)
 * [OpenSSL](#openssl)
 * [libxml2](#libxml2)
 * [patch](#patch)
 
-### Rust
-
-depends on:
-* [gcc](#gcc)
-* [Make](#make)
-* [Tar](#tar)
-
-notes:
-* installation is done via *rustup*, does not work at the time of this writing.
-
 ### Tar
+
+It is a *.software* dependency.
 
 Install it with a package manager:
 
 * `# apt-get install -y tar`
 
-depends on:
+Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
-* [Tar](#tar)
 
 ### Wget
 
-* deps
-: [gcc](#gcc), [Make](#make)
+It is a *.software* dependency.
+
+Install it with a package manager:
+
+* `# apt-get install -y wget`
+
+Build depends on:
+* [gcc](#gcc)
+* [Make](#make)
 
 ## Folder structure
 
@@ -299,7 +321,7 @@ Implements the *.software_install* function.
 The requirement are
 
 * The hosts has the same system software (OS, kernel, etc) and environment.
-* The variable `DOTSOFTWARE_ROOT_DIR` has the same value on every host. Note that, using default value implies that users has the same name.
+* The variable [DOTSOFTWARE_ROOT_DIR](#dotsoftware_root_dir) has the same value on every host. Note that, using default value implies that users has the same name.
 
 If you are using default *.software* configuration you could launch
 
