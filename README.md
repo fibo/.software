@@ -56,7 +56,7 @@ Typing *.software_install* in your bash prompt, and hitting <kbd>TAB</kbd> will 
 ## Requirements
 
 Please note that *.software* supports only Linux, but most of the features should work on many other Unix-like systems, like BSD and Darwin with no or minor modifications.
-In order to run, *.software* requires bash, tar, gzip, find and wget. Other requirements are those needed by software builds: make, gcc, etc.
+In order to run, *.software* requires bash, [Tar](#tar), gzip, find and [Wget](#wget). Other requirements are those needed by software builds: make, gcc, etc.
 
 ## Installation
 
@@ -141,12 +141,12 @@ Everything works like a charm!
 ### Git
 
 * deps
-: [gcc](#gcc), [Make](#make), [Perl](#perl), [Python](#python), [Tar](#tar)
+: [gcc](#gcc), [Make](#make), [Perl](#perl), [Python](#python)
 
 ### Make
 
 * deps
-: [gcc](#gcc), [Make](#make), [Tar](#tar)
+: [gcc](#gcc), [Make](#make)
 
     # apt-get install make
 
@@ -159,29 +159,29 @@ Everything works like a charm!
 ### Node
 
 * deps
-: [gcc](#gcc), [Make](#make), [Python](#python), [Tar](#tar)
+: [gcc](#gcc), [Make](#make), [Python](#python)
 
 ### Perl
 
 * deps
-: [gcc](#gcc), [Make](#make), [Tar](#tar)
+: [gcc](#gcc), [Make](#make)
 
 ### Ruby
 
 * deps
-: [OpenSSL](#openssl), [gcc](#gcc), [Make](#make), [Tar](#tar), [patch](#patch), [libxml2](#libxml2)
-
-### Rust
-
-* notes
-: installation is done via *rustup*, does not work at the time of this writing.
+: [OpenSSL](#openssl), [gcc](#gcc), [Make](#make), [patch](#patch), [libxml2](#libxml2)
 
 ### Tar
 
 * deps
-: [gcc](#gcc), [Make](#make), [Tar](#tar)
+: [gcc](#gcc), [Make](#make)
 
     # apt-get install tar
+
+### Wget
+
+* deps
+: [gcc](#gcc), [Make](#make)
 
 ## Folder structure
 
