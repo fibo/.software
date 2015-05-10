@@ -1,5 +1,5 @@
 
-SOURCES_URI=https://github.com/golang/go/archive/go${GOLANG_VERSION}.tar.gz
+SOURCES_URI=https://github.com/golang/go/archive/go${VERSION}.tar.gz
 
 function _build() {
 	# Create profile

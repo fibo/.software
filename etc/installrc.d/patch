@@ -1,2 +1,2 @@
 
-SOURCES_URI=http://ftp.gnu.org/gnu/patch/patch-${PATCH_VERSION}.tar.gz
+SOURCES_URI=http://ftp.gnu.org/gnu/patch/patch-${VERSION}.tar.gz

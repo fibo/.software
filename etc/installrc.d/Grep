@@ -1,5 +1,5 @@
 
-SOURCES_URI=http://ftp.gnu.org/gnu/grep/grep-${GREP_VERSION}.tar.xz
+SOURCES_URI=http://ftp.gnu.org/gnu/grep/grep-${VERSION}.tar.xz
 
 function _read_current_version_dir() {
 	CURRENT_VERSION_DIR=grep-$GREP_VERSION
