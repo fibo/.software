@@ -47,13 +47,15 @@ But, sometimes you are in one of the following scenarios
 *.software* has only one feature: installing software locally!
 
 It is implemented by a bash function named `.software_install` that takes only one parameter: what you want to install.
+
 For example
 
 ```bash
 $ .software_install Foo
 ```
 
-Typing *.software_install* in your bash prompt, and hitting <kbd>TAB</kbd> will autocomplete with available software, i.e. *~/.software/etc* subfolders.
+Typing *.software_install* in your bash prompt, and hitting <kbd>TAB</kbd> will autocomplete with available software.
+Take a look to [Software list](#software-list), which includes for example [Perl](#perl), [Node](#node), [Golang](#golang), [Ruby](#ruby).
 
 ## Installation
 
@@ -134,7 +136,7 @@ $ ln -s ~/workspace/ ~/.software
 
 ## Software list
 
-**TODO** document these:
+**TODO** available software to be documented:
 * ctags
 * cURL
 * Dos2Unix
@@ -185,6 +187,8 @@ Install it with a package manager:
 Build not supported.
 
 ### Git
+
+> version 2.3.5
 
 Build depends on:
 * [gcc](#gcc)
@@ -286,13 +290,13 @@ Build depends on:
 
 ## Folder structure
 
-### ~/.software/etc/installrc.d/Foo
+### ~/.software/etc/installrc.d/
 
 Software _Foo_ has its homonym file in folder *~/.software/etc/installrc.d*.
 
-It defines env vars needed for installation. It **must contain** at least `SOURCES_URI`.
+It defines environment variables needed for installation. It **must contain** at least `SOURCES_URI`.
 
-For example, _Wget_ contains
+For example, _Wget_ file contains
 
 ```bash
 SOURCES_URI=http://ftp.gnu.org/gnu/wget/wget-${WGET_VERSION}.tar.gz
@@ -306,7 +310,7 @@ It can also be used to override functions used by *.software_install*
 	_extract
 	_build
 
-For example, _Perl_ contains
+For example, _Perl_ file contains
 
 ```bash
 SOURCES_URI=http://www.cpan.org/src/5.0/perl-${PERL_VERSION}.tar.gz
