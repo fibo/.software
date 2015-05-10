@@ -1,5 +1,5 @@
 
-SOURCES_URI=http://download.redis.io/releases/redis-${REDIS_VERSION}.tar.gz
+SOURCES_URI=http://download.redis.io/releases/redis-${VERSION}.tar.gz
 
 function _build() {
   cd $CURRENT_VERSION_DIR

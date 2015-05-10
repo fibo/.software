@@ -35,8 +35,7 @@ If you have root rights or sudo with a package manager, __don't use me!__.
 But, sometimes you are in one of the following scenarios
 
 * your host is too old, without vendor support
-* you have not root rights, and you need to keep your software update
-
+* you have not root rights, and you need to keep your software up to date
 * you want to compile from sources you trust
 * you want to try new releases without waiting until they are packaged
 * you are a nerd
@@ -62,7 +61,8 @@ Take a look to [Software list](#software-list), which includes for example [Perl
 ### Requirements
 
 Please note that *.software* supports only Linux, but most of the features should work on many other Unix-like systems, like BSD and Darwin with no or minor modifications.
-In order to run, *.software* requires bash, [Tar](#tar), [Gzip](#gzip), [Findutils](#findutils) and [Wget](#wget). Other requirements are those needed by software builds: [Make](#make), [gcc](#gcc), etc.
+In order to run, *.software* requires bash, [Tar](#tar), [Gzip](#gzip), [Grep](#grep), [Findutils](#findutils) and [Wget](#wget).
+Other requirements are those needed by software builds: [Make](#make), [gcc](#gcc), etc.
 
 ### Get it
 
@@ -91,7 +91,8 @@ The following command will add `source ~/.software/etc/profile` to your *.bash_p
 $ [ -f ~/.bash_profile ] && grep 'source ~/.software/etc/profile' ~/.bash_profile || echo 'source ~/.software/etc/profile' >> ~/.bash_profile && source ~/.software/etc/profile
 ```
 
-Otherwise you can add manually these lines to your *.bash_profile*. Note that if you are using *.software* from a graphical environment rather than a remote server login shell, you should use *.bashrc* file instead.
+Otherwise you can add manually these lines to your *.bash_profile*.
+Note that if you are using *.software* from a graphical environment rather than a remote server login shell, you should edit *.bashrc* file instead.
 
 ```bash
 ################################################################################
@@ -117,7 +118,7 @@ source ~/.software/etc/profile
 
 *.software* uses enviroment variable `DOTSOFTWARE_ROOT_DIR` to know the dir where all your software will be installed.
 
-It defaults to *~/.software* dir.
+It defaults to *~/.software*.
 
 You maybe want to edit it when
 
@@ -136,21 +137,41 @@ $ ln -s ~/workspace/ ~/.software
 
 ## Software list
 
-**TODO** available software to be documented:
-* ctags
-* cURL
-* Dos2Unix
-* git-extras
-* Graphviz
-* Grep
-* patch
-* redis
-* rsync
-* Sed
-* xz
-* zlib
- 
+### ctags
+
+> version 5.8
+
+Build depends on:
+* [gcc](#gcc)
+* [Make](#make)
+
+### cURL
+
+> version 7.41.0
+
+Build depends on:
+* [gcc](#gcc)
+* [Make](#make)
+
+### Dos2Unix
+
+> version 7.1
+
+Build depends on:
+* [gcc](#gcc)
+* [Make](#make)
+
+### Graphviz
+
+> version
+
+Build depends on:
+* [gcc](#gcc)
+* [Make](#make)
+
 ### Expat
+
+> version 2.1.0
 
 Build depends on:
 * [gcc](#gcc)
@@ -159,6 +180,8 @@ Build depends on:
 * [Python](#python)
 
 ### Findutils
+
+> version 4.4.2
 
 It is a *.software* dependency.
 
@@ -196,13 +219,46 @@ Build depends on:
 * [Perl](#perl)
 * [Python](#python)
 
+### git-extras
+
+> version 2.2.0
+
+Build depends on:
+* [Make](#make)
+
 ### Golang
+
+> version 1.4.2
+
+Build depends on:
+* [gcc](#gcc)
+* [Make](#make)
+
+### Graphviz
+
+> version 2.38.0
+
+Build depends on:
+* [gcc](#gcc)
+* [Make](#make)
+
+### Grep
+
+> version 2.21
+
+It is a *.software* dependency.
+
+Install it with a package manager:
+
+* `# apt-get install -y grep`
 
 Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
 
 ### Gzip
+
+> version 1.6
 
 Install it with a package manager:
 
@@ -214,11 +270,15 @@ Build depends on:
 
 ### libxml2
 
+> version 2.9.0
+
 Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
 
 ### Make
+
+> version 3.82
 
 Install it with a package manager:
 
@@ -230,11 +290,15 @@ Build depends on:
 
 ### Netcat
 
+> version 0.7.1
+
 Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
 
 ### Node
+
+> version 0.12.2
 
 Build depends on:
 * [gcc](#gcc)
@@ -249,13 +313,49 @@ Install it with a package manager:
 
 Build not supported.
 
+### patch
+
+> version 2.7
+
+Build depends on:
+* [gcc](#gcc)
+* [Make](#make)
+
 ### Perl
+
+> version 5.20.2
+
+Build depends on:
+* [gcc](#gcc)
+* [Make](#make)
+
+### Python
+
+> version 2.7.9
+
+Build depends on:
+* [gcc](#gcc)
+* [Make](#make)
+
+### Redis
+
+> version 2.8.7
+
+Build depends on:
+* [gcc](#gcc)
+* [Make](#make)
+
+### Rsync
+
+> version 3.1.0
 
 Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
 
 ### Ruby
+
+> version 2.2.2
 
 Build depends on:
 * [gcc](#gcc)
@@ -264,7 +364,17 @@ Build depends on:
 * [libxml2](#libxml2)
 * [patch](#patch)
 
+### Sed
+
+> version 4.2.2
+
+Build depends on:
+* [gcc](#gcc)
+* [Make](#make)
+
 ### Tar
+
+> version 1.28
 
 It is a *.software* dependency.
 
@@ -278,6 +388,8 @@ Build depends on:
 
 ### Wget
 
+> version 1.16
+
 It is a *.software* dependency.
 
 Install it with a package manager:
@@ -287,6 +399,23 @@ Install it with a package manager:
 Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
+
+### xz
+
+> version 5.0.5
+
+Build depends on:
+* [gcc](#gcc)
+* [Make](#make)
+
+### zlib
+
+> version 1.2.8
+
+Build depends on:
+* [gcc](#gcc)
+* [Make](#make)
+
 
 ## Folder structure
 
@@ -299,7 +428,7 @@ It defines environment variables needed for installation. It **must contain** at
 For example, _Wget_ file contains
 
 ```bash
-SOURCES_URI=http://ftp.gnu.org/gnu/wget/wget-${WGET_VERSION}.tar.gz
+SOURCES_URI=http://ftp.gnu.org/gnu/wget/wget-${VERSION}.tar.gz
 ```
 
 It can also be used to override functions used by *.software_install*
@@ -313,7 +442,7 @@ It can also be used to override functions used by *.software_install*
 For example, _Perl_ file contains
 
 ```bash
-SOURCES_URI=http://www.cpan.org/src/5.0/perl-${PERL_VERSION}.tar.gz
+SOURCES_URI=http://www.cpan.org/src/5.0/perl-${VERSION}.tar.gz
 
 function _build() {
 	cd $CURRENT_VERSION_DIR
@@ -325,13 +454,20 @@ function _build() {
 }
 ```
 
-### ~/.software/etc/versions
-
-Contains the list of software with corresponding version: **edit it** according to your needs.
-
 ### ~/.software/etc/profile
 
 Implements the *.software_install* function.
+
+### ~/.software/README.md
+
+This file, contains also software versions. Every software must have an homonym section in this file
+where version number is in the second row, like this
+
+```
+### Foo
+
+> version 1.2.3
+```
 
 ## Packaging software
 

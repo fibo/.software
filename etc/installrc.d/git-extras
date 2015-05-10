@@ -1,5 +1,5 @@
 
-SOURCES_URI=https://github.com/tj/git-extras/archive/${GITEXTRAS_VERSION}.tar.gz
+SOURCES_URI=https://github.com/tj/git-extras/archive/${VERSION}.tar.gz
 
 function _build() {
 	cd $CURRENT_VERSION_DIR

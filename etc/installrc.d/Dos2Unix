@@ -1,5 +1,5 @@
 
-SOURCES_URI=http://waterlan.home.xs4all.nl/dos2unix/dos2unix-${DOS2UNIX_VERSION}.tar.gz
+SOURCES_URI=http://waterlan.home.xs4all.nl/dos2unix/dos2unix-${VERSION}.tar.gz
 
 function _build() {
 	cd $CURRENT_VERSION_DIR

@@ -77,7 +77,14 @@ find ~/.software/etc/ -mindepth 2 -name profile | while read prof; do source $pr
 		return 1
 	fi
 
-	source ~/.software/etc/versions
+	# Get version from documentation.
+	# Every software must be documented in README.md as
+	#
+	# ### Foo
+	#
+	# > version 1.2.3
+	#
+	VERSION=$(grep -A 2 "### $SOFTWARE_NAME" README.md | tail -1 | cut -d ' ' -f3)
 
 	BUILD_DIR=$DOTSOFTWARE_TMP_DIR/build
 	mkdir -p $BUILD_DIR
@@ -131,6 +138,7 @@ find ~/.software/etc/ -mindepth 2 -name profile | while read prof; do source $pr
 	unset SOURCES_DIR
 	unset SOURCES_FILENAME
 	unset SOURCES_URI
+	unset VERSION
 
 	unset _get_sources
 	unset _read_sources_filename
