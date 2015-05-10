@@ -21,7 +21,7 @@ git clone https://github.com/fibo/.software.git
 Give it a try, launch
 
 ```bash
-$ .software_install Node
+$ .software_install Golang
 ```
 
 If you want to try it without installing, push this botton to [![Show me a Demo at Codio](https://codio-public.s3.amazonaws.com/sharing/demo-in-ide.png)](https://codio.com/fibo/dotsoftware)
