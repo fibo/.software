@@ -24,13 +24,13 @@ Give it a try, launch
 $ .software_install Golang
 ```
 
-If you want to try it without installing, push this botton to [![Show me a Demo at Codio](https://codio-public.s3.amazonaws.com/sharing/demo-in-ide.png)](https://codio.com/fibo/dotsoftware)
+If you want to try it without installing, push this button to [![Show me a Demo at Codio](https://codio-public.s3.amazonaws.com/sharing/demo-in-ide.png)](https://codio.com/fibo/dotsoftware)
 
 ## Motivation
 
 > Why install software locally?
 
-If you have root rights or sudo with a package manager, __don't use me!__.
+If you have root rights or sudo with a package manager, **don't use me!**.
 
 But, sometimes you are in one of the following scenarios
 
@@ -39,7 +39,7 @@ But, sometimes you are in one of the following scenarios
 * you want to compile from sources you trust
 * you want to try new releases without waiting until they are packaged
 * you are a nerd
-* you are a nerd, and it is saturday night
+* you are a nerd, and it is Saturday night
 
 ## Usage
 
@@ -60,13 +60,13 @@ Take a look to [Software list](#software-list), which includes for example [Perl
 
 ### Requirements
 
-Please note that *.software* supports only Linux, but most of the features should work on many other Unix-like systems, like BSD and Darwin with no or minor modifications.
+Please note that *.software* supports only Linux, but could work on many other Unix-like systems, like BSD and Darwin.
 In order to run, *.software* requires bash, [Tar](#tar), [Gzip](#gzip), [Grep](#grep), [Findutils](#findutils) and [Wget](#wget).
 Other requirements are those needed by software builds: [Make](#make), [gcc](#gcc), etc.
 
 ### Get it
 
-Just go to your home dir and clone this repo.
+Just go to your home directory and clone this repository.
 
 ```bash
 $ cd
@@ -122,8 +122,8 @@ It defaults to *~/.software*.
 
 You maybe want to edit it when
 
-* you have not enough space in your home dir
-* you want to install in a dir common to many users like */usr/local* or */opt*.
+* you have not enough space in your home directory.
+* you want to install in a directory common to many users like */usr/local* or */opt*.
 
 Note that *.software* by default do not download sources if they are already in folder *$DOTSOFTWARE_ROOT_DIR/src*.
 This information can be useful when you need to install software without an Internet connection.
