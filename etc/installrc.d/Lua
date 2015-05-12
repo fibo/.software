@@ -1,0 +1,3 @@
+
+SOURCES_URI=http://www.lua.org/ftp/lua-${VERSION}.tar.gz
+

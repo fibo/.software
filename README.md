@@ -268,6 +268,14 @@ Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
 
+### Lua
+
+> version 5.3.0
+
+Build depends on:
+* [gcc](#gcc)
+* [Make](#make)
+
 ### libxml2
 
 > version 2.9.0

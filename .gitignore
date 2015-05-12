@@ -1,10 +1,5 @@
 
-!etc/deps.gv
-!etc/installrc.d/
-!etc/profile
-!etc/versions
-
-# In case DOTSOFTWARE_ROOT_DIR is set as ~/.software, that is the default
+# In case $DOTSOFTWARE_ROOT_DIR is set as ~/.software, that is the default.
 bin/
 etc/
 info/
@@ -17,8 +12,11 @@ opt/
 share/
 src/
 
-# In case DOTSOFTWARE_TMP_DIR is set as DOTSOFTWARE_ROOT_DIR
+# In case $DOTSOFTWARE_TMP_DIR is set as $DOTSOFTWARE_ROOT_DIR.
 build/
 
-# Needed if OpenSSL is installed
-ssl/
+# Do not ignore .software files.
+!etc/deps.gv
+!etc/installrc.d/
+!etc/profile
+
