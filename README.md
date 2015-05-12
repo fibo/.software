@@ -187,7 +187,7 @@ It is a *.software* dependency.
 
 Install it with a package manager:
 
-* `# apt-get install -y findutils`
+* `# apt-get install findutils`
 
 Build depends on:
 * [gcc](#gcc)
@@ -195,19 +195,19 @@ Build depends on:
 
 ### g++
 
+Build not supported.
+
 Install it with a package manager:
 
-* `# apt-get install -y c++`
-
-Build not supported.
+* `# apt-get install c++`
 
 ### gcc
 
+Build not supported.
+
 Install it with a package manager:
 
-* `# apt-get install -y gcc`
-
-Build not supported.
+* `# apt-get install gcc`
 
 ### Git
 
@@ -250,7 +250,7 @@ It is a *.software* dependency.
 
 Install it with a package manager:
 
-* `# apt-get install -y grep`
+* `# apt-get install grep`
 
 Build depends on:
 * [gcc](#gcc)
@@ -262,7 +262,7 @@ Build depends on:
 
 Install it with a package manager:
 
-* `# apt-get install -y gzip`
+* `# apt-get install gzip`
 
 Build depends on:
 * [gcc](#gcc)
@@ -275,6 +275,7 @@ Build depends on:
 Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
+* [Readline](#readline)
 
 ### libxml2
 
@@ -290,7 +291,7 @@ Build depends on:
 
 Install it with a package manager:
 
-* `# apt-get install -y make`
+* `# apt-get install make`
 
 Build depends on:
 * [gcc](#gcc)
@@ -315,11 +316,21 @@ Build depends on:
 
 ### OpenSSL
 
+Build not supported.
+
 Install it with a package manager:
 
-* `# apt-get install -y openssl libssl libssl-dev`
+* `# apt-get install openssl libssl libssl-dev`
+
+
+### Readline
 
 Build not supported.
+
+Install it with a package manager:
+
+* `# apt-get install libreadline-devel`
+* `# yum install readline-devel`
 
 ### patch
 
@@ -388,7 +399,7 @@ It is a *.software* dependency.
 
 Install it with a package manager:
 
-* `# apt-get install -y tar`
+* `# apt-get install tar`
 
 Build depends on:
 * [gcc](#gcc)
@@ -402,7 +413,7 @@ It is a *.software* dependency.
 
 Install it with a package manager:
 
-* `# apt-get install -y wget`
+* `# apt-get install wget`
 
 Build depends on:
 * [gcc](#gcc)
