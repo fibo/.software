@@ -137,6 +137,14 @@ $ ln -s ~/workspace/ ~/.software
 
 ## Software list
 
+### BitchX
+
+> version 1.2.1
+
+Build depends on:
+* [gcc](#gcc)
+* [Make](#make)
+
 ### ctags
 
 > version 5.8
@@ -321,7 +329,6 @@ Build not supported.
 Install it with a package manager:
 
 * `# apt-get install openssl libssl libssl-dev`
-
 
 ### Readline
 
