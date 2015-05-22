@@ -363,9 +363,9 @@ Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
 
-### Redis
+### [Redis](http://redis.io/)
 
-> version 2.8.7
+> version 3.0.1
 
 Build depends on:
 * [gcc](#gcc)
@@ -490,7 +490,7 @@ This file, contains also software versions. Every software must have an homonym 
 where version number is in the second row, like this
 
 ```
-### Foo
+### [Foo](http://url-of-foo-homepage.xxx)
 
 > version 1.2.3
 ```
