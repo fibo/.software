@@ -95,23 +95,17 @@ Otherwise you can add manually these lines to your *.bash_profile*.
 Note that if you are using *.software* from a graphical environment rather than a remote server login shell, you should edit *.bashrc* file instead.
 
 ```bash
-################################################################################
+###############################################################################
 ### .software config start
 
-##[optional]
-#
 # Set .software target dir, defaults to "~/.software".
-#
-##
 # export DOTSOFTWARE_ROOT_DIR=/path/to/your/software/installation/dir
 
-##[required]
 # Init .software
-##
 source ~/.software/etc/profile
 
-### end .software config
-################################################################################
+### .software config end
+###############################################################################
 ```
 
 #### DOTSOFTWARE_ROOT_DIR
@@ -137,7 +131,7 @@ $ ln -s ~/workspace/ ~/.software
 
 ## Software list
 
-### BitchX
+### [BitchX](http://bitchx.sourceforge.net/)
 
 > version 1.2.1
 
@@ -145,7 +139,7 @@ Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
 
-### ctags
+### [ctags](http://ctags.sourceforge.net/)
 
 > version 5.8
 
@@ -153,7 +147,7 @@ Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
 
-### cURL
+### [cURL](http://curl.haxx.se/)
 
 > version 7.41.0
 
@@ -161,7 +155,7 @@ Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
 
-### Dos2Unix
+### [Dos2Unix](http://dos2unix.sourceforge.net/)
 
 > version 7.1
 
@@ -169,15 +163,7 @@ Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
 
-### Graphviz
-
-> version
-
-Build depends on:
-* [gcc](#gcc)
-* [Make](#make)
-
-### Expat
+### [Expat](http://expat.sourceforge.net/)
 
 > version 2.1.0
 
@@ -187,7 +173,7 @@ Build depends on:
 * [Perl](#perl)
 * [Python](#python)
 
-### Findutils
+### [Findutils](http://www.gnu.org/software/findutils/)
 
 > version 4.4.2
 
@@ -217,7 +203,7 @@ Install it with a package manager:
 
 * `# apt-get install gcc`
 
-### Git
+### [Git](https://git-scm.com/)
 
 > version 2.3.5
 
@@ -227,14 +213,14 @@ Build depends on:
 * [Perl](#perl)
 * [Python](#python)
 
-### git-extras
+### [git-extras](https://github.com/tj/git-extras)
 
 > version 2.2.0
 
 Build depends on:
 * [Make](#make)
 
-### Golang
+### [Golang](https://golang.org/)
 
 > version 1.4.2
 
@@ -242,7 +228,7 @@ Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
 
-### Graphviz
+### [Graphviz](http://www.graphviz.org/)
 
 > version 2.38.0
 
@@ -250,7 +236,7 @@ Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
 
-### Grep
+### [Grep](http://www.gnu.org/software/grep/)
 
 > version 2.21
 
@@ -264,7 +250,7 @@ Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
 
-### Gzip
+### [Gzip](http://www.gnu.org/software/gzip/)
 
 > version 1.6
 
@@ -276,7 +262,7 @@ Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
 
-### Lua
+### [Lua](http://www.lua.org/)
 
 > version 5.3.0
 
@@ -285,7 +271,7 @@ Build depends on:
 * [Make](#make)
 * [Readline](#readline)
 
-### libxml2
+### [libxml2](http://www.xmlsoft.org/)
 
 > version 2.9.0
 
@@ -293,7 +279,7 @@ Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
 
-### Make
+### [Make](http://www.gnu.org/software/make/)
 
 > version 3.82
 
@@ -305,7 +291,7 @@ Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
 
-### Netcat
+### [Netcat](http://netcat.sourceforge.net/)
 
 > version 0.7.1
 
@@ -313,16 +299,16 @@ Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
 
-### Node
+### [Node](https://nodejs.org/)
 
-> version 0.12.2
+> version 0.12.3
 
 Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
 * [Python](#python)
 
-### OpenSSL
+### [OpenSSL](https://www.openssl.org/)
 
 Build not supported.
 
@@ -330,7 +316,7 @@ Install it with a package manager:
 
 * `# apt-get install openssl libssl libssl-dev`
 
-### Readline
+### [Readline](http://www.gnu.org/software/readline/)
 
 Build not supported.
 
@@ -339,7 +325,7 @@ Install it with a package manager:
 * `# apt-get install libreadline-devel`
 * `# yum install readline-devel`
 
-### patch
+### [patch](http://www.gnu.org/software/patch/)
 
 > version 2.7
 
@@ -347,7 +333,7 @@ Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
 
-### Perl
+### [Perl](http://www.perl.org/)
 
 > version 5.20.2
 
@@ -355,7 +341,7 @@ Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
 
-### Python
+### [Python](https://www.python.org/)
 
 > version 2.7.9
 
@@ -371,15 +357,15 @@ Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
 
-### Rsync
+### [rsync](https://rsync.samba.org/)
 
-> version 3.1.0
+> version 3.1.1
 
 Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
 
-### Ruby
+### [Ruby](https://www.ruby-lang.org/)
 
 > version 2.2.2
 
@@ -390,7 +376,7 @@ Build depends on:
 * [libxml2](#libxml2)
 * [patch](#patch)
 
-### Sed
+### [sed](http://www.gnu.org/software/sed/)
 
 > version 4.2.2
 
@@ -398,7 +384,7 @@ Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
 
-### Tar
+### [Tar](http://www.gnu.org/software/tar/)
 
 > version 1.28
 
@@ -412,7 +398,7 @@ Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
 
-### Wget
+### [Wget](http://www.gnu.org/software/wget/)
 
 > version 1.16
 
@@ -426,7 +412,7 @@ Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
 
-### xz
+### [xz](http://tukaani.org/xz/)
 
 > version 5.0.5
 
@@ -434,7 +420,7 @@ Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
 
-### zlib
+### [zlib](http://www.zlib.net/)
 
 > version 1.2.8
 
