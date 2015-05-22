@@ -85,6 +85,11 @@ find ~/.software/etc/ -mindepth 2 -name profile | while read prof; do source $pr
 	# > version 1.2.3
 	#
 	VERSION=$(grep -A 2 "### \[$SOFTWARE_NAME\]" README.md | tail -1 | cut -d ' ' -f3)
+	if [ -z $VERSION ]; then
+		echo $SOFTWARE_NAME VERSION not defined
+		popd 1> /dev/null
+		return 1
+	fi
 
 	BUILD_DIR=$DOTSOFTWARE_TMP_DIR/build
 	mkdir -p $BUILD_DIR
