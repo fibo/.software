@@ -313,6 +313,14 @@ Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
 
+### [nginx](http://nginx.org/)
+
+> version 1.9.0
+
+Build depends on:
+* [gcc](#gcc)
+* [Make](#make)
+
 ### Node
 
 > version 0.12.2
