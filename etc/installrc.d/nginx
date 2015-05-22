@@ -1,3 +1,19 @@
 
 SOURCES_URI=http://nginx.org/download/nginx-${VERSION}.tar.gz
 
+function _build() {
+	mkdir -p $DOTSOFTWARE_ROOT_DIR/etc/nginx
+	mkdir -p $DOTSOFTWARE_ROOT_DIR/var/log
+	mkdir -p $DOTSOFTWARE_ROOT_DIR/var/run
+
+	cd $CURRENT_VERSION_DIR
+	./configure --prefix=$DOTSOFTWARE_ROOT_DIR \
+		--conf-path=$DOTSOFTWARE_ROOT_DIR/etc/nginx \
+		--error-log-path=$DOTSOFTWARE_ROOT_DIR/var/log \
+		--lock-path=$DOTSOFTWARE_ROOT_DIR/var/run \
+		--pid-path=$DOTSOFTWARE_ROOT_DIR/var/run \
+		--sbin-path=$DOTSOFTWARE_ROOT_DIR/bin \
+		&& make \
+		&& make install
+}
+
