@@ -1,2 +1,3 @@
 
-SOURCES_URI=http://sourceforge.net/projects/netcat/files/netcat/${VERSION}.tar.gz
+SOURCES_URI=http://sourceforge.net/projects/netcat/files/netcat/${VERSION}/netcat-${VERSION}.tar.gz
+
