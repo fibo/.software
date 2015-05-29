@@ -173,6 +173,14 @@ Build depends on:
 * [Perl](#perl)
 * [Python](#python)
 
+### [Expect](http://expect.sourceforge.net/)
+
+> version 5.45
+
+Build depends on:
+* [gcc](#gcc)
+* [Make](#make)
+
 ### [Findutils](http://www.gnu.org/software/findutils/)
 
 > version 4.4.2
