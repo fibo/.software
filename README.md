@@ -355,7 +355,7 @@ Build depends on:
 
 ### Ruby
 
-> version 2.2.2
+> version 2.1.1
 
 Build depends on:
 * [gcc](#gcc)
@@ -363,6 +363,8 @@ Build depends on:
 * [OpenSSL](#openssl)
 * [libxml2](#libxml2)
 * [patch](#patch)
+
+Here version may be not the latest cause it is up to date with [GitHub Pages Dependency versions](https://pages.github.com/versions/)
 
 ### Sed
 
