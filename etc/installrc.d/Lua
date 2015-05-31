@@ -1,0 +1,8 @@
+
+SOURCES_URI=http://www.lua.org/ftp/lua-${VERSION}.tar.gz
+
+function _build() {
+	cd $CURRENT_VERSION_DIR
+	INSTALL_TOP=$DOTSOFTWARE_ROOT_DIR make linux
+}
+
