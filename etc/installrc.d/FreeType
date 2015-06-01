@@ -1,0 +1,3 @@
+
+SOURCES_URI=http://download.savannah.gnu.org/releases/freetype/freetype-${VERSION}.tar.gz
+

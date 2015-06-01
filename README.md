@@ -204,6 +204,15 @@ Build depends on:
 Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
+* [FreeType](#freetype)
+
+### [FreeType](http://www.freetype.org/)
+
+> version 2.5.5
+
+Build depends on:
+* [gcc](#gcc)
+* [Make](#make)
 
 ### g++
 
