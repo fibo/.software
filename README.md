@@ -204,7 +204,9 @@ Build depends on:
 Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
+* [Expat](#expat)
 * [FreeType](#freetype)
+* [pkg-config](#pkg-config)
 
 ### [FreeType](http://www.freetype.org/)
 
@@ -213,7 +215,6 @@ Build depends on:
 Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
-* [pkg-config](#pkg-config)
 
 ### g++
 
