@@ -11,6 +11,7 @@ man/
 opt/
 share/
 src/
+var/
 
 # In case $DOTSOFTWARE_TMP_DIR is set as $DOTSOFTWARE_ROOT_DIR.
 build/
