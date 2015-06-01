@@ -121,7 +121,7 @@ find ~/.software/etc/ -mindepth 2 -name profile | while read prof; do source $pr
 
 	function _build() {
 		cd $CURRENT_VERSION_DIR
-		./configure --prefix=$DOTSOFTWARE_ROOT_DIR && make install
+		./configure --prefix=$DOTSOFTWARE_ROOT_DIR && make && make install
 	}
 
 	source $INSTALLRC

@@ -1,3 +1,8 @@
 
 SOURCES_URI=http://ftp.gnu.org/gnu/ncurses/ncurses-${VERSION}.tar.gz
 
+function _build() {
+	cd $CURRENT_VERSION_DIR
+	./configure --prefix=$DOTSOFTWARE_ROOT_DIR --with-shared && make && make install
+}
+
