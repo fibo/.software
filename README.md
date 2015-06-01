@@ -197,6 +197,14 @@ Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
 
+### [Fontconfig](http://www.freedesktop.org/wiki/Software/fontconfig/)
+
+> version 2.11.93
+
+Build depends on:
+* [gcc](#gcc)
+* [Make](#make)
+
 ### g++
 
 Build not supported.
