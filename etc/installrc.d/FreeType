@@ -1,0 +1,8 @@
+
+SOURCES_URI=http://download.savannah.gnu.org/releases/freetype/freetype-${VERSION}.tar.gz
+
+function _build() {
+	cd $CURRENT_VERSION_DIR
+	./configure --prefix=$DOTSOFTWARE_ROOT_DIR --disable-static && make install
+}
+
