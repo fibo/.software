@@ -1,350 +1,358 @@
-.software
-=========
+  .software
+  =========
 
-> build & install software locally with **dot**software
+  > build & install software locally with **dot**software
 
-[Usage](#usage) | [Installation](#installation) | [Software list](#software-list)
+  [Usage](#usage) | [Installation](#installation) | [Software list](#software-list)
 
-## Quick start
+  ## Quick start
 
-For the impatient, just copy and paste the following lines in your bash prompt
+  For the impatient, just copy and paste the following lines in your bash prompt
 
-```bash
-# get latest .software
-cd
-git clone https://github.com/fibo/.software.git
-# source it in your profile and in current session
-[ -f ~/.bash_profile ] && grep 'source ~/.software/etc/profile' ~/.bash_profile || echo 'source ~/.software/etc/profile' >> ~/.bash_profile && source ~/.software/etc/profile
-# you are done!
-```
+  ```bash
+  # get latest .software
+  cd
+  git clone https://github.com/fibo/.software.git
+  # source it in your profile and in current session
+  [ -f ~/.bash_profile ] && grep 'source ~/.software/etc/profile' ~/.bash_profile || echo 'source ~/.software/etc/profile' >> ~/.bash_profile && source ~/.software/etc/profile
+  # you are done!
+  ```
 
-Give it a try, launch
+  Give it a try, launch
 
-```bash
-$ .software_install Golang
-```
+  ```bash
+  $ .software_install Golang
+  ```
 
-If you want to try it without installing, push this button to [![Show me a Demo at Codio](https://codio-public.s3.amazonaws.com/sharing/demo-in-ide.png)](https://codio.com/fibo/dotsoftware)
+  If you want to try it without installing, push this button to [![Show me a Demo at Codio](https://codio-public.s3.amazonaws.com/sharing/demo-in-ide.png)](https://codio.com/fibo/dotsoftware)
 
-## Motivation
+  ## Motivation
 
-> Why install software locally?
+  > Why install software locally?
 
-If you have root rights or sudo with a package manager, **don't use me!**.
+  If you have root rights or sudo with a package manager, **don't use me!**.
 
-But, sometimes you are in one of the following scenarios
+  But, sometimes you are in one of the following scenarios
 
-* your host is too old, without vendor support
-* you have not root rights, and you need to keep your software up to date
-* you want to compile from sources you trust
-* you want to try new releases without waiting until they are packaged
-* you are a nerd
-* you are a nerd, and it is Saturday night
+  * your host is too old, without vendor support
+  * you have not root rights, and you need to keep your software up to date
+  * you want to compile from sources you trust
+  * you want to try new releases without waiting until they are packaged
+  * you are a nerd
+  * you are a nerd, and it is Saturday night
 
-## Usage
+  ## Usage
 
-*.software* has only one feature: installing software locally!
+  *.software* has only one feature: installing software locally!
 
-It is implemented by a bash function named `.software_install` that takes only one parameter: what you want to install.
+  It is implemented by a bash function named `.software_install` that takes only one parameter: what you want to install.
 
-For example
+  For example
 
-```bash
-$ .software_install Foo
-```
+  ```bash
+  $ .software_install Foo
+  ```
 
-Typing *.software_install* in your bash prompt, and hitting <kbd>TAB</kbd> will autocomplete with available software.
-Take a look to [Software list](#software-list), which includes for example [Perl](#perl), [Node](#node), [Golang](#golang), [Ruby](#ruby).
+  Typing *.software_install* in your bash prompt, and hitting <kbd>TAB</kbd> will autocomplete with available software.
+  Take a look to [Software list](#software-list), which includes for example [Perl](#perl), [Node](#node), [Golang](#golang), [Ruby](#ruby).
 
-## Installation
+  ## Installation
 
-### Requirements
+  ### Requirements
 
-Please note that *.software* supports only Linux, but could work on many other Unix-like systems, like BSD and Darwin.
-In order to run, *.software* requires bash, [Tar](#tar), [Gzip](#gzip), [Grep](#grep), [Findutils](#findutils) and [Wget](#wget).
-Other requirements are those needed by software builds: [Make](#make), [gcc](#gcc), etc.
+  Please note that *.software* supports only Linux, but could work on many other Unix-like systems, like BSD and Darwin.
+  In order to run, *.software* requires bash, [Tar](#tar), [Gzip](#gzip), [Grep](#grep), [Findutils](#findutils) and [Wget](#wget).
+  Other requirements are those needed by software builds: [Make](#make), [gcc](#gcc), etc.
 
-### Get it
+  ### Get it
 
-Just go to your home directory and clone this repository.
+  Just go to your home directory and clone this repository.
 
-```bash
-$ cd
-$ git clone https://github.com/fibo/.software.git
-```
+  ```bash
+  $ cd
+  $ git clone https://github.com/fibo/.software.git
+  ```
 
-If you don't have git installed you can try the following commands
+  If you don't have git installed you can try the following commands
 
-```bash
-$ cd
-$ wget --no-check-certificate https://github.com/fibo/.software/archive/master.zip
-$ unzip master
-$ mv .software-master .software
-$ rm master
-```
+  ```bash
+  $ cd
+  $ wget --no-check-certificate https://github.com/fibo/.software/archive/master.zip
+  $ unzip master
+  $ mv .software-master .software
+  $ rm master
+  ```
 
-### Set your environment
+  ### Set your environment
 
-The following command will add `source ~/.software/etc/profile` to your *.bash_profile* **only once** and load *.software* features in your current session.
+  The following command will add `source ~/.software/etc/profile` to your *.bash_profile* **only once** and load *.software* features in your current session.
 
-```bash
-$ [ -f ~/.bash_profile ] && grep 'source ~/.software/etc/profile' ~/.bash_profile || echo 'source ~/.software/etc/profile' >> ~/.bash_profile && source ~/.software/etc/profile
-```
+  ```bash
+  $ [ -f ~/.bash_profile ] && grep 'source ~/.software/etc/profile' ~/.bash_profile || echo 'source ~/.software/etc/profile' >> ~/.bash_profile && source ~/.software/etc/profile
+  ```
 
-Otherwise you can add manually these lines to your *.bash_profile*.
-Note that if you are using *.software* from a graphical environment rather than a remote server login shell, you should edit *.bashrc* file instead.
+  Otherwise you can add manually these lines to your *.bash_profile*.
+  Note that if you are using *.software* from a graphical environment rather than a remote server login shell, you should edit *.bashrc* file instead.
 
-```bash
-###############################################################################
-### .software config start
+  ```bash
+  ###############################################################################
+  ### .software config start
 
-# Set .software target dir, defaults to "~/.software".
-# export DOTSOFTWARE_ROOT_DIR=/path/to/your/software/installation/dir
+  # Set .software target dir, defaults to "~/.software".
+  # export DOTSOFTWARE_ROOT_DIR=/path/to/your/software/installation/dir
 
-# Init .software
-source ~/.software/etc/profile
+  # Init .software
+  source ~/.software/etc/profile
 
-### .software config end
-###############################################################################
-```
+  ### .software config end
+  ###############################################################################
+  ```
 
-#### DOTSOFTWARE_ROOT_DIR
+  #### DOTSOFTWARE_ROOT_DIR
 
-*.software* uses enviroment variable `DOTSOFTWARE_ROOT_DIR` to know the dir where all your software will be installed.
+  *.software* uses enviroment variable `DOTSOFTWARE_ROOT_DIR` to know the dir where all your software will be installed.
 
-It defaults to *~/.software*.
+  It defaults to *~/.software*.
 
-You maybe want to edit it when
+  You maybe want to edit it when
 
-* you have not enough space in your home directory.
-* you want to install in a directory common to many users like */usr/local* or */opt*.
+  * you have not enough space in your home directory.
+  * you want to install in a directory common to many users like */usr/local* or */opt*.
 
-Note that *.software* by default do not download sources if they are already in folder *$DOTSOFTWARE_ROOT_DIR/src*.
-This information can be useful when you need to install software without an Internet connection.
+  Note that *.software* by default do not download sources if they are already in folder *$DOTSOFTWARE_ROOT_DIR/src*.
+  This information can be useful when you need to install software without an Internet connection.
 
-Instead of setting a `DOTSOFTWARE_ROOT_DIR` variable, another choice is to create a symbolic link from your */dotsoftware/root/dir* to *~/.software/* dir.
-For example on my [Codio box][1], since default working folder is *~./workspace* I launched
+  Instead of setting a `DOTSOFTWARE_ROOT_DIR` variable, another choice is to create a symbolic link from your */dotsoftware/root/dir* to *~/.software/* dir.
+  For example on my [Codio box][1], since default working folder is *~./workspace* I launched
 
-```bash
-$ ln -s ~/workspace/ ~/.software
-```
+  ```bash
+  $ ln -s ~/workspace/ ~/.software
+  ```
 
-## Software list
+  ## Software list
 
-### [BitchX](http://bitchx.sourceforge.net/)
+  ### [BitchX](http://bitchx.sourceforge.net/)
 
-> version 1.2.1
+  > version 1.2.1
 
-Build depends on:
-* [gcc](#gcc)
-* [Make](#make)
+  Build depends on:
+  * [gcc](#gcc)
+  * [Make](#make)
 
-### [ctags](http://ctags.sourceforge.net/)
+  ### [ctags](http://ctags.sourceforge.net/)
 
-> version 5.8
+  > version 5.8
 
-Build depends on:
-* [gcc](#gcc)
-* [Make](#make)
+  Build depends on:
+  * [gcc](#gcc)
+  * [Make](#make)
 
-### [cURL](http://curl.haxx.se/)
+  ### [cURL](http://curl.haxx.se/)
 
-> version 7.41.0
+  > version 7.41.0
 
-Build depends on:
-* [gcc](#gcc)
-* [Make](#make)
+  Build depends on:
+  * [gcc](#gcc)
+  * [Make](#make)
 
-### [Dos2Unix](http://dos2unix.sourceforge.net/)
+  ### [Dos2Unix](http://dos2unix.sourceforge.net/)
 
-> version 7.1
+  > version 7.1
 
-Build depends on:
-* [gcc](#gcc)
-* [Make](#make)
+  Build depends on:
+  * [gcc](#gcc)
+  * [Make](#make)
 
-### [Expat](http://expat.sourceforge.net/)
+  ### [Expat](http://expat.sourceforge.net/)
 
-> version 2.1.0
+  > version 2.1.0
 
-Build depends on:
-* [gcc](#gcc)
-* [Make](#make)
-* [Perl](#perl)
-* [Python](#python)
+  Build depends on:
+  * [gcc](#gcc)
+  * [Make](#make)
+  * [Perl](#perl)
+  * [Python](#python)
 
-### [Expect](http://expect.sourceforge.net/)
+  ### [Expect](http://expect.sourceforge.net/)
 
-> version 5.45
+  > version 5.45
 
-Build depends on:
-* [gcc](#gcc)
-* [Make](#make)
-* [Tcl](#tcl)
+  Build depends on:
+  * [gcc](#gcc)
+  * [Make](#make)
+  * [Tcl](#tcl)
 
-### [Findutils](http://www.gnu.org/software/findutils/)
+  ### [Findutils](http://www.gnu.org/software/findutils/)
 
-> version 4.4.2
+  > version 4.4.2
 
-It is a *.software* dependency.
+  It is a *.software* dependency.
 
-Install it with a package manager:
+  Install it with a package manager:
 
-* `# apt-get install findutils`
+  * `# apt-get install findutils`
 
-Build depends on:
-* [gcc](#gcc)
-* [Make](#make)
+  Build depends on:
+  * [gcc](#gcc)
+  * [Make](#make)
 
-### g++
+  ### g++
 
-Build not supported.
+  Build not supported.
 
-Install it with a package manager:
+  Install it with a package manager:
 
-* `# apt-get install c++`
+  * `# apt-get install c++`
 
-### gcc
+  ### gcc
 
-Build not supported.
+  Build not supported.
 
-Install it with a package manager:
+  Install it with a package manager:
 
-* `# apt-get install gcc`
+  * `# apt-get install gcc`
 
-### [Git](https://git-scm.com/)
+  ### [Git](https://git-scm.com/)
 
-> version 2.3.5
+  > version 2.3.5
 
-Build depends on:
-* [gcc](#gcc)
-* [Make](#make)
-* [Perl](#perl)
-* [Python](#python)
+  Build depends on:
+  * [gcc](#gcc)
+  * [Make](#make)
+  * [Perl](#perl)
+  * [Python](#python)
 
-### [git-extras](https://github.com/tj/git-extras)
+  ### [git-extras](https://github.com/tj/git-extras)
 
-> version 2.2.0
+  > version 2.2.0
 
-Build depends on:
-* [Make](#make)
+  Build depends on:
+  * [Make](#make)
 
-### [Golang](https://golang.org/)
+  ### [Golang](https://golang.org/)
 
-> version 1.4.2
+  > version 1.4.2
 
-Build depends on:
-* [gcc](#gcc)
-* [Make](#make)
+  Build depends on:
+  * [gcc](#gcc)
+  * [Make](#make)
 
-### [Graphviz](http://www.graphviz.org/)
+  ### [Graphviz](http://www.graphviz.org/)
 
-> version 2.38.0
+  > version 2.38.0
 
-Build depends on:
-* [gcc](#gcc)
-* [Make](#make)
+  Build depends on:
+  * [gcc](#gcc)
+  * [Make](#make)
 
-### [Grep](http://www.gnu.org/software/grep/)
+  ### [Grep](http://www.gnu.org/software/grep/)
 
-> version 2.21
+  > version 2.21
 
-It is a *.software* dependency.
+  It is a *.software* dependency.
 
-Install it with a package manager:
+  Install it with a package manager:
 
-* `# apt-get install grep`
+  * `# apt-get install grep`
 
-Build depends on:
-* [gcc](#gcc)
-* [Make](#make)
+  Build depends on:
+  * [gcc](#gcc)
+  * [Make](#make)
 
-### [Gzip](http://www.gnu.org/software/gzip/)
+  ### [Gzip](http://www.gnu.org/software/gzip/)
 
-> version 1.6
+  > version 1.6
 
-Install it with a package manager:
+  Install it with a package manager:
 
-* `# apt-get install gzip`
+  * `# apt-get install gzip`
 
-Build depends on:
-* [gcc](#gcc)
-* [Make](#make)
+  Build depends on:
+  * [gcc](#gcc)
+  * [Make](#make)
 
-### [Lua](http://www.lua.org/)
+  ### [Lua](http://www.lua.org/)
 
-> version 5.3.0
+  > version 5.3.0
 
-Build depends on:
-* [gcc](#gcc)
-* [Make](#make)
-* [Readline](#readline)
+  Build depends on:
+  * [gcc](#gcc)
+  * [Make](#make)
+  * [Readline](#readline)
 
-### [libxml2](http://www.xmlsoft.org/)
+  ### [libxml2](http://www.xmlsoft.org/)
 
-> version 2.9.0
+  > version 2.9.0
 
-Build depends on:
-* [gcc](#gcc)
-* [Make](#make)
+  Build depends on:
+  * [gcc](#gcc)
+  * [Make](#make)
 
-### [Make](http://www.gnu.org/software/make/)
+  ### [Make](http://www.gnu.org/software/make/)
 
-> version 3.82
+  > version 3.82
 
-Install it with a package manager:
+  Install it with a package manager:
 
-* `# apt-get install make`
+  * `# apt-get install make`
 
-Build depends on:
-* [gcc](#gcc)
-* [Make](#make)
+  Build depends on:
+  * [gcc](#gcc)
+  * [Make](#make)
 
-### [Netcat](http://netcat.sourceforge.net/)
+  ### [Netcat](http://netcat.sourceforge.net/)
 
-> version 0.7.1
+  > version 0.7.1
 
-Build depends on:
-* [gcc](#gcc)
-* [Make](#make)
+  Build depends on:
+  * [gcc](#gcc)
+  * [Make](#make)
 
-### [Node](https://nodejs.org/)
+  ### [Node](https://nodejs.org/)
 
-> version 0.12.3
+  > version 0.12.3
 
-Build depends on:
-* [gcc](#gcc)
-* [Make](#make)
-* [Python](#python)
+  Build depends on:
+  * [gcc](#gcc)
+  * [Make](#make)
+  * [Python](#python)
 
-### [OpenSSL](https://www.openssl.org/)
+  ### [OpenSSL](https://www.openssl.org/)
 
-Build not supported.
+  Build not supported.
 
-Install it with a package manager:
+  Install it with a package manager:
 
-* `# apt-get install openssl libssl libssl-dev`
+  * `# apt-get install openssl libssl libssl-dev`
 
-### [Readline](http://www.gnu.org/software/readline/)
+  ### [Readline](http://www.gnu.org/software/readline/)
 
-Build not supported.
+  Build not supported.
 
-Install it with a package manager:
+  Install it with a package manager:
 
-* `# apt-get install libreadline-devel`
-* `# yum install readline-devel`
+  * `# apt-get install libreadline-devel`
+  * `# yum install readline-devel`
 
-### [patch](http://www.gnu.org/software/patch/)
+  ### [patch](http://www.gnu.org/software/patch/)
 
-> version 2.7
+  > version 2.7
 
-Build depends on:
-* [gcc](#gcc)
-* [Make](#make)
+  Build depends on:
+  * [gcc](#gcc)
+  * [Make](#make)
 
-### [Perl](http://www.perl.org/)
+  ### [Perl](http://www.perl.org/)
 
-> version 5.20.2
+  > version 5.20.2
+
+  Build depends on:
+  * [gcc](#gcc)
+  * [Make](#make)
+
+  ### [pkg-config](http://www.freedesktop.org/wiki/Software/pkg-config/)
+
+  > version 0.18
 
 Build depends on:
 * [gcc](#gcc)
