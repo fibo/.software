@@ -1,0 +1,3 @@
+
+SOURCES_URI=http://sourceforge.net/projects/zsh/files/zsh/${VERSION}/zsh-${VERSION}.tar.gz
+

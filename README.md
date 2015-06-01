@@ -447,6 +447,14 @@ Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
 
+### [Zsh](http://www.zsh.org/)
+
+> version 5.0.7
+
+Build depends on:
+* [gcc](#gcc)
+* [Make](#make)
+
 
 ## Folder structure
 
