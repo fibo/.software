@@ -320,6 +320,14 @@ Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
 
+### [Ncurses](http://www.gnu.org/software/ncurses/)
+
+> version 5.9
+
+Build depends on:
+* [gcc](#gcc)
+* [Make](#make)
+
 ### [Netcat](http://netcat.sourceforge.net/)
 
 > version 0.7.1
@@ -482,6 +490,7 @@ Build depends on:
 Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
+* [Ncurses](#ncurses)
 
 ## Folder structure
 
