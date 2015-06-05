@@ -19,5 +19,6 @@ build/
 # Do not ignore .software files.
 !etc/deps.gv
 !etc/installrc.d/
+!etc/git-extras/profile
 !etc/profile
 
