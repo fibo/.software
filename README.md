@@ -372,7 +372,7 @@ Build depends on:
 
 ### [Perl](http://www.perl.org/)
 
-> version 5.20.2
+> version 5.22
 
 Build depends on:
 * [gcc](#gcc)
