@@ -65,6 +65,8 @@ Please note that *.software* supports only Linux, but could work on many other U
 In order to run, *.software* requires bash, [Tar](#tar), [Gzip](#gzip), [Grep](#grep), [Findutils](#findutils) and [Wget](#wget).
 Other requirements are those needed by software builds: [Make](#make), [gcc](#gcc), etc.
 
+I am working on zsh compatibility, feedbacks are welcome.
+
 ### Get it
 
 Just go to your home directory and clone this repository.
@@ -359,7 +361,7 @@ Build not supported.
 
 Install it with a package manager:
 
-* `# apt-get install libreadline-devel`
+* `# apt-get install libreadline-dev`
 * `# yum install readline-devel`
 
 ### [patch](http://www.gnu.org/software/patch/)
@@ -412,7 +414,7 @@ Build depends on:
 
 ### [Ruby](https://www.ruby-lang.org/)
 
-> version 2.1.1
+> version 2.1.6
 
 Build depends on:
 * [gcc](#gcc)
