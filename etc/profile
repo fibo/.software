@@ -170,7 +170,9 @@ _dotsoftware_install_completion() {
 	fi
 }
 
-complete -F _dotsoftware_install_completion .software_install
+if [ "/bin/bash" = $SHELL ]; then
+	complete -F _dotsoftware_install_completion .software_install
+fi
 
 # Do not unset _dotsoftware_install_completion
 
