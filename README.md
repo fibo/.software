@@ -1,5 +1,5 @@
-.software
-=========
+dot software
+============
 
 > build & install software locally with **dot**software
 
