@@ -340,7 +340,7 @@ Build depends on:
 
 ### [Node](https://nodejs.org/)
 
-> version 0.12.3
+> version 4.0.0
 
 Build depends on:
 * [gcc](#gcc)
