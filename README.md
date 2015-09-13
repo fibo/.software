@@ -343,7 +343,7 @@ Build depends on:
 > version 4.0.0
 
 Build depends on:
-* [gcc](#gcc)
+* [g++](#g++)
 * [Make](#make)
 * [Python](#python)
 
