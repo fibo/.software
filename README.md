@@ -139,6 +139,7 @@ $ ln -s ~/workspace/ ~/.software
 > version 1.2.1
 
 Build depends on:
+
 * [gcc](#gcc)
 * [Make](#make)
 
@@ -147,6 +148,7 @@ Build depends on:
 > version 5.8
 
 Build depends on:
+
 * [gcc](#gcc)
 * [Make](#make)
 
@@ -155,6 +157,7 @@ Build depends on:
 > version 7.41.0
 
 Build depends on:
+
 * [gcc](#gcc)
 * [Make](#make)
 
@@ -163,6 +166,7 @@ Build depends on:
 > version 7.1
 
 Build depends on:
+
 * [gcc](#gcc)
 * [Make](#make)
 
@@ -171,6 +175,7 @@ Build depends on:
 > version 2.1.0
 
 Build depends on:
+
 * [gcc](#gcc)
 * [Make](#make)
 * [Perl](#perl)
@@ -181,6 +186,7 @@ Build depends on:
 > version 5.45
 
 Build depends on:
+
 * [gcc](#gcc)
 * [Make](#make)
 * [Tcl](#tcl)
@@ -196,6 +202,7 @@ Install it with a package manager:
 * `# apt-get install findutils`
 
 Build depends on:
+
 * [gcc](#gcc)
 * [Make](#make)
 
@@ -204,6 +211,7 @@ Build depends on:
 > version 2.11.93
 
 Build depends on:
+
 * [gcc](#gcc)
 * [Make](#make)
 * [Expat](#expat)
@@ -215,12 +223,14 @@ Build depends on:
 > version 2.5.5
 
 Build depends on:
+
 * [gcc](#gcc)
 * [Make](#make)
 
 ### g++
 
 Build not supported.
+
 
 Install it with a package manager:
 
@@ -229,6 +239,7 @@ Install it with a package manager:
 ### gcc
 
 Build not supported.
+
 
 Install it with a package manager:
 
@@ -239,6 +250,7 @@ Install it with a package manager:
 > version 2.3.5
 
 Build depends on:
+
 * [gcc](#gcc)
 * [Make](#make)
 * [Perl](#perl)
@@ -249,6 +261,7 @@ Build depends on:
 > version 2.2.0
 
 Build depends on:
+
 * [Make](#make)
 
 ### [Golang](https://golang.org/)
@@ -256,6 +269,7 @@ Build depends on:
 > version 1.4.2
 
 Build depends on:
+
 * [gcc](#gcc)
 * [Make](#make)
 
@@ -264,6 +278,7 @@ Build depends on:
 > version 2.38.0
 
 Build depends on:
+
 * [gcc](#gcc)
 * [Make](#make)
 
@@ -278,6 +293,7 @@ Install it with a package manager:
 * `# apt-get install grep`
 
 Build depends on:
+
 * [gcc](#gcc)
 * [Make](#make)
 
@@ -290,6 +306,7 @@ Install it with a package manager:
 * `# apt-get install gzip`
 
 Build depends on:
+
 * [gcc](#gcc)
 * [Make](#make)
 
@@ -298,6 +315,7 @@ Build depends on:
 > version 5.3.0
 
 Build depends on:
+
 * [gcc](#gcc)
 * [Make](#make)
 * [Readline](#readline)
@@ -307,6 +325,7 @@ Build depends on:
 > version 2.9.0
 
 Build depends on:
+
 * [gcc](#gcc)
 * [Make](#make)
 
@@ -319,6 +338,7 @@ Install it with a package manager:
 * `# apt-get install make`
 
 Build depends on:
+
 * [gcc](#gcc)
 * [Make](#make)
 
@@ -327,6 +347,7 @@ Build depends on:
 > version 5.9
 
 Build depends on:
+
 * [gcc](#gcc)
 * [Make](#make)
 
@@ -335,14 +356,16 @@ Build depends on:
 > version 0.7.1
 
 Build depends on:
+
 * [gcc](#gcc)
 * [Make](#make)
 
 ### [Node](https://nodejs.org/)
 
-> version 4.0.0
+> version 4.1.1
 
 Build depends on:
+
 * [g++](#g++)
 * [Make](#make)
 * [Python](#python)
@@ -369,6 +392,7 @@ Install it with a package manager:
 > version 2.7
 
 Build depends on:
+
 * [gcc](#gcc)
 * [Make](#make)
 
@@ -377,6 +401,7 @@ Build depends on:
 > version 5.22.0
 
 Build depends on:
+
 * [gcc](#gcc)
 * [Make](#make)
 
@@ -385,6 +410,7 @@ Build depends on:
 > version 0.18
 
 Build depends on:
+
 * [gcc](#gcc)
 * [Make](#make)
 
@@ -393,6 +419,7 @@ Build depends on:
 > version 2.7.9
 
 Build depends on:
+
 * [gcc](#gcc)
 * [Make](#make)
 
@@ -401,6 +428,7 @@ Build depends on:
 > version 3.0.1
 
 Build depends on:
+
 * [gcc](#gcc)
 * [Make](#make)
 
@@ -409,6 +437,7 @@ Build depends on:
 > version 3.1.1
 
 Build depends on:
+
 * [gcc](#gcc)
 * [Make](#make)
 
@@ -417,6 +446,7 @@ Build depends on:
 > version 2.1.6
 
 Build depends on:
+
 * [gcc](#gcc)
 * [Make](#make)
 * [OpenSSL](#openssl)
@@ -430,6 +460,7 @@ Here version may be not the latest cause it is up to date with [GitHub Pages Dep
 > version 4.2.2
 
 Build depends on:
+
 * [gcc](#gcc)
 * [Make](#make)
 
@@ -444,6 +475,7 @@ Install it with a package manager:
 * `# apt-get install tar`
 
 Build depends on:
+
 * [gcc](#gcc)
 * [Make](#make)
 
@@ -452,6 +484,7 @@ Build depends on:
 > version 8.6.4
 
 Build depends on:
+
 * [gcc](#gcc)
 * [Make](#make)
 
@@ -466,6 +499,7 @@ Install it with a package manager:
 * `# apt-get install wget`
 
 Build depends on:
+
 * [gcc](#gcc)
 * [Make](#make)
 
@@ -474,6 +508,7 @@ Build depends on:
 > version 5.0.5
 
 Build depends on:
+
 * [gcc](#gcc)
 * [Make](#make)
 
@@ -482,6 +517,7 @@ Build depends on:
 > version 1.2.8
 
 Build depends on:
+
 * [gcc](#gcc)
 * [Make](#make)
 
@@ -490,6 +526,7 @@ Build depends on:
 > version 5.0.7
 
 Build depends on:
+
 * [gcc](#gcc)
 * [Make](#make)
 * [Ncurses](#ncurses)
