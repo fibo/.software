@@ -61,7 +61,7 @@ Take a look to [Software list](#software-list), which includes for example [Perl
 
 ### Requirements
 
-Please note that *.software* supports only Linux, but could work on many other Unix-like systems, like [BSD](http://en.wikipedia.org/wiki/Berkeley_Software_Distribution) and [Darwin](http://en.wikipedia.org/wiki/Darwin_%28operating_system%29).
+Please note that *.software* supports Linux and OS X, but could work on other Unix-like systems, like [BSD](http://en.wikipedia.org/wiki/Berkeley_Software_Distribution).
 In order to run, *.software* requires bash, [Tar](#tar), [Gzip](#gzip), [Grep](#grep), [Findutils](#findutils) and [Wget](#wget).
 Other requirements are those needed by software builds: [Make](#make), [gcc](#gcc), etc.
 
@@ -154,7 +154,7 @@ Build depends on:
 
 ### [cURL](http://curl.haxx.se/)
 
-> version 7.41.0
+> version 7.44.0
 
 Build depends on:
 
@@ -247,7 +247,7 @@ Install it with a package manager:
 
 ### [Git](https://git-scm.com/)
 
-> version 2.3.5
+> version 2.6.0
 
 Build depends on:
 
@@ -266,7 +266,7 @@ Build depends on:
 
 ### [Golang](https://golang.org/)
 
-> version 1.4.2
+> version 1.5.1
 
 Build depends on:
 
@@ -425,7 +425,7 @@ Build depends on:
 
 ### [Redis](http://redis.io/)
 
-> version 3.0.1
+> version 3.0.4
 
 Build depends on:
 
