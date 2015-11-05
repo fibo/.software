@@ -98,7 +98,7 @@ Otherwise you can add manually these lines to your *.bash_profile*.
 Note that if you are using *.software* from a graphical environment rather than a remote server login shell, you should edit *.bashrc* file instead.
 
 ```bash
-###############################################################################
+##########################
 ### .software config start
 
 # Set .software target dir, defaults to "~/.software".
@@ -108,7 +108,7 @@ Note that if you are using *.software* from a graphical environment rather than 
 source ~/.software/etc/profile
 
 ### .software config end
-###############################################################################
+########################
 ```
 
 #### DOTSOFTWARE_ROOT_DIR
@@ -386,6 +386,16 @@ Install it with a package manager:
 
 * `# apt-get install libreadline-dev`
 * `# yum install readline-devel`
+
+### [Squid](http://www.squid-cache.org/)
+
+> version 3.5.11
+
+Build depends on:
+
+* [g++](#g++)
+* [gcc](#gcc)
+* [Make](#make)
 
 ### [patch](http://www.gnu.org/software/patch/)
 

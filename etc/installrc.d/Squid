@@ -1,0 +1,5 @@
+MAJOR=$(echo $VERSION | cut -d . -f1)
+MINOR=$(echo $VERSION | cut -d . -f1,2)
+
+SOURCES_URI=http://www.squid-cache.org/Versions/v$MAJOR/$MINOR/squid-$VERSION.tar.gz
+
