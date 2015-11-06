@@ -408,7 +408,7 @@ Build depends on:
 
 ### [Perl](http://www.perl.org/)
 
-> version 5.22.0
+> version 5.20.3
 
 Build depends on:
 
