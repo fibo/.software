@@ -266,7 +266,7 @@ Build depends on:
 
 ### [Golang](https://golang.org/)
 
-> version 1.5.1
+> version 1.4.3
 
 Build depends on:
 
