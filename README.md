@@ -362,7 +362,9 @@ Build depends on:
 
 ### [Node](https://nodejs.org/)
 
-> version 4.1.1
+> version 4.2.2
+
+Node version above is latest **LTS / Stable**.
 
 Build depends on:
 
