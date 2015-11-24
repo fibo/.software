@@ -448,6 +448,8 @@ Build depends on:
 
 * [gcc](#gcc)
 * [Make](#make)
+* [Readline](#readline)
+* [zlib](#zlib)
 
 To build a [Amazon Redshift](https://aws.amazon.com/redshift/) compatible version launch
 
