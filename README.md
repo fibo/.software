@@ -440,6 +440,21 @@ Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
 
+### [PostgreSQL](http://www.postgresql.org/)
+
+> version 9.4.5
+
+Build depends on:
+
+* [gcc](#gcc)
+* [Make](#make)
+
+To build a [Amazon Redshift](https://aws.amazon.com/redshift/) compatible version launch
+
+```
+.software_install PostgreSQL 8.0.2
+```
+
 ### [Redis](http://redis.io/)
 
 > version 3.0.4
