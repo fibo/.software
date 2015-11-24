@@ -46,7 +46,7 @@ But, sometimes you are in one of the following scenarios
 
 *.software* has only one feature: installing software locally!
 
-It is implemented by a bash function named `.software_install` that takes only one parameter: what you want to install.
+It is implemented by a bash function named `.software_install` that takes the software want to install as argument.
 
 For example
 
@@ -54,8 +54,13 @@ For example
 $ .software_install Foo
 ```
 
+Optionally, a custom version number can be passed as a second argument
+
+```bash
+$ .software_install Foo 2.3.4
+```
 Typing *.software_install* in your bash prompt, and hitting <kbd>TAB</kbd> will autocomplete with available software.
-Take a look to [Software list](#software-list), which includes for example [Perl](#perl), [Node](#node), [Golang](#golang), [Ruby](#ruby).
+Take a look to [Software list](#software-list), which includes [Perl](#perl), [Node](#node), [Golang](#golang), [Ruby](#ruby) among others.
 
 ## Installation
 

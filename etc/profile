@@ -77,15 +77,21 @@ find ~/.software/etc/ -mindepth 2 -name profile | while read prof; do source $pr
 		return 1
 	fi
 
-	# Get version from documentation.
+	# Get version from second parameter or from documentation.
+	#
 	# Every software must be documented in README.md as
 	#
 	# ### [Foo](http://url-of-foo-homepage.xxx)
 	#
 	# > version 1.2.3
-	#
-	VERSION=$(grep -A 2 "### \[$SOFTWARE_NAME\]" README.md | tail -1 | cut -d ' ' -f3)
-	if [ -z $VERSION ]; then
+
+	if [ -z "$2" ]; then
+		VERSION=$(grep -A 2 "### \[$SOFTWARE_NAME\]" README.md | tail -1 | cut -d ' ' -f3)
+	else
+		VERSION=$2
+	fi
+
+	if [ -z "$VERSION" ]; then
 		echo $SOFTWARE_NAME VERSION not defined
 		popd 1> /dev/null
 		return 1
