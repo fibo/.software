@@ -2,7 +2,11 @@
 SOURCES_URI=https://github.com/tj/git-extras/archive/${VERSION}.tar.gz
 
 function _build() {
+	source ~/.software/etc/profile.d/git-extras.sh
+	chmod +x ~/.software/etc/profile.d/git-extras.sh
+
 	cd $CURRENT_VERSION_DIR
 	DESTDIR=$DOTSOFTWARE_ROOT_DIR PREFIX=$DOTSOFTWARE_ROOT_DIR make install
+
 }
 

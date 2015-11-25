@@ -451,6 +451,19 @@ Build depends on:
 * [Readline](#readline)
 * [zlib](#zlib)
 
+Variable `PGDATA` defines the directory where PostgreSQL stores data.
+It defaults to `$DOTSOFTWARE_ROOT_DIR/opt/postgresql/data`.
+
+After installation create a database launching
+
+```
+mkdir -p $PGDATA
+initdb
+postmaster > logfile 2>&1 &
+createdb mydb
+psql mydb
+```
+
 To build a [Amazon Redshift](https://aws.amazon.com/redshift/) compatible version launch
 
 ```

@@ -1,3 +1,13 @@
 
 SOURCES_URI=https://ftp.postgresql.org/pub/source/v${VERSION}/postgresql-${VERSION}.tar.gz
 
+function _build() {
+	source ~/.software/etc/profile.d/postgresql.sh
+	chmod +x ~/.software/etc/profile.d/postgresql.sh
+
+	cd $CURRENT_VERSION_DIR
+	./configure --prefix=$DOTSOFTWARE_ROOT_DIR \
+		--without-docdir
+		&& make install
+}
+
