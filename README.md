@@ -459,10 +459,15 @@ After installation create a database launching
 ```
 mkdir -p $PGDATA
 initdb
-postmaster > logfile 2>&1 &
+pg_ctl -l /path/to/logfile start
 createdb mydb
-psql mydb
 ```
+
+Other actions are:
+
+* Stop database: `pg_ctl stop`
+* Start database: `pg_ctl -l /path/to/logfile start`
+* Connect to database: `psql mydb`
 
 To build a [Amazon Redshift](https://aws.amazon.com/redshift/) compatible version launch
 
