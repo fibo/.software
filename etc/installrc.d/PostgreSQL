@@ -6,8 +6,19 @@ function _build() {
 	chmod +x ~/.software/etc/profile.d/postgresql.sh
 
 	cd $CURRENT_VERSION_DIR
+
+	# Python is enabled cause it is also used on RedShift.
+	# Doc directory is disabled.
 	./configure --prefix=$DOTSOFTWARE_ROOT_DIR \
+		--without-python
 		--without-docdir
 		&& make install
+
+	# Initialize instance and create a database.
+	mkdir -p $PGDATA
+	start_postgresql
+	initdb
+	createdb
+	stop_postresql
 }
 

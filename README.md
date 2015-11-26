@@ -451,23 +451,19 @@ Build depends on:
 * [Readline](#readline)
 * [zlib](#zlib)
 
-Variable `PGDATA` defines the directory where PostgreSQL stores data.
-It defaults to `$DOTSOFTWARE_ROOT_DIR/opt/postgresql/data`.
+Variable `PGDATA` defines the directory where PostgreSQL stores data and configuration.
+It defaults to `$DOTSOFTWARE_ROOT_DIR/opt/pgsql/data`.
 
-After installation create a database launching
-
-```
-mkdir -p $PGDATA
-initdb
-pg_ctl start
-createdb mydb
-```
+On build, commands `initdb` and `createdb` are launched: this means that
+database instance is initialized and a database named as your unix user is created.
+Set variable `PGDATABASE` in your environment to customize database name.
 
 Common actions are:
 
-* **Stop** database: `pg_ctl stop`
-* **Start** database: `pg_ctl -l $PGDATA/postmaster.log start`
-* **Connect** to database: `psql mydb`
+* **Stop** database: `stop_postresql`
+* **Start** database: `start_postgresql`
+* **Connect** to database: `psql`
+* **Reload** configuration: `pg_ctl reload`
 
 Configuration files can be found in `$PGDATA` directory.
 For example, to enable connections to all users and databases from
