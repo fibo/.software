@@ -459,15 +459,37 @@ After installation create a database launching
 ```
 mkdir -p $PGDATA
 initdb
-pg_ctl -l /path/to/logfile start
+pg_ctl start
 createdb mydb
 ```
 
-Other actions are:
+Common actions are:
 
-* Stop database: `pg_ctl stop`
-* Start database: `pg_ctl -l /path/to/logfile start`
-* Connect to database: `psql mydb`
+* **Stop** database: `pg_ctl stop`
+* **Start** database: `pg_ctl -l $PGDATA/postmaster.log start`
+* **Connect** to database: `psql mydb`
+
+Configuration files can be found in `$PGDATA` directory.
+For example, to enable connections to all users and databases from
+IP 10.20.30.40, to a PostgreSQL instance running on an host with an IP 1.2.3.4,
+
+edit $PGDATA/postgresql.conf
+
+```
+listen_addresses = '1.2.3.4'
+```
+
+and $PGDATA/pg_hba.conf
+
+```
+host    all    all    10.20.30.40/32    trust
+```
+
+then launch
+
+```
+pg_ctl reload
+```
 
 To build a [Amazon Redshift](https://aws.amazon.com/redshift/) compatible version launch
 
