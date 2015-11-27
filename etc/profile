@@ -50,13 +50,13 @@ export PATH=$DOTSOFTWARE_ROOT_DIR/bin:$PATH
 #
 # On build the relative profile executable switch is turned on, so it is
 # possible to source only profiles of installed software.
-find ~/.software/etc/profile.d/ -executable -mindepth 1 \
+find ~/.software/etc/ -mindepth 1 -type f -executable \
 	| while read prof; do source $prof; done
 
 #-------------------------------------------------------------------------------
 
 .software_install() {
-	# Cleanup DOTSOFTWARE_TMP_DIR
+	# Cleanup DOTSOFTWARE_TMP_DIR.
 	find $DOTSOFTWARE_TMP_DIR -depth -follow -ctime +$DOTSOFTWARE_TMP_DIR_RETENTION -user $USER -exec rm -rf {} \;
 
 	# Change directory into ~/.software, just to popd when install
@@ -65,7 +65,7 @@ find ~/.software/etc/profile.d/ -executable -mindepth 1 \
 
 	SOFTWARE_NAME=$1
 
-	# Require parameter
+	# Require first parameter.
 	if [ -z "$SOFTWARE_NAME" ]; then
 		echo USAGE: .software_install Foo
 		popd 1> /dev/null
