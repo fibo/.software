@@ -239,7 +239,7 @@ Build not supported.
 
 Install it with a package manager:
 
-* `# apt-get install c++`
+* `# apt-get install g++`
 
 ### gcc
 
@@ -373,7 +373,7 @@ Node version above is latest **LTS / Stable**.
 
 Build depends on:
 
-* [g++](#g++)
+* [g++](#g)
 * [Make](#make)
 * [Python](#python)
 
@@ -400,7 +400,7 @@ Install it with a package manager:
 
 Build depends on:
 
-* [g++](#g++)
+* [g++](#g)
 * [gcc](#gcc)
 * [Make](#make)
 
