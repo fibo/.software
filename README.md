@@ -278,6 +278,10 @@ Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
 
+*Golang* needs environment variables
+* `GOROOT` which is set to `$DOTSOFTWARE_ROOT_DIR/opt/golang`
+* `GOPATH` which is set to `$DOTSOFTWARE_ROOT_DIR/opt/gopath`
+
 ### [Graphviz](http://www.graphviz.org/)
 
 > version 2.38.0
@@ -642,6 +646,10 @@ function _build() {
 
 Implements the *.software_install* function.
 
+### ~/.software/etc/profile.d/
+
+Contains profile files for every software, where needed.
+
 ### ~/.software/README.md
 
 This file, contains also software versions. Every software must have an homonym section in this file
@@ -655,7 +663,8 @@ where version number is in the second row, like this
 
 ## Packaging software
 
-*.software* installs software locally downloading and compiling sources. This process can be time and cpu consuming, so, if you have two or more similar machines is not that difficult to build only once, then package your result and installing it on other hosts.
+*.software* installs software locally downloading and compiling sources.
+This process can be time and cpu consuming, so, if you have two or more similar machines is not that difficult to build only once, then package your result and installing it on other hosts.
 The requirement are
 
 * The hosts has the same system software (OS, kernel, etc) and environment.

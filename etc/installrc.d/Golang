@@ -2,16 +2,8 @@
 SOURCES_URI=https://github.com/golang/go/archive/go${VERSION}.tar.gz
 
 function _build() {
-	# Create profile
-	mkdir -p ~/.software/etc/Golang
-
-	cat <<-"PROFILE" > ~/.software/etc/Golang/profile
-	export GOROOT=$DOTSOFTWARE_ROOT_DIR/opt/golang
-	export GOPATH=$DOTSOFTWARE_ROOT_DIR/opt/gopath
-	export PATH=$PATH:$GOROOT/bin
-	PROFILE
-
-	source ~/.software/etc/Golang/profile
+	source ~/.software/etc/profile.d/golang.sh
+	chmod +x ~/.software/etc/profile.d/golang.sh
 
 	if [ -d $GOROOT ]; then
 		rm -rf $GOROOT
