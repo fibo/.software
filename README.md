@@ -70,8 +70,6 @@ Please note that *.software* supports Linux and OS X, but could work on other Un
 In order to run, *.software* requires bash, [Tar](#tar), [Gzip](#gzip), [Grep](#grep), [Findutils](#findutils) and [Wget](#wget).
 Other requirements are those needed by software builds: [Make](#make), [gcc](#gcc), etc.
 
-I am working on zsh compatibility, feedbacks are welcome.
-
 ### Get it
 
 Just go to your home directory and clone this repository.
@@ -139,15 +137,6 @@ $ ln -s ~/workspace/ ~/.software
 
 ## Software list
 
-### [BitchX](http://bitchx.sourceforge.net/)
-
-> version 1.2.1
-
-Build depends on:
-
-* [gcc](#gcc)
-* [Make](#make)
-
 ### [ctags](http://ctags.sourceforge.net/)
 
 > version 5.8
@@ -211,40 +200,9 @@ Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
 
-### [fish-shell](http://fishshell.com/)
-
-> version 2.2.0
-
-Build depends on:
-
-* [gcc](#gcc)
-* [Make](#make)
-
-### [Fontconfig](http://www.freedesktop.org/wiki/Software/fontconfig/)
-
-> version 2.11.93
-
-Build depends on:
-
-* [gcc](#gcc)
-* [Make](#make)
-* [Expat](#expat)
-* [FreeType](#freetype)
-* [pkg-config](#pkg-config)
-
-### [FreeType](http://www.freetype.org/)
-
-> version 2.5.5
-
-Build depends on:
-
-* [gcc](#gcc)
-* [Make](#make)
-
 ### g++
 
 Build not supported.
-
 
 Install it with a package manager:
 
@@ -253,7 +211,6 @@ Install it with a package manager:
 ### gcc
 
 Build not supported.
-
 
 Install it with a package manager:
 
@@ -360,15 +317,6 @@ Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
 
-### [Ncurses](http://www.gnu.org/software/ncurses/)
-
-> version 5.9
-
-Build depends on:
-
-* [gcc](#gcc)
-* [Make](#make)
-
 ### [Netcat](http://netcat.sourceforge.net/)
 
 > version 0.7.1
@@ -429,15 +377,6 @@ Build depends on:
 ### [Perl](http://www.perl.org/)
 
 > version 5.20.3
-
-Build depends on:
-
-* [gcc](#gcc)
-* [Make](#make)
-
-### [pkg-config](http://www.freedesktop.org/wiki/Software/pkg-config/)
-
-> version 0.18
 
 Build depends on:
 
@@ -603,16 +542,6 @@ Build depends on:
 
 * [gcc](#gcc)
 * [Make](#make)
-
-### [Zsh](http://www.zsh.org/)
-
-> version 5.0.7
-
-Build depends on:
-
-* [gcc](#gcc)
-* [Make](#make)
-* [Ncurses](#ncurses)
 
 ## Folder structure
 
