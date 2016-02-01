@@ -245,6 +245,7 @@ Build depends on:
 * [Make](#make)
 
 *Golang* needs environment variables
+
 * `GOROOT` which is set to `$DOTSOFTWARE_ROOT_DIR/opt/golang`
 * `GOPATH` which is set to `$DOTSOFTWARE_ROOT_DIR/opt/gopath`
 
@@ -326,6 +327,18 @@ Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
 
+### [nginx](http://nginx.org/)
+
+> version 1.9.10
+
+Build depends on:
+
+* [gcc](#gcc)
+* [Make](#make)
+* [OpenSSL](#openssl)
+* [PCRE](#pcre)
+* [zlib](#zlib)
+
 ### [Node](https://nodejs.org/)
 
 > version 4.2.2
@@ -344,7 +357,8 @@ Build not supported.
 
 Install it with a package manager:
 
-* `# apt-get install openssl libssl libssl-dev`
+* `# apt-get install openssl libssl-dev`
+* `# yum install openssl-devel`
 
 ### [Readline](http://www.gnu.org/software/readline/)
 
@@ -368,6 +382,22 @@ Build depends on:
 ### [patch](http://www.gnu.org/software/patch/)
 
 > version 2.7
+
+Build depends on:
+
+* [gcc](#gcc)
+* [Make](#make)
+
+### [PCRE](http://www.pcre.org/)
+
+Build not supported.
+
+Install it with a package manager:
+
+* `# apt-get install libpcre3-dev`
+* `# yum install pcre-devel`
+
+> version 5.20.3
 
 Build depends on:
 
@@ -542,6 +572,10 @@ Build depends on:
 
 * [gcc](#gcc)
 * [Make](#make)
+
+Install it with a package manager:
+
+* `# yum install zlib-devel`
 
 ## Folder structure
 

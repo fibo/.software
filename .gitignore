@@ -1,5 +1,6 @@
 
 # In case $DOTSOFTWARE_ROOT_DIR is set as ~/.software, that is the default.
+sbin/
 bin/
 info/
 include/

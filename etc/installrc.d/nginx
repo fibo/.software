@@ -1,0 +1,16 @@
+
+SOURCES_URI=http://nginx.org/download/nginx-${VERSION}.tar.gz
+
+function _build() {
+	NGINX_PREFIX=$DOTSOFTWARE_ROOT_DIR/opt/nginx
+	mkdir -p $NGINX_PREFIX
+
+	cd $CURRENT_VERSION_DIR
+	./configure \
+		--prefix=$NGINX_PREFIX \
+		--pid-path=$NGINX_PREFIX/nginx.pid \
+		--lock-path=$NGINX_PREFIX/nginx.lock \
+		--sbin-path=$DOTSOFTWARE_ROOT_DIR/sbin \
+		--with-http_ssl_module \
+		&& make install
+}
