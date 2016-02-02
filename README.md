@@ -339,6 +339,11 @@ Build depends on:
 * [PCRE](#pcre)
 * [zlib](#zlib)
 
+Install it with a package manager:
+
+* `# apt-get install nginx`
+* `# yum install nginx`
+
 ### [Node](https://nodejs.org/)
 
 > version 4.2.2
