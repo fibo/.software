@@ -3,7 +3,12 @@ dot software
 
 > build & install software locally with **dot**software
 
-[Usage](#usage) | [Installation](#installation) | [Software list](#software-list)
+**Table Of Contents:**
+
+* [Quick start](#quick-start)
+* [Usage](#usage)
+* [Installation](#installation)
+* [Software list](#software-list)
 
 ## Quick start
 
