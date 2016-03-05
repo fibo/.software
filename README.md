@@ -29,8 +29,6 @@ Give it a try, launch
 $ .software_install Golang
 ```
 
-If you want to try it without installing, push this button to [![Show me a Demo at Codio](https://codio-public.s3.amazonaws.com/sharing/demo-in-ide.png)](https://codio.com/fibo/dotsoftware)
-
 ## Motivation
 
 > Why install software locally?
@@ -134,11 +132,6 @@ Note that *.software* by default do not download sources if they are already in 
 This information can be useful when you need to install software without an Internet connection.
 
 Instead of setting a `DOTSOFTWARE_ROOT_DIR` variable, another choice is to create a symbolic link from your */dotsoftware/root/dir* to *~/.software/* dir.
-For example on my [Codio box][1], since default working folder is *~./workspace* I launched
-
-```bash
-$ ln -s ~/workspace/ ~/.software
-```
 
 ## Software list
 
