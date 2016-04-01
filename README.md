@@ -257,7 +257,7 @@ Build depends on:
 
 ### [Golang](https://golang.org/)
 
-> version 1.4.3
+> version 1.6
 
 Build depends on:
 

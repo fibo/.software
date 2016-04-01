@@ -1,5 +1,33 @@
 
-SOURCES_URI=https://github.com/golang/go/archive/go${VERSION}.tar.gz
+# Get here the list of builds https://storage.googleapis.com/golang/
+
+# Code stolen from https://github.com/apex/apex/blob/master/install.sh
+#UNAME=$(uname)
+#
+#if [ "$UNAME" != "Linux" -a "$UNAME" != "Darwin" ]; then
+#	echo "Sorry, OS not supported: ${UNAME}".
+#	exit 1
+#fi
+#
+#if [ "$UNAME" = "Darwin" ]; then
+#	OSX_ARCH=$(uname -m)
+#	if [ "${OSX_ARCH}" = "x86_64" ]; then
+#		PLATFORM="darwin-amd64-osx"
+#	else
+#		echo "Sorry, architecture not supported: ${OSX_ARCH}.
+#		exit 1
+#	fi
+#elif [ "$UNAME" = "Linux" ]; then
+#	LINUX_ARCH=$(uname -m)
+#	if [ "${LINUX_ARCH}" = "x86_64" ]; then
+#		PLATFORM="linux-amd64"
+#	else
+#		echo "Sorry, architecture not supported: ${LINUX_ARCH}.
+#	exit 1
+#fi
+
+PLATFORM="linux-amd64"
+SOURCES_URI=https://storage.googleapis.com/golang/go${VERSION}.${PLATFORM}.tar.gz
 
 function _build() {
 	source ~/.software/etc/profile.d/golang.sh
@@ -11,8 +39,5 @@ function _build() {
 
 	mkdir -p $GOPATH
 	mv $CURRENT_VERSION_DIR $GOROOT
-
-	cd $GOROOT/src
-	./all.bash
 }
 
