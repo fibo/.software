@@ -492,6 +492,10 @@ Build depends on:
 * [Readline](#readline)
 * [zlib](#zlib)
 
+Install requirements with a package manager:
+
+* `# apt-get install make gcc libreadline-dev zlib1g-dev`
+
 Variable `PGDATA` defines the directory where PostgreSQL stores data and configuration.
 It defaults to `$DOTSOFTWARE_ROOT_DIR/opt/pgsql/data`.
 
@@ -658,6 +662,7 @@ Build depends on:
 Install it with a package manager:
 
 * `# yum install zlib-devel`
+* `# apt-get install zlib1g-dev`
 
 ## Folder structure
 
