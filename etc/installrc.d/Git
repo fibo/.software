@@ -4,11 +4,13 @@ SOURCES_URI=https://github.com/git/git/archive/v${VERSION}.tar.gz
 function _build() {
 	cd $CURRENT_VERSION_DIR
 
-	# Substitute prefix in Makefile.
-	sed -i -e 's/prefix = \$(HOME)/prefix = \$(DOTSOFTWARE_ROOT_DIR)/' Makefile
-
+	make configure
 	# Build with no gui, no docs.
-	make NO_TCLTK=1 && make install
+	export NO_TCLTK=1
+	./configure --prefix=$DOTSOFTWARE_ROOT \
+		--with-perl=/usr/bin/perl \
+		--with-python=/usr/bin/python
+	make install
 
 	# Install also subtree
 	cd contrib/subtree

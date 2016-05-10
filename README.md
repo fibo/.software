@@ -135,6 +135,27 @@ Instead of setting a `DOTSOFTWARE_ROOT_DIR` variable, another choice is to creat
 
 ## Software list
 
+<a name="autoconf"></a>
+
+### [Autoconf](http://www.gnu.org/software/autoconf/autoconf.html)
+
+Build not supported.
+
+Install it with a package manager:
+
+* `# apt-get install autoconf`
+
+<a name="ctags"></a>
+
+### [ctags](http://ctags.sourceforge.net/)
+
+> version 5.8
+
+Build depends on:
+
+* [gcc](#gcc)
+* [Make](#make)
+
 <a name="ctags"></a>
 
 ### [ctags](http://ctags.sourceforge.net/)
@@ -230,6 +251,16 @@ Install it with a package manager:
 
 * `# apt-get install gcc`
 
+<a name="gettext"></a>
+
+### [Gettext](https://www.gnu.org/software/gettext/)
+
+Build not supported.
+
+Install it with a package manager:
+
+* `# apt-get install gettext`
+
 <a name="git"></a>
 
 ### [Git](https://git-scm.com/)
@@ -240,8 +271,10 @@ Build depends on:
 
 * [gcc](#gcc)
 * [Make](#make)
+* [Autoconf](#autoconf)
 * [cURL](#curl)
 * [Expat](#expat)
+* [Gettext](#gettext)
 * [Perl](#perl)
 * [Python](#python)
 
