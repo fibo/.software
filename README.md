@@ -384,7 +384,7 @@ Install it with a package manager:
 
 ### [Node](https://nodejs.org/)
 
-> version 4.3.2
+> version 4.4.3
 
 Node version above is latest **LTS / Stable**.
 
