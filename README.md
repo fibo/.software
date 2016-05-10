@@ -234,7 +234,7 @@ Install it with a package manager:
 
 ### [Git](https://git-scm.com/)
 
-> version 2.6.0
+> version 2.8.2
 
 Build depends on:
 
@@ -553,7 +553,7 @@ Build depends on:
 
 ### [rsync](https://rsync.samba.org/)
 
-> version 3.1.1
+> version 3.1.2
 
 Build depends on:
 
