@@ -240,6 +240,8 @@ Build depends on:
 
 * [gcc](#gcc)
 * [Make](#make)
+* [cURL](#curl)
+* [Expat](#expat)
 * [Perl](#perl)
 * [Python](#python)
 
@@ -661,8 +663,8 @@ Build depends on:
 
 Install it with a package manager:
 
-* `# yum install zlib-devel`
 * `# apt-get install zlib1g-dev`
+* `# yum install zlib-devel`
 
 ## Folder structure
 
