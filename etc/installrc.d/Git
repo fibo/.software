@@ -7,7 +7,7 @@ function _build() {
 	make configure
 	# Build with no gui, no docs.
 	export NO_TCLTK=1
-	./configure --prefix=$DOTSOFTWARE_ROOT \
+	./configure --prefix=$DOTSOFTWARE_ROOT_DIR \
 		--with-perl=/usr/bin/perl \
 		--with-python=/usr/bin/python
 	make install
