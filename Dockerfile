@@ -8,24 +8,15 @@
 # docker push fibo/dotsoftware
 # ```
 #
-# Enter into the container as usual
-#
-# ```
-# docker run -t -i fibo/dotsoftware /bin/bash
-# ```
 ###
 FROM ubuntu
 MAINTAINER Gianluca Casati <casati_gianluca@yahoo.it>
-
-# Use bash instead of dash
-RUN rm /bin/sh; \
-    ln -s /bin/bash /bin/sh
 
 # Install base requirements
 RUN apt-get update -y && apt-get install -y \
     make gcc wget tar git gzip findutils
 
-# Install dotsoftware
+# Install dotsoftware in /usr/local
 RUN cd; \
     git clone https://github.com/fibo/.software.git; \
     echo 'export DOTSOFTWARE_ROOT_DIR=/usr/local' \
