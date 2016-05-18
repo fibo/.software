@@ -16,7 +16,7 @@ MAINTAINER Gianluca Casati <casati_gianluca@yahoo.it>
 RUN apt-get update -y && apt-get install -y \
     make gcc wget tar git gzip findutils
 
-# Install dotsoftware in /usr/local
+# Install dotsoftware pointing to /usr/local
 RUN cd; \
     git clone https://github.com/fibo/.software.git; \
     echo 'export DOTSOFTWARE_ROOT_DIR=/usr/local' \
