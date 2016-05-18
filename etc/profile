@@ -180,7 +180,7 @@ _dotsoftware_install_completion() {
 	fi
 }
 
-if [ "/bin/bash" = $SHELL ]; then
+if [ "bash" = $(basename $SHELL)  ]; then
 	complete -F _dotsoftware_install_completion .software_install
 fi
 
