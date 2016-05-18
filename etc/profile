@@ -1,7 +1,7 @@
 
 # Define and create .software folders.
 
-DOTSOFTWARE_ROOT_DIR=${DOTSOFTWARE_ROOT_DIR:-~/.software}
+DOTSOFTWARE_ROOT_DIR=${DOTSOFTWARE_ROOT_DIR:-$HOME/.software}
 mkdir -p $DOTSOFTWARE_ROOT_DIR
 export DOTSOFTWARE_ROOT_DIR
 
@@ -50,7 +50,7 @@ export PATH=$DOTSOFTWARE_ROOT_DIR/bin:$PATH
 #
 # On build the relative profile executable switch is turned on, so it is
 # possible to source only profiles of installed software.
-find ~/.software/etc/ -mindepth 1 -type f -executable \
+find $HOME/.software/etc/ -mindepth 1 -type f -executable \
 	| while read prof; do source $prof; done
 
 #-------------------------------------------------------------------------------
@@ -59,9 +59,9 @@ find ~/.software/etc/ -mindepth 1 -type f -executable \
 	# Cleanup DOTSOFTWARE_TMP_DIR.
 	find $DOTSOFTWARE_TMP_DIR -depth -follow -ctime +$DOTSOFTWARE_TMP_DIR_RETENTION -user $USER -exec rm -rf {} \;
 
-	# Change directory into ~/.software, just to popd when install
+	# Change directory into $HOME/.software, just to popd when install
         # finishes, in order to go back to starting directory.
-	pushd ~/.software 1> /dev/null
+	pushd $HOME/.software 1> /dev/null
 
 	SOFTWARE_NAME=$1
 
@@ -72,7 +72,7 @@ find ~/.software/etc/ -mindepth 1 -type f -executable \
 		return 1
 	fi
 
-	INSTALLRC=~/.software/etc/installrc.d/$SOFTWARE_NAME
+	INSTALLRC=$HOME/.software/etc/installrc.d/$SOFTWARE_NAME
 
 	# Check that SOFTWARE_NAME dir exists.
 	if [ ! -f $INSTALLRC ]; then
@@ -171,8 +171,8 @@ _dotsoftware_install_completion() {
 	COMPREPLY=()
 	cur="${COMP_WORDS[COMP_CWORD]}"
 	prev="${COMP_WORDS[COMP_CWORD-1]}"
-        # Every file in dir ~/.software/etc/installrc.d/ maps to an installable software.
-	opts=`find ~/.software/etc/installrc.d -maxdepth 1 -mindepth 1 | while read installrc; do echo $(basename $installrc); done`
+        # Every file in dir $HOME/.software/etc/installrc.d/ maps to an installable software.
+	opts=`find $HOME/.software/etc/installrc.d -maxdepth 1 -mindepth 1 | while read installrc; do echo $(basename $installrc); done`
 
 	if [[ ${cur} == * ]] ; then
 		COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
