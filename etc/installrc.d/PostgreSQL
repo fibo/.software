@@ -15,9 +15,8 @@ function _build() {
 		&& make install
 
 	# Initialize instance and create a database.
-	mkdir -p $PGDATA
-	start_postgresql
 	initdb
+	start_postgresql
 	createdb
 	stop_postresql
 }
