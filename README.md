@@ -85,11 +85,11 @@ $ git clone https://github.com/fibo/.software.git
 If you don't have git installed you can try the following commands
 
 ```bash
-$ cd
-$ wget --no-check-certificate https://github.com/fibo/.software/archive/master.zip
-$ unzip master
-$ mv .software-master .software
-$ rm master
+cd
+wget --no-check-certificate https://github.com/fibo/.software/archive/master.zip
+unzip master
+mv .software-master .software
+rm master
 ```
 
 ### Set your environment
@@ -171,12 +171,15 @@ Build depends on:
 
 ### [cURL](http://curl.haxx.se/)
 
-> version 7.44.0
+> version 7.50.3
+
+It is build with https support, i.e. `--with-ssl` configure flag.
 
 Build depends on:
 
 * [gcc](#gcc)
 * [Make](#make)
+* [OpenSSL](#openssl)
 
 <a name="dos2unix"></a>
 
@@ -419,7 +422,7 @@ Install it with a package manager:
 
 ### [Node](https://nodejs.org/)
 
-> version 4.4.3
+> version 4.6.0
 
 Node version above is latest **LTS / Stable**.
 
