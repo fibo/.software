@@ -1,3 +1,10 @@
 
 SOURCES_URI=http://curl.haxx.se/download/curl-${VERSION}.tar.gz
 
+function _build() {
+	cd $CURRENT_VERSION_DIR
+	./configure --prefix=$DOTSOFTWARE_ROOT_DIR \
+		--with-ssl \
+		&& make install
+}
+
