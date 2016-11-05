@@ -412,7 +412,7 @@ Install it with a package manager:
 
 ### [Node](https://nodejs.org/)
 
-> version 4.6.0
+> version 6.9.1
 
 Node version above is latest **LTS / Stable**.
 
@@ -592,7 +592,7 @@ Build depends on:
 
 ### [Ruby](https://www.ruby-lang.org/)
 
-> version 2.1.7
+> version 2.3.1
 
 Build depends on:
 
@@ -606,7 +606,7 @@ Here version may be not the latest cause it is (manually) up to date with [GitHu
 However you can install another version, for example with
 
 ```
-.software_install Ruby 2.3.0
+.software_install Ruby 2.1.7
 ```
 
 <a name="sed"></a>

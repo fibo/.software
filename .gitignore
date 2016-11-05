@@ -1,20 +1,9 @@
+# Ignore everything except the following files and folders.
+!README.md
+!Dockerfile
+!etc/deps.gv
+!etc/installrc.d
+!etc/profile
+!etc/profile.d
 
-# In case $DOTSOFTWARE_ROOT_DIR is set as ~/.software, that is the default.
-sbin/
-bin/
-doc/
-info/
-include/
-lib/
-lib64/
-libexec/
-man/
-opt/
-share/
-src/
-var/
-etc/bash_completion.d/
-
-# In case $DOTSOFTWARE_TMP_DIR is set as $DOTSOFTWARE_ROOT_DIR.
-build/
-
+*.*
