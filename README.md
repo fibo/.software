@@ -161,9 +161,9 @@ Build depends on:
 
 ### [cURL](http://curl.haxx.se/)
 
-> version 7.50.3
+> version 7.53.1
 
-It is build with https support, i.e. `--with-ssl` configure flag.
+In order to support `POST` via https, it is builded `--with-ssl` configure flag.
 
 Build depends on:
 
@@ -570,7 +570,7 @@ To build a [Amazon Redshift](https://aws.amazon.com/redshift/) compatible versio
 
 ### [Redis](http://redis.io/)
 
-> version 3.2.4
+> version 3.2.8
 
 Build depends on:
 
