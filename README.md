@@ -389,25 +389,6 @@ Build depends on:
 * [gcc](#gcc)
 * [Make](#make)
 
-<a name="nginx"></a>
-
-### [nginx](http://nginx.org/)
-
-> version 1.9.10
-
-Build depends on:
-
-* [gcc](#gcc)
-* [Make](#make)
-* [OpenSSL](#openssl)
-* [PCRE](#pcre)
-* [zlib](#zlib)
-
-Install it with a package manager:
-
-* `# apt-get install nginx`
-* `# yum install nginx`
-
 <a name="node"></a>
 
 ### [Node](https://nodejs.org/)
@@ -461,24 +442,6 @@ Build depends on:
 ### [patch](http://www.gnu.org/software/patch/)
 
 > version 2.7
-
-Build depends on:
-
-* [gcc](#gcc)
-* [Make](#make)
-
-<a name="pcre"></a>
-
-### [PCRE](http://www.pcre.org/)
-
-Build not supported.
-
-Install it with a package manager:
-
-* `# apt-get install libpcre3-dev`
-* `# yum install pcre-devel`
-
-> version 5.20.3
 
 Build depends on:
 
