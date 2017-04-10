@@ -10,8 +10,9 @@ function _build() {
 	# Python is enabled cause it is also used on RedShift.
 	# Doc directory is disabled.
 	./configure --prefix=$DOTSOFTWARE_ROOT_DIR \
-		--without-python
-		--without-docdir
+		--without-python \
+		--without-docdir \
+		--enable-odbc \
 		&& make install
 
 	# Initialize instance and create a database.
