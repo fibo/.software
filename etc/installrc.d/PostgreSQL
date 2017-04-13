@@ -12,13 +12,15 @@ function _build() {
 	./configure --prefix=$DOTSOFTWARE_ROOT_DIR \
 		--without-python \
 		--without-docdir \
-		--enable-odbc \
 		&& make install
 
+cat <<MESSAGE
 	# Initialize instance and create a database.
 	initdb
 	start_postgresql
 	createdb
 	stop_postresql
+MESSAGE
+
 }
 
