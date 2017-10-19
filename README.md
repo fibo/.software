@@ -287,11 +287,6 @@ Build depends on:
 
 > version 1.9.1
 
-Build depends on:
-
-* [gcc](#gcc)
-* [Make](#make)
-
 *Golang* needs environment variables
 
 * `GOROOT` which is set to `$DOTSOFTWARE_ROOT_DIR/opt/golang`.

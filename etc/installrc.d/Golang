@@ -14,7 +14,7 @@ if [ "$UNAME" = "Darwin" ]; then
 	if [ "${OSX_ARCH}" = "x86_64" ]; then
 		PLATFORM="darwin-amd64-osx"
 	else
-		echo "Sorry, architecture not supported: ${OSX_ARCH}.
+		echo "Sorry, architecture not supported: ${OSX_ARCH}."
 		exit 1
 	fi
 elif [ "$UNAME" = "Linux" ]; then
@@ -22,7 +22,7 @@ elif [ "$UNAME" = "Linux" ]; then
 	if [ "${LINUX_ARCH}" = "x86_64" ]; then
 		PLATFORM="linux-amd64"
 	else
-		echo "Sorry, architecture not supported: ${LINUX_ARCH}.
+		echo "Sorry, architecture not supported: ${LINUX_ARCH}."
 	exit 1
 fi
 
