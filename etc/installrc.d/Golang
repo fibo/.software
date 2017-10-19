@@ -3,27 +3,27 @@
 
 # Code stolen from https://github.com/apex/apex/blob/master/install.sh
 UNAME=$(uname)
+ARCH=$(uname -m)
 
 if [ "$UNAME" != "Linux" -a "$UNAME" != "Darwin" ]; then
-	echo "Sorry, OS not supported: ${UNAME}".
+	echo "Sorry, OS not supported: ${UNAME}"
 	exit 1
 fi
 
 if [ "$UNAME" = "Darwin" ]; then
-	OSX_ARCH=$(uname -m)
-	if [ "${OSX_ARCH}" = "x86_64" ]; then
+	if [ "${ARCH}" = "x86_64" ]; then
 		PLATFORM="darwin-amd64-osx"
 	else
-		echo "Sorry, architecture not supported: ${OSX_ARCH}."
+		echo "Sorry, architecture not supported: ${ARCH}"
 		exit 1
 	fi
 elif [ "$UNAME" = "Linux" ]; then
-	LINUX_ARCH=$(uname -m)
-	if [ "${LINUX_ARCH}" = "x86_64" ]; then
+	if [ "${ARCH}" = "x86_64" ]; then
 		PLATFORM="linux-amd64"
 	else
-		echo "Sorry, architecture not supported: ${LINUX_ARCH}."
-	exit 1
+		echo "Sorry, architecture not supported: ${ARCH}"
+  	exit 1
+  fi
 fi
 
 SOURCES_URI=https://storage.googleapis.com/golang/go${VERSION}.${PLATFORM}.tar.gz
