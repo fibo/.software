@@ -285,7 +285,7 @@ Build depends on:
 
 ### [Golang](https://golang.org/)
 
-> version 1.6
+> version 1.9.1
 
 Build depends on:
 
@@ -294,8 +294,9 @@ Build depends on:
 
 *Golang* needs environment variables
 
-* `GOROOT` which is set to `$DOTSOFTWARE_ROOT_DIR/opt/golang`
-* `GOPATH` which is set to `$DOTSOFTWARE_ROOT_DIR/opt/gopath`
+* `GOROOT` which is set to `$DOTSOFTWARE_ROOT_DIR/opt/golang`.
+* `GOPATH` which should be set by user, for instance `$HOME/Golang`.
+* `GOBIN` which should be set by user, for instance `$GOPATH/bin`, and added to `PATH`.
 
 <a name="graphviz"></a>
 

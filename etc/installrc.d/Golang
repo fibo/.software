@@ -38,7 +38,6 @@ function _build() {
 		rm -rf $GOROOT
 	fi
 
-	mkdir -p $GOPATH
 	mv $CURRENT_VERSION_DIR $GOROOT
 }
 
