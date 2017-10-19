@@ -34,6 +34,8 @@ function _build() {
 	source ~/.software/etc/profile.d/golang.sh
 	chmod +x ~/.software/etc/profile.d/golang.sh
 
+	mkdir -p $DOTSOFTWARE_ROOT_DIR/opt
+
 	if [ -d $GOROOT ]; then
 		rm -rf $GOROOT
 	fi
