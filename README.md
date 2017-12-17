@@ -389,7 +389,7 @@ Build depends on:
 
 ### [Node](https://nodejs.org/)
 
-> version 8.1.0
+> version 8.9.3
 
 Node version above is latest **LTS / Stable**.
 
